@@ -1,10 +1,24 @@
 window.MARKET_CALENDAR = {
-  "updatedAt": "2026-11-11T07:56:58+09:00",
+  "updatedAt": "2026-11-11T08:19:47+09:00",
   "coverage": [
     "2026-11-01",
     "2026-12-31"
   ],
   "events": [
+    {
+      "date": "2026-10-29",
+      "time": "03:00",
+      "title": "FOMC声明",
+      "category": "経済指標",
+      "region": "米国",
+      "detail": "FRB公式発表",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
+      "result": {
+        "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
+        "publishedAt": "2026-10-29T03:00:00+09:00",
+        "summary": "FOMC声明が公表されました。"
+      }
+    },
     {
       "date": "2026-11-04",
       "time": "00:00",

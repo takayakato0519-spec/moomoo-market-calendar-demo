@@ -7,7 +7,7 @@ import "./style.css";
 const data = window.MARKET_CALENDAR;
 const today = new Intl.DateTimeFormat("sv-SE", {timeZone: "Asia/Tokyo"}).format(new Date());
 const sourceHosts = new Set([
-  "fred.stlouisfed.org", "www.nyse.com", "ir.homedepot.com", "corporate.walmart.com",
+  "fred.stlouisfed.org", "www.nyse.com", "www.federalreserve.gov", "ir.homedepot.com", "corporate.walmart.com",
 ]);
 const events = data.events.filter(event => {
   try {
@@ -23,6 +23,7 @@ const events = data.events.filter(event => {
   type: event.category === "決算" ? "earnings" : "macro",
   note: [event.time, event.detail].filter(Boolean).join(" · "),
   url: event.url,
+  result: event.result,
 }));
 function PublicMarketTabs() {
   const [tab, setTab] = useState("calendar");

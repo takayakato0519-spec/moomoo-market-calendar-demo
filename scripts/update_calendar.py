@@ -184,6 +184,33 @@ def walmart_earnings(today, end):
     return items
 
 
+def attach_fomc_results(events, news, start):
+    for item in news:
+        if not re.fullmatch(r"https://www\.federalreserve\.gov/newsevents/pressreleases/monetary\d{8}a\.htm", item["url"]):
+            continue
+        if item["title"].casefold() != "federal reserve issues fomc statement":
+            continue
+        stamp = datetime.fromisoformat(item["date"])
+        day = stamp.date().isoformat()
+        if stamp.date() < start:
+            continue
+        event = next((e for e in events if e["title"] == RELEASES[101] and e["date"] == day), None)
+        if event is None:
+            event = dict(date=day, time=stamp.strftime("%H:%M"), title=RELEASES[101],
+                         category="経済指標", region="米国", detail="FRB公式発表", url=item["url"])
+            events.append(event)
+        summary = "FOMC声明が公表されました。"
+        try:
+            page = BeautifulSoup(fetch(item["url"]).text, "html.parser")
+            body = " ".join(page.get_text(" ", strip=True).split())
+            match = re.search(r"target range for the federal funds rate (?:at|to) ([\d.]+)\s*(?:to|[–-])\s*([\d.]+)\s*percent", body, re.I)
+            if match:
+                summary = f"政策金利の誘導目標：{match[1]}〜{match[2]}％"
+        except requests.RequestException:
+            pass
+        event["result"] = dict(url=item["url"], publishedAt=item["date"], summary=summary)
+
+
 def main():
     now = datetime.now(JST)
     start = now.date().replace(day=1)
@@ -204,10 +231,13 @@ def main():
     if enabled:
         private_events, trends = licensed_data(start, end)
         events.extend(private_events)
+    news = market_news()
+    result_start = (start - timedelta(days=1)).replace(day=1)
+    attach_fomc_results(events, news, result_start)
     payload = dict(updatedAt=now.isoformat(timespec="seconds"), coverage=[start.isoformat(), end.isoformat()],
-                   events=sorted((e for e in events if start.isoformat() <= e["date"] <= end.isoformat()),
+                   events=sorted((e for e in events if (start.isoformat() <= e["date"] <= end.isoformat()) or e.get("result")),
                                  key=lambda e: (e["date"], e["time"], e["title"])),
-                   analystTrends=trends, news=market_news(), licensedData=enabled, issuerStatus=issuer_status)
+                   analystTrends=trends, news=news, licensedData=enabled, issuerStatus=issuer_status)
     temp = OUT.with_suffix(".tmp")
     temp.write_text("window.MARKET_CALENDAR = " + json.dumps(payload, ensure_ascii=False, indent=2) + ";\n", encoding="utf-8")
     temp.replace(OUT)
