@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ja">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Market Calendar Demo</title><link rel="stylesheet" href="style.css"><script src="app.js" defer></script></head>
+<body>
+<header><div class="shell brand"><strong>MARKET CALENDAR</strong><span>MOOMOOAI / PUBLIC DEMO</span></div></header>
+<main class="shell">
+  <section class="intro"><div><p class="eyebrow">MARKET OVERVIEW</p><h1>市場カレンダー</h1><p>米国の主要な経済指標の発表予定を日付ごとに確認。</p></div><span class="badge">公式日程 · JST</span></section>
+  <div class="layout">
+    <section class="panel" aria-labelledby="month">
+      <div class="panel-head"><h2 id="month"></h2><div class="controls"><button id="prev" aria-label="前月">‹</button><button id="reset">収録月</button><button id="next" aria-label="翌月">›</button></div></div>
+      <div class="weekdays" aria-hidden="true"><span>月</span><span>火</span><span>水</span><span>木</span><span>金</span><span>土</span><span>日</span></div>
+      <div id="calendar" class="calendar"></div>
+    </section>
+    <section class="panel events" aria-labelledby="selected"><p class="eyebrow">DAILY AGENDA</p><h2 id="selected"></h2><div id="events" aria-live="polite"></div></section>
+  </div>
+<p class="note source">出典 <a href="https://www.bls.gov/schedule/2026/11_sched.htm">米国労働統計局（BLS）の2026年11月発表予定</a>。一部の指標を掲載。取得確認日 2026年11月11日。</p>
+</main>
+</body></html>
