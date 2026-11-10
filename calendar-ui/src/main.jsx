@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { NewsPanel } from "./NewsPanel";
 import { createRoot } from "react-dom/client";
 import { MarketCalendarPanel } from "./MarketCalendarPanel";
 import "./style.css";
@@ -23,17 +24,33 @@ const events = data.events.filter(event => {
   note: [event.time, event.detail].filter(Boolean).join(" · "),
   url: event.url,
 }));
-createRoot(document.getElementById("market-calendar")).render(
-  <>
-    <p className="mb-3 text-xs text-slate-500">更新 {data.updatedAt.slice(0, 10)} · JST</p>
-    <MarketCalendarPanel events={events} today={today} />
-    <section className="mt-6" aria-labelledby="news-heading">
-      <h2 id="news-heading">市場ニュース（FRB）</h2>
-      <ul className="space-y-2 text-sm">
-        {data.news.filter(item => item.url.startsWith("https://www.federalreserve.gov/")).map(item => (
-          <li key={item.url}>{item.date} · <a className="text-indigo-700 underline" href={item.url}>{item.title}</a></li>
+function PublicMarketTabs() {
+  const [tab, setTab] = useState("calendar");
+  const todaysEvents = events.filter(event => event.date === today);
+  const tabs = [
+    ["schedule", "🗓 本日予定"],
+    ["calendar", "📅 カレンダー"],
+    ["news", "📰 ニュース"],
+  ];
+  return (
+    <>
+      <nav aria-label="市場環境" className="flex items-center gap-1.5 flex-wrap mb-3">
+        <span className="text-[9px] font-black text-indigo-500 shrink-0">📰 市場環境</span>
+        {tabs.map(([key, label]) => (
+          <button key={key} onClick={() => setTab(key)} aria-pressed={tab === key}
+            className={`text-[11px] px-2.5 py-1 rounded-full border font-bold transition ${tab === key ? "bg-indigo-600 text-white border-indigo-600" : "bg-white text-slate-600 border-slate-300 hover:border-slate-400"}`}>
+            {label}
+          </button>
         ))}
-      </ul>
-    </section>
-  </>
-);
+      </nav>
+      <p className="mb-3 text-xs text-slate-500">更新 {data.updatedAt.slice(0, 10)} · JST</p>
+      {tab === "calendar" && <MarketCalendarPanel events={events} today={today} />}
+      {tab === "schedule" && (todaysEvents.length
+        ? <MarketCalendarPanel events={todaysEvents} today={today} />
+        : <p className="text-center py-10 text-slate-500 text-sm">{today} の収録イベントはありません。</p>)}
+      {tab === "news" && <NewsPanel news={data.news} />}
+    </>
+  );
+}
+
+createRoot(document.getElementById("market-calendar")).render(<PublicMarketTabs />);
