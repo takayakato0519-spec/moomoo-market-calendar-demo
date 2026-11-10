@@ -5,6 +5,7 @@ import os
 from datetime import date, datetime, timedelta
 from pathlib import Path
 import re
+from fractions import Fraction
 from email.utils import parsedate_to_datetime
 from xml.etree import ElementTree
 from urllib.parse import urlsplit
@@ -203,12 +204,114 @@ def attach_fomc_results(events, news, start):
         try:
             page = BeautifulSoup(fetch(item["url"]).text, "html.parser")
             body = " ".join(page.get_text(" ", strip=True).split())
-            match = re.search(r"target range for the federal funds rate (?:at|to) ([\d.]+)\s*(?:to|[–-])\s*([\d.]+)\s*percent", body, re.I)
+            match = re.search(r"target range for the federal funds rate (?:at|to) ([\d.]+(?:-\d+/\d+)?)\s*(?:to|[–-])\s*([\d.]+(?:-\d+/\d+)?)\s*percent", body, re.I)
             if match:
-                summary = f"政策金利の誘導目標：{match[1]}〜{match[2]}％"
+                def rate(value):
+                    whole, separator, fraction = value.partition("-")
+                    return float(whole) + (float(Fraction(fraction)) if separator else 0)
+                summary = f"政策金利の誘導目標：{rate(match[1]):g}〜{rate(match[2]):g}％"
         except requests.RequestException:
             pass
         event["result"] = dict(url=item["url"], publishedAt=item["date"], summary=summary)
+
+
+def attach_bls_results(events, now):
+    series = {}
+    for code in ("CUSR0000SA0", "CUUR0000SA0", "CES0000000001", "LNS14000000"):
+        try:
+            payload = fetch(f"https://api.bls.gov/publicAPI/v2/timeseries/data/{code}").json()
+            rows = payload["Results"]["series"][0]["data"]
+            series[code] = {(int(row["year"]), int(row["period"][1:])): float(row["value"])
+                            for row in rows if row["period"] != "M13" and row["value"] not in ("", "-")}
+        except (requests.RequestException, ValueError, KeyError, IndexError) as error:
+            print(f"BLS {code}: {error}")
+    for event in events:
+        if event["title"] not in (RELEASES[10], RELEASES[50]) or not re.fullmatch(r"\d{2}:\d{2}", event["time"]):
+            continue
+        stamp = datetime.fromisoformat(event["date"] + "T" + event["time"]).replace(tzinfo=JST)
+        if stamp > now:
+            continue
+        day = stamp.astimezone(ZoneInfo("America/New_York")).date()
+        period = day.replace(day=1) - timedelta(days=1)
+        previous = period.replace(day=1) - timedelta(days=1)
+        def value(code, year, month):
+            return series[code][year, month]
+        try:
+            if event["title"] == RELEASES[10]:
+                adjusted = value("CUSR0000SA0", period.year, period.month)
+                prior = value("CUSR0000SA0", previous.year, previous.month)
+                raw = value("CUUR0000SA0", period.year, period.month)
+                year_ago = series.get("CUUR0000SA0", {}).get((period.year - 1, period.month))
+                summary = f"CPI 前月比 {(adjusted / prior - 1) * 100:+.1f}％（季節調整済み）"
+                summary += f"・前年比 {(raw / year_ago - 1) * 100:+.1f}％" if year_ago else "・前年比は比較元の値なし"
+                release = "cpi"
+            else:
+                jobs = value("CES0000000001", period.year, period.month) - value("CES0000000001", previous.year, previous.month)
+                rate = value("LNS14000000", period.year, period.month)
+                summary = f"非農業部門雇用者数 前月比 {jobs * 1000:+,.0f}人・失業率 {rate:.1f}％"
+                release = "empsit"
+        except (KeyError, ZeroDivisionError):
+            continue
+        event["result"] = dict(
+            url=f"https://www.bls.gov/news.release/archives/{release}_{day:%m%d%Y}.htm",
+            publishedAt=stamp.isoformat(),
+            summary=f"{period.year}年{period.month}月分 · {summary}（BLS最新系列から計算、改定を含む）",
+        )
+
+
+def attach_earnings_results(events, now):
+    first_day = (now.date() - timedelta(days=105))
+    sources = {}
+    try:
+        for year in range(first_day.year, now.year + 1):
+            origin = "https://ir.homedepot.com"
+            archive = BeautifulSoup(fetch(f"{origin}/news-releases/{year}", headers={"User-Agent": "Mozilla/5.0"}).text, "html.parser")
+            for link in archive.select('a[href^="/news-releases/"]'):
+                match = re.fullmatch(r"/news-releases/\d{4}/(\d{2}-\d{2}-\d{4})-\d+", link["href"])
+                if match and re.search(r"quarter fiscal .* results", link.get_text(" ", strip=True), re.I):
+                    day = datetime.strptime(match[1], "%m-%d-%Y").date()
+                    sources["HD", day] = origin + link["href"]
+    except (requests.RequestException, ValueError) as error:
+        print(f"HD results archive: {error}")
+    try:
+        for event in walmart_earnings(first_day, now.date()):
+            page = BeautifulSoup(fetch(event["url"]).text, "html.parser")
+            for link in page.select('a[href^="https://corporate.walmart.com/news/"]'):
+                if re.search(r"/walmart-releases-.*-earnings$", link["href"]):
+                    sources["WMT", date.fromisoformat(event["date"])] = link["href"]
+                    break
+    except (requests.RequestException, ValueError) as error:
+        print(f"WMT results archive: {error}")
+    for (symbol, day), url in sources.items():
+        if not first_day <= day <= now.date():
+            continue
+        try:
+            page = BeautifulSoup(fetch(url, headers={"User-Agent": "Mozilla/5.0"}).text, "html.parser")
+        except requests.RequestException as error:
+            print(f"{symbol} results for {day}: {error}")
+            continue
+        body = " ".join(page.stripped_strings)
+        facts = []
+        if symbol == "HD":
+            sales = re.search(r"reported sales of \$([\d.]+) billion", body, re.I)
+            eps = re.search(r"or \$([\d.]+) per diluted share", body, re.I)
+            if sales:
+                facts.append(f"売上高 {float(sales[1]) * 10:g}億ドル")
+            if eps:
+                facts.append(f"希薄化後EPS {eps[1]}ドル")
+        else:
+            growth = re.search(r"Total revenues\s+Q\d FY\d+\s+([\d.]+)%", body)
+            if growth:
+                facts.append(f"総収益 前年同期比 +{growth[1]}％")
+        key = day.isoformat()
+        event = next((row for row in events if row["date"] == key
+                      and row["category"] == "決算" and row["title"].startswith(symbol + " ")), None)
+        if event is None:
+            event = dict(date=key, time="", title=f"{symbol} 決算発表",
+                         category="決算", region="米国", detail="企業公式IR", url=url)
+            events.append(event)
+        event["result"] = dict(url=url, publishedAt=key,
+                               summary="・".join(facts) if facts else "企業が決算結果を公表しました。")
 
 
 def main():
@@ -231,9 +334,11 @@ def main():
     if enabled:
         private_events, trends = licensed_data(start, end)
         events.extend(private_events)
+    attach_bls_results(events, now)
     news = market_news()
     result_start = (start - timedelta(days=1)).replace(day=1)
     attach_fomc_results(events, news, result_start)
+    attach_earnings_results(events, now)
     payload = dict(updatedAt=now.isoformat(timespec="seconds"), coverage=[start.isoformat(), end.isoformat()],
                    events=sorted((e for e in events if (start.isoformat() <= e["date"] <= end.isoformat()) or e.get("result")),
                                  key=lambda e: (e["date"], e["time"], e["title"])),

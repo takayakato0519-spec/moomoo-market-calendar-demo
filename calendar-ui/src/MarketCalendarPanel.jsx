@@ -67,7 +67,7 @@ export function MarketCalendarPanel({ events, today }) {
                     <div className="mt-2 rounded-md border border-indigo-200 bg-indigo-50 p-2 text-xs">
                       <strong>発表済み</strong>
                       <p>{ev.result.summary}</p>
-                      <time dateTime={ev.result.publishedAt}>{ev.result.publishedAt.slice(0, 16).replace("T", " ")} JST</time>
+                      <time dateTime={ev.result.publishedAt}>{ev.result.publishedAt.slice(0, 16).replace("T", " ")}{ev.result.publishedAt.includes("T") ? " JST" : "（現地日付）"}</time>
                       {" · "}<a className="text-indigo-700 underline" href={ev.result.url}>公式発表の原文</a>
                     </div>
                   )}

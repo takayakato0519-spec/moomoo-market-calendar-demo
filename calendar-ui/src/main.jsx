@@ -31,6 +31,7 @@ function PublicMarketTabs() {
   const tabs = [
     ["schedule", "🗓 本日予定"],
     ["calendar", "📅 カレンダー"],
+    ["results", "発表済み"],
     ["news", "📰 ニュース"],
   ];
   return (
@@ -49,6 +50,7 @@ function PublicMarketTabs() {
       {tab === "schedule" && (todaysEvents.length
         ? <MarketCalendarPanel events={todaysEvents} today={today} />
         : <p className="text-center py-10 text-slate-500 text-sm">{today} の収録イベントはありません。</p>)}
+      {tab === "results" && <MarketCalendarPanel events={events.filter(event => event.result)} today={today} />}
       {tab === "news" && <NewsPanel news={data.news} />}
     </>
   );

@@ -1,10 +1,38 @@
 window.MARKET_CALENDAR = {
-  "updatedAt": "2026-11-11T08:19:47+09:00",
+  "updatedAt": "2026-11-11T08:25:28+09:00",
   "coverage": [
     "2026-11-01",
     "2026-12-31"
   ],
   "events": [
+    {
+      "date": "2026-08-18",
+      "time": "",
+      "title": "HD 決算発表",
+      "category": "決算",
+      "region": "米国",
+      "detail": "企業公式IR",
+      "url": "https://ir.homedepot.com/news-releases/2026/08-18-2026-110040463",
+      "result": {
+        "url": "https://ir.homedepot.com/news-releases/2026/08-18-2026-110040463",
+        "publishedAt": "2026-08-18",
+        "summary": "売上高 479億ドル・希薄化後EPS 4.79ドル"
+      }
+    },
+    {
+      "date": "2026-08-20",
+      "time": "",
+      "title": "WMT 決算発表",
+      "category": "決算",
+      "region": "米国",
+      "detail": "企業公式IR",
+      "url": "https://corporate.walmart.com/news/2026/08/20/walmart-releases-q2-fy27-earnings",
+      "result": {
+        "url": "https://corporate.walmart.com/news/2026/08/20/walmart-releases-q2-fy27-earnings",
+        "publishedAt": "2026-08-20",
+        "summary": "総収益 前年同期比 +5.9％"
+      }
+    },
     {
       "date": "2026-10-29",
       "time": "03:00",
@@ -16,7 +44,7 @@ window.MARKET_CALENDAR = {
       "result": {
         "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
         "publishedAt": "2026-10-29T03:00:00+09:00",
-        "summary": "FOMC声明が公表されました。"
+        "summary": "政策金利の誘導目標：3.75〜4％"
       }
     },
     {
@@ -35,7 +63,12 @@ window.MARKET_CALENDAR = {
       "category": "経済指標",
       "region": "米国",
       "detail": "FRED公表カレンダー",
-      "url": "https://fred.stlouisfed.org/release?rid=50"
+      "url": "https://fred.stlouisfed.org/release?rid=50",
+      "result": {
+        "url": "https://www.bls.gov/news.release/archives/empsit_11062026.htm",
+        "publishedAt": "2026-11-06T22:30:00+09:00",
+        "summary": "2026年10月分 · 非農業部門雇用者数 前月比 +165,000人・失業率 4.1％（BLS最新系列から計算、改定を含む）"
+      }
     },
     {
       "date": "2026-11-10",
@@ -44,7 +77,12 @@ window.MARKET_CALENDAR = {
       "category": "経済指標",
       "region": "米国",
       "detail": "FRED公表カレンダー",
-      "url": "https://fred.stlouisfed.org/release?rid=10"
+      "url": "https://fred.stlouisfed.org/release?rid=10",
+      "result": {
+        "url": "https://www.bls.gov/news.release/archives/cpi_11102026.htm",
+        "publishedAt": "2026-11-10T22:30:00+09:00",
+        "summary": "2026年10月分 · CPI 前月比 +0.4％（季節調整済み）・前年比は比較元の値なし（BLS最新系列から計算、改定を含む）"
+      }
     },
     {
       "date": "2026-11-13",
