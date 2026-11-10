@@ -30,3 +30,5 @@ python scripts/update_calendar.py
 市場ニュースでは [FRB公式RSS](https://www.federalreserve.gov/feeds/feeds.htm) の金融政策発表を、日付・見出し・原典リンクで毎日更新します。
 
 [非公開版の表示項目と公開範囲](DISPLAY-INVENTORY.md)
+
+決算予定は [Home Depot公式IR](https://ir.homedepot.com/events-and-presentations) の公表済みイベントから日付・時刻・出典リンクを毎日取得します。収録対象は現在Home Depotです。時刻は米国東部時間です。

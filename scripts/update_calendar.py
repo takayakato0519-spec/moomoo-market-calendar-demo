@@ -135,12 +135,42 @@ def market_news():
     return sorted(items, key=lambda item: item["date"], reverse=True)[:8]
 
 
+def issuer_earnings(today, end):
+    url = "https://ir.homedepot.com/events-and-presentations"
+    soup = BeautifulSoup(fetch(url, headers={"User-Agent": "Mozilla/5.0"}).text, "html.parser")
+    section = soup.select_one(".upcoming-events-container")
+    if section is None:
+        if any("upcoming events" in h.get_text(strip=True).lower() for h in soup.find_all("h2")):
+            return []
+        raise ValueError("Home Depot IR events section missing")
+    items = []
+    for item in section.select(".upcoming-event-item"):
+        title = item.select_one(".event-title")
+        if title is None or "earnings release" not in title.get_text(strip=True).lower():
+            continue
+        stamp = item.select_one(".event-date-simple")
+        if stamp is None:
+            raise ValueError("Home Depot IR earnings date missing")
+        local = datetime.strptime(" ".join(stamp.get_text().split()).upper(), "%A, %B %d, %Y %I:%M %p ET")
+        if today <= local.date() <= end:
+            items.append(dict(date=local.date().isoformat(), time=local.strftime("%H:%M") + " ET",
+                              title="HD 決算発表", category="決算", region="米国",
+                              detail="Home Depot公式IR · 取引所の現地日付", url=url))
+    return items
+
+
 def main():
     now = datetime.now(JST)
     start = now.date().replace(day=1)
     next_month = (start.replace(day=28) + timedelta(days=4)).replace(day=1)
     end = next_month.replace(day=calendar.monthrange(next_month.year, next_month.month)[1])
     events = economy(start - timedelta(days=1), end) + holidays(start, end)
+    try:
+        events.extend(issuer_earnings(now.date(), end))
+        issuer_available = True
+    except (requests.RequestException, ValueError) as error:
+        print(f"Home Depot IR unavailable: {type(error).__name__}")
+        issuer_available = False
     trends = []
     enabled = os.getenv("ENABLE_LICENSED_DATA") == "true"
     if enabled:
@@ -149,7 +179,7 @@ def main():
     payload = dict(updatedAt=now.isoformat(timespec="seconds"), coverage=[start.isoformat(), end.isoformat()],
                    events=sorted((e for e in events if start.isoformat() <= e["date"] <= end.isoformat()),
                                  key=lambda e: (e["date"], e["time"], e["title"])),
-                   analystTrends=trends, news=market_news(), licensedData=enabled)
+                   analystTrends=trends, news=market_news(), licensedData=enabled, issuerAvailable=issuer_available)
     temp = OUT.with_suffix(".tmp")
     temp.write_text("window.MARKET_CALENDAR = " + json.dumps(payload, ensure_ascii=False, indent=2) + ";\n", encoding="utf-8")
     temp.replace(OUT)

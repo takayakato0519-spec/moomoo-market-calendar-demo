@@ -8,7 +8,7 @@
   <div class="layout">
     <section class="panel" aria-labelledby="month">
       <div class="panel-head"><h2 id="month"></h2><div class="controls"><button id="prev" aria-label="前月">‹</button><button id="reset">収録月</button><button id="next" aria-label="翌月">›</button></div></div>
-      <label class="filter">表示 <select id="category"><option value="all">すべて</option><option>経済指標</option><option>休場</option><option id="earnings-option" disabled>決算</option></select></label>
+      <label class="filter">表示 <select id="category"><option value="all">すべて</option><option>経済指標</option><option>休場</option><option id="earnings-option">決算</option></select></label>
       <div class="weekdays" aria-hidden="true"><span>月</span><span>火</span><span>水</span><span>木</span><span>金</span><span>土</span><span>日</span></div>
       <div id="calendar" class="calendar"></div>
     </section>
@@ -16,6 +16,7 @@
   </div>
 <section class="panel heatmap" aria-labelledby="analyst-heading">
   <h2 id="analyst-heading">決算予定・アナリスト予想</h2>
+  <p class="note" id="issuer-status"></p>
   <p class="note" id="licensed-status">公開表示ライセンスのあるデータ接続が未設定です。</p>
   <div id="analysts"></div>
 </section>

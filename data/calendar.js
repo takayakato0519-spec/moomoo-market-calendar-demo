@@ -1,5 +1,5 @@
 window.MARKET_CALENDAR = {
-  "updatedAt": "2026-11-11T07:33:31+09:00",
+  "updatedAt": "2026-11-11T07:37:45+09:00",
   "coverage": [
     "2026-11-01",
     "2026-12-31"
@@ -40,6 +40,15 @@ window.MARKET_CALENDAR = {
       "region": "米国",
       "detail": "FRED公表カレンダー",
       "url": "https://fred.stlouisfed.org/release?rid=46"
+    },
+    {
+      "date": "2026-11-17",
+      "time": "09:00 ET",
+      "title": "HD 決算発表",
+      "category": "決算",
+      "region": "米国",
+      "detail": "Home Depot公式IR · 取引所の現地日付",
+      "url": "https://ir.homedepot.com/events-and-presentations"
     },
     {
       "date": "2026-11-25",
@@ -175,5 +184,6 @@ window.MARKET_CALENDAR = {
       "date": "2026-07-30T03:00:00+09:00"
     }
   ],
-  "licensedData": false
+  "licensedData": false,
+  "issuerAvailable": true
 };
