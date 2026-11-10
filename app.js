@@ -104,3 +104,17 @@ for (const row of data.analystTrends) {
     "中立 " + row.hold, "売り " + row.sell, "強い売り " + row.strongSell].join(" · ");
   byId("analysts").append(line);
 }
+
+for (const item of data.news ?? []) {
+  const row = document.createElement("article");
+  const stamp = document.createElement("time");
+  stamp.dateTime = item.date;
+  stamp.textContent = item.date.slice(0, 10) + " · FRB";
+  const title = document.createElement("h3");
+  const source = document.createElement("a");
+  source.href = item.url;
+  source.textContent = item.title;
+  title.append(source);
+  row.append(stamp, title);
+  byId("news").append(row);
+}

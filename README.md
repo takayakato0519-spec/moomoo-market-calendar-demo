@@ -26,3 +26,7 @@ python scripts/update_calendar.py
 - 決算予定・EPS予想・アナリスト推奨件数は、公開再配布を許諾する [Finnhub契約](https://api.finnhub.io/pricing-startups-and-enterprise) がある場合に利用できます。契約確認後、Actionsのシークレット FINNHUB_API_KEY と変数 ENABLE_LICENSED_DATA=true を設定します。対象は米国の主要7銘柄です。公開されるのは正規化したデータで、キーはActions内に保持されます。
 
 公開対象は市場情報の取得と表示です。自動売買、発注、口座情報、本番システムへの接続は含みません。
+
+市場ニュースでは [FRB公式RSS](https://www.federalreserve.gov/feeds/feeds.htm) の金融政策発表を、日付・見出し・原典リンクで毎日更新します。
+
+[非公開版の表示項目と公開範囲](DISPLAY-INVENTORY.md)

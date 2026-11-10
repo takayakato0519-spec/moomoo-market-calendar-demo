@@ -5,6 +5,9 @@ import os
 from datetime import date, datetime, timedelta
 from pathlib import Path
 import re
+from email.utils import parsedate_to_datetime
+from xml.etree import ElementTree
+from urllib.parse import urlsplit
 from urllib.parse import urljoin
 from zoneinfo import ZoneInfo
 
@@ -114,6 +117,24 @@ def licensed_data(start, end):
     return events, trends
 
 
+def market_news():
+    rss = "https://www.federalreserve.gov/feeds/press_monetary.xml"
+    root = ElementTree.fromstring(fetch(rss).content)
+    items = []
+    for entry in root.findall("./channel/item"):
+        url = entry.findtext("link", "").strip()
+        target = urlsplit(url)
+        if target.scheme != "https" or target.hostname != "www.federalreserve.gov":
+            continue
+        title = entry.findtext("title", "").strip()
+        stamp = entry.findtext("pubDate", "").strip()
+        if title and stamp:
+            items.append(dict(title=title, url=url, date=parsedate_to_datetime(stamp).astimezone(JST).isoformat()))
+    if not items:
+        raise ValueError("No Federal Reserve news found")
+    return sorted(items, key=lambda item: item["date"], reverse=True)[:8]
+
+
 def main():
     now = datetime.now(JST)
     start = now.date().replace(day=1)
@@ -128,7 +149,7 @@ def main():
     payload = dict(updatedAt=now.isoformat(timespec="seconds"), coverage=[start.isoformat(), end.isoformat()],
                    events=sorted((e for e in events if start.isoformat() <= e["date"] <= end.isoformat()),
                                  key=lambda e: (e["date"], e["time"], e["title"])),
-                   analystTrends=trends, licensedData=enabled)
+                   analystTrends=trends, news=market_news(), licensedData=enabled)
     temp = OUT.with_suffix(".tmp")
     temp.write_text("window.MARKET_CALENDAR = " + json.dumps(payload, ensure_ascii=False, indent=2) + ";\n", encoding="utf-8")
     temp.replace(OUT)
