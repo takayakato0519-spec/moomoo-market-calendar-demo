@@ -7,7 +7,7 @@ import "./style.css";
 const data = window.MARKET_CALENDAR;
 const today = new Intl.DateTimeFormat("sv-SE", {timeZone: "Asia/Tokyo"}).format(new Date());
 const sourceHosts = new Set([
-  "fred.stlouisfed.org", "www.nyse.com", "www.federalreserve.gov", "ir.homedepot.com", "corporate.walmart.com",
+  "fred.stlouisfed.org", "www.nyse.com", "www.federalreserve.gov", "www.bea.gov", "ir.homedepot.com", "corporate.walmart.com",
 ]);
 const events = data.events.filter(event => {
   try {
@@ -50,7 +50,7 @@ function PublicMarketTabs() {
       {tab === "schedule" && (todaysEvents.length
         ? <MarketCalendarPanel events={todaysEvents} today={today} />
         : <p className="text-center py-10 text-slate-500 text-sm">{today} の収録イベントはありません。</p>)}
-      {tab === "results" && <MarketCalendarPanel events={events.filter(event => event.result)} today={today} />}
+      {tab === "results" && <MarketCalendarPanel events={events.filter(event => event.result)} today={today} newestFirst />}
       {tab === "news" && <NewsPanel news={data.news} />}
     </>
   );

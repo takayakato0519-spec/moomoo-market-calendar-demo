@@ -1,6 +1,6 @@
 import React from "react";
 
-export function MarketCalendarPanel({ events, today }) {
+export function MarketCalendarPanel({ events, today, newestFirst = false }) {
   const IMPACT_STYLE = {
 
     VERY_HIGH: { border: "border-rose-300",   bg: "bg-rose-50",   badge: "bg-rose-100 text-rose-800 border-rose-300",   dot: "bg-rose-500" },
@@ -19,7 +19,7 @@ export function MarketCalendarPanel({ events, today }) {
   }, {});
   return (
     <div className="space-y-3">
-      {Object.entries(groupedByDate).sort(([a], [b]) => a.localeCompare(b)).map(([dateStr, events]) => {
+      {Object.entries(groupedByDate).sort(([a], [b]) => newestFirst ? b.localeCompare(a) : a.localeCompare(b)).map(([dateStr, events]) => {
         const d = new Date(dateStr + "T00:00:00");
         const isToday = dateStr === today;
         const dayLabel = ["日","月","火","水","木","金","土"][d.getDay()];
@@ -67,6 +67,23 @@ export function MarketCalendarPanel({ events, today }) {
                     <div className="mt-2 rounded-md border border-indigo-200 bg-indigo-50 p-2 text-xs">
                       <strong>発表済み</strong>
                       <p>{ev.result.summary}</p>
+                      {ev.result.metrics?.length > 0 && (
+                        <table className="my-2 w-full text-left">
+                          <thead><tr><th scope="col">指標</th><th scope="col">前回</th><th scope="col">今回</th><th scope="col">差</th></tr></thead>
+                          <tbody>{ev.result.metrics.map(metric => (
+                            <React.Fragment key={metric.label}>
+                              <tr><th scope="row">{metric.label}</th><td>{metric.previous ?? "—"}</td><td>{metric.current}</td><td>{metric.change ?? "—"}</td></tr>
+                              {metric.initialRelease && (
+                                <tr><td colSpan={4}>同じ四半期の速報値 {metric.initialRelease} · 改定値 {metric.current}</td></tr>
+                              )}
+                              {metric.revisions?.length > 0 && (
+                                <tr><td colSpan={4}>初回取得 {metric.firstObserved} · 改定 {metric.revisions.map(revision => revision.value).join(" → ")}</td></tr>
+                              )}
+                            </React.Fragment>
+                          ))}</tbody>
+                        </table>
+                      )}
+                      {ev.result.consensusAvailable === false && <p>市場予想：公開可能なデータなし</p>}
                       <time dateTime={ev.result.publishedAt}>{ev.result.publishedAt.slice(0, 16).replace("T", " ")}{ev.result.publishedAt.includes("T") ? " JST" : "（現地日付）"}</time>
                       {" · "}<a className="text-indigo-700 underline" href={ev.result.url}>公式発表の原文</a>
                     </div>

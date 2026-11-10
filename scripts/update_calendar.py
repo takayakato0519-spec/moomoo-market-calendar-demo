@@ -1,5 +1,7 @@
 """Update the public, read-only market calendar."""
 import calendar
+import csv
+from io import StringIO
 import json
 import os
 from datetime import date, datetime, timedelta
@@ -217,7 +219,7 @@ def attach_fomc_results(events, news, start):
 
 def attach_bls_results(events, now):
     series = {}
-    for code in ("CUSR0000SA0", "CUUR0000SA0", "CES0000000001", "LNS14000000"):
+    for code in ("CUSR0000SA0", "CUUR0000SA0", "CES0000000001", "LNS14000000", "WPSFD4"):
         try:
             payload = fetch(f"https://api.bls.gov/publicAPI/v2/timeseries/data/{code}").json()
             rows = payload["Results"]["series"][0]["data"]
@@ -225,8 +227,17 @@ def attach_bls_results(events, now):
                             for row in rows if row["period"] != "M13" and row["value"] not in ("", "-")}
         except (requests.RequestException, ValueError, KeyError, IndexError) as error:
             print(f"BLS {code}: {error}")
+    if "WPSFD4" not in series:
+        try:
+            response = fetch("https://fred.stlouisfed.org/graph/fredgraph.csv",
+                             params={"id": "PPIFIS", "cosd": f"{now.year - 1}-01-01"})
+            series["WPSFD4"] = {(int(row["observation_date"][:4]), int(row["observation_date"][5:7])):
+                               float(row["PPIFIS"]) for row in csv.DictReader(StringIO(response.text))
+                               if row.get("PPIFIS") not in (None, "", ".")}
+        except (requests.RequestException, KeyError, ValueError) as error:
+            print(f"PPI mirror: {error}")
     for event in events:
-        if event["title"] not in (RELEASES[10], RELEASES[50]) or not re.fullmatch(r"\d{2}:\d{2}", event["time"]):
+        if event["title"] not in (RELEASES[10], RELEASES[46], RELEASES[50]) or not re.fullmatch(r"\d{2}:\d{2}", event["time"]):
             continue
         stamp = datetime.fromisoformat(event["date"] + "T" + event["time"]).replace(tzinfo=JST)
         if stamp > now:
@@ -245,6 +256,15 @@ def attach_bls_results(events, now):
                 summary = f"CPI 前月比 {(adjusted / prior - 1) * 100:+.1f}％（季節調整済み）"
                 summary += f"・前年比 {(raw / year_ago - 1) * 100:+.1f}％" if year_ago else "・前年比は比較元の値なし"
                 release = "cpi"
+            elif event["title"] == RELEASES[46]:
+                values = series["WPSFD4"]
+                earlier = previous.replace(day=1) - timedelta(days=1)
+                current = values[period.year, period.month]
+                prior = values[previous.year, previous.month]
+                older = values.get((earlier.year, earlier.month))
+                actual = (current / prior - 1) * 100
+                summary = "最終需要・季節調整済み前月比"
+                release = "ppi"
             else:
                 jobs = value("CES0000000001", period.year, period.month) - value("CES0000000001", previous.year, previous.month)
                 rate = value("LNS14000000", period.year, period.month)
@@ -255,34 +275,111 @@ def attach_bls_results(events, now):
         event["result"] = dict(
             url=f"https://www.bls.gov/news.release/archives/{release}_{day:%m%d%Y}.htm",
             publishedAt=stamp.isoformat(),
-            summary=f"{period.year}年{period.month}月分 · {summary}（BLS最新系列から計算、改定を含む）",
+            summary=f"{period.year}年{period.month}月分 · {summary}（BLS公表系列から計算、改定を含む）",
         )
+        if release == "ppi":
+            event["result"]["metrics"] = [dict(label="PPI 前月比", current=f"{actual:+.1f}%",
+                previous=f"{(prior / older - 1) * 100:+.1f}%" if older else None)]
+
+
+def attach_bea_results(events, now):
+    try:
+        root = ElementTree.fromstring(fetch("https://apps.bea.gov/rss/rss.xml").content)
+    except (requests.RequestException, ElementTree.ParseError) as error:
+        print(f"BEA feed unavailable: {error}")
+        return []
+    headlines = []
+    for item in root.findall("./channel/item")[:25]:
+        title, url, published = (item.findtext(field, "").strip() for field in ("title", "link", "pubDate"))
+        target = urlsplit(url)
+        if target.scheme != "https" or target.hostname != "www.bea.gov" or not published:
+            continue
+        stamp = parsedate_to_datetime(published).astimezone(JST)
+        if stamp > now:
+            continue
+        headlines.append(dict(title=title, url=url, date=stamp.isoformat(), publisher="BEA"))
+        if stamp < now - timedelta(days=105):
+            continue
+        description = BeautifulSoup(item.findtext("description", ""), "html.parser").get_text(" ", strip=True)
+        if re.match(r"GDP[ ,(]", title):
+            match = re.search(r"annual rate of ([\d.]+) percent", description)
+            if not match:
+                continue
+            previous = re.search(r"real GDP (increased|decreased) ([\d.]+) percent", description)
+            current = ("-" if "decreased at an annual rate" in description else "") + match[1] + "%"
+            prior = (("-" if previous[1] == "decreased" else "") + previous[2] + "%") if previous else None
+            label, release = "実質GDP 前期比年率", 53
+        elif title.startswith("Personal Income and Outlays,"):
+            try:
+                page = BeautifulSoup(fetch(url).text, "html.parser")
+            except requests.RequestException as error:
+                print(f"BEA release unavailable: {error}")
+                continue
+            row = next((row for row in page.select("tr")
+                        if row.find(["th", "td"]) and row.find(["th", "td"]).get_text(" ", strip=True) == "PCE price index"), None)
+            values = [cell.get_text(strip=True) for cell in row.find_all(["td", "th"])[1:]] if row else []
+            values = [value.replace("−", "-") + "%" for value in values if re.fullmatch(r"[-−]?[\d.]+", value)]
+            if len(values) < 2:
+                continue
+            prior, current = values[-2:]
+            label, release = "PCE価格指数 前月比", 54
+        else:
+            continue
+        day = stamp.date().isoformat()
+        event = next((row for row in events if row["date"] == day and row["title"] == RELEASES[release]), None)
+        if event is None:
+            event = dict(date=day, time=stamp.strftime("%H:%M"), title=RELEASES[release],
+                         category="経済指標", region="米国", detail="BEA公式発表", url=url)
+            events.append(event)
+        event["result"] = dict(url=url, publishedAt=stamp.isoformat(), summary=title,
+                               metrics=[dict(label=label, current=current, previous=prior)])
+    return headlines
+
+
+def ecb_news():
+    try:
+        root = ElementTree.fromstring(fetch("https://www.ecb.europa.eu/rss/press.html").content)
+        items = []
+        for entry in root.findall("./channel/item")[:8]:
+            title, url, stamp = (entry.findtext(field, "").strip() for field in ("title", "link", "pubDate"))
+            target = urlsplit(url)
+            if title and stamp and target.scheme == "https" and target.hostname == "www.ecb.europa.eu":
+                items.append(dict(title=title, url=url, publisher="ECB",
+                                  date=parsedate_to_datetime(stamp).astimezone(JST).isoformat()))
+        return items
+    except (requests.RequestException, ElementTree.ParseError, ValueError) as error:
+        print(f"ECB news unavailable: {error}")
+        return []
 
 
 def attach_earnings_results(events, now):
-    first_day = (now.date() - timedelta(days=105))
+    first_day = now.date() - timedelta(days=220)
     sources = {}
+    previous_metrics = {}
     try:
         for year in range(first_day.year, now.year + 1):
             origin = "https://ir.homedepot.com"
-            archive = BeautifulSoup(fetch(f"{origin}/news-releases/{year}", headers={"User-Agent": "Mozilla/5.0"}).text, "html.parser")
-            for link in archive.select('a[href^="/news-releases/"]'):
-                match = re.fullmatch(r"/news-releases/\d{4}/(\d{2}-\d{2}-\d{4})-\d+", link["href"])
-                if match and re.search(r"quarter fiscal .* results", link.get_text(" ", strip=True), re.I):
-                    day = datetime.strptime(match[1], "%m-%d-%Y").date()
-                    sources["HD", day] = origin + link["href"]
+            for number in range(1, 4):
+                archive = BeautifulSoup(fetch(f"{origin}/news-releases/{year}", params={"page": number},
+                                              headers={"User-Agent": "Mozilla/5.0"}).text, "html.parser")
+                for link in archive.select('a[href^="/news-releases/"]'):
+                    match = re.fullmatch(r"/news-releases/\d{4}/(\d{2}-\d{2}-\d{4})-\d+", link["href"])
+                    if match and re.search(r"quarter fiscal .* results", link.get_text(" ", strip=True), re.I):
+                        day = datetime.strptime(match[1], "%m-%d-%Y").date()
+                        sources["HD", day] = origin + link["href"]
     except (requests.RequestException, ValueError) as error:
         print(f"HD results archive: {error}")
     try:
         for event in walmart_earnings(first_day, now.date()):
             page = BeautifulSoup(fetch(event["url"]).text, "html.parser")
-            for link in page.select('a[href^="https://corporate.walmart.com/news/"]'):
-                if re.search(r"/walmart-releases-.*-earnings$", link["href"]):
-                    sources["WMT", date.fromisoformat(event["date"])] = link["href"]
+            for link in page.select("a[href]"):
+                url = urljoin(event["url"], link["href"])
+                if url.startswith("https://corporate.walmart.com/news/") and re.search(r"/walmart-releases-.*-earnings$", url):
+                    sources["WMT", date.fromisoformat(event["date"])] = url
                     break
     except (requests.RequestException, ValueError) as error:
         print(f"WMT results archive: {error}")
-    for (symbol, day), url in sources.items():
+    for (symbol, day), url in sorted(sources.items(), key=lambda entry: entry[0][1]):
         if not first_day <= day <= now.date():
             continue
         try:
@@ -292,17 +389,29 @@ def attach_earnings_results(events, now):
             continue
         body = " ".join(page.stripped_strings)
         facts = []
+        metrics = []
         if symbol == "HD":
             sales = re.search(r"reported sales of \$([\d.]+) billion", body, re.I)
             eps = re.search(r"or \$([\d.]+) per diluted share", body, re.I)
             if sales:
                 facts.append(f"売上高 {float(sales[1]) * 10:g}億ドル")
+                metrics.append(("売上高", float(sales[1]) * 10, "億ドル", "億ドル"))
             if eps:
                 facts.append(f"希薄化後EPS {eps[1]}ドル")
+                metrics.append(("希薄化後EPS", float(eps[1]), "ドル", "ドル"))
         else:
-            growth = re.search(r"Total revenues\s+Q\d FY\d+\s+([\d.]+)%", body)
+            growth = re.search(r"Total revenues\s+Q\d FY\d+\s+([+−-]?[\d.]+)%", body)
             if growth:
-                facts.append(f"総収益 前年同期比 +{growth[1]}％")
+                amount = float(growth[1].replace("−", "-"))
+                facts.append(f"総収益 前年同期比 {amount:+g}％")
+                metrics.append(("総収益 前年同期比", amount, "%", "ポイント"))
+        comparison = []
+        for label, current, unit, delta_unit in metrics:
+            prior = previous_metrics.get((symbol, label))
+            comparison.append(dict(label=label, current=f"{current:g}{unit}",
+                                   previous=f"{prior:g}{unit}" if prior is not None else None,
+                                   change=f"{current - prior:+.4g}{delta_unit}" if prior is not None else None))
+            previous_metrics[symbol, label] = current
         key = day.isoformat()
         event = next((row for row in events if row["date"] == key
                       and row["category"] == "決算" and row["title"].startswith(symbol + " ")), None)
@@ -311,7 +420,61 @@ def attach_earnings_results(events, now):
                          category="決算", region="米国", detail="企業公式IR", url=url)
             events.append(event)
         event["result"] = dict(url=url, publishedAt=key,
-                               summary="・".join(facts) if facts else "企業が決算結果を公表しました。")
+                               summary="・".join(facts) if facts else "企業が決算結果を公表しました。",
+                               metrics=comparison, consensusAvailable=False)
+
+
+def preserve_result_history(events, observed_at):
+    if not OUT.exists():
+        return
+    try:
+        old = json.loads(OUT.read_text(encoding="utf-8").removeprefix("window.MARKET_CALENDAR = ").strip().removesuffix(";"))
+    except (OSError, ValueError):
+        return
+    def key(event):
+        return event["date"], event["title"]
+    old_results = {key(event): event for event in old["events"] if event.get("result")}
+    present = set()
+    for event in events:
+        event_key = key(event)
+        present.add(event_key)
+        old_event = old_results.get(event_key, {})
+        previous = old_event.get("result")
+        if not previous:
+            continue
+        if not event.get("result"):
+            event["result"] = previous
+            continue
+        result = event["result"]
+        for metric in result.get("metrics", []):
+            earlier = next((row for row in previous.get("metrics", []) if row["label"] == metric["label"]), None)
+            if not earlier:
+                continue
+            metric["firstObserved"] = earlier.get("firstObserved", earlier["current"])
+            metric["revisions"] = earlier.get("revisions", [])
+            if metric["current"] != earlier["current"]:
+                metric["revisions"] = [*metric["revisions"], dict(at=observed_at, value=metric["current"])]
+    cutoff = (datetime.fromisoformat(observed_at).date() - timedelta(days=220)).isoformat()
+    events.extend(event for event_key, event in old_results.items()
+                  if event_key not in present and cutoff <= event["date"])
+
+
+def compare_gdp_estimates(events):
+    first = {}
+    for event in sorted(events, key=lambda row: row["date"]):
+        if event["title"] != RELEASES[53] or not event.get("result"):
+            continue
+        result = event["result"]
+        period = re.search(r"([1-4](?:st|nd|rd|th) Quarter \d{4})", result["summary"], re.I)
+        metrics = result.get("metrics", [])
+        if not period or not metrics:
+            continue
+        metric = metrics[0]
+        key = period[1].lower()
+        if "advance estimate" in result["summary"].lower():
+            first[key] = metric["current"]
+        elif key in first:
+            metric["initialRelease"] = first[key]
 
 
 def main():
@@ -319,7 +482,8 @@ def main():
     start = now.date().replace(day=1)
     next_month = (start.replace(day=28) + timedelta(days=4)).replace(day=1)
     end = next_month.replace(day=calendar.monthrange(next_month.year, next_month.month)[1])
-    events = economy(start - timedelta(days=1), end) + holidays(start, end)
+    prior_month = (start - timedelta(days=1)).replace(day=1)
+    events = economy(prior_month - timedelta(days=1), end) + holidays(start, end)
     issuer_status = {}
     for symbol, source in {"HD": issuer_earnings, "WMT": walmart_earnings}.items():
         try:
@@ -336,13 +500,17 @@ def main():
         events.extend(private_events)
     attach_bls_results(events, now)
     news = market_news()
+    bea_news = attach_bea_results(events, now)
     result_start = (start - timedelta(days=1)).replace(day=1)
     attach_fomc_results(events, news, result_start)
     attach_earnings_results(events, now)
+    preserve_result_history(events, now.isoformat(timespec="seconds"))
+    compare_gdp_estimates(events)
     payload = dict(updatedAt=now.isoformat(timespec="seconds"), coverage=[start.isoformat(), end.isoformat()],
                    events=sorted((e for e in events if (start.isoformat() <= e["date"] <= end.isoformat()) or e.get("result")),
                                  key=lambda e: (e["date"], e["time"], e["title"])),
-                   analystTrends=trends, news=news, licensedData=enabled, issuerStatus=issuer_status)
+                   analystTrends=trends, news=sorted(news + bea_news[:12] + ecb_news(), key=lambda item: item["date"], reverse=True),
+                   licensedData=enabled, issuerStatus=issuer_status)
     temp = OUT.with_suffix(".tmp")
     temp.write_text("window.MARKET_CALENDAR = " + json.dumps(payload, ensure_ascii=False, indent=2) + ";\n", encoding="utf-8")
     temp.replace(OUT)
