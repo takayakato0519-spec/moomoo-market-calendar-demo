@@ -32,3 +32,8 @@ python scripts/update_calendar.py
 [非公開版の表示項目と公開範囲](DISPLAY-INVENTORY.md)
 
 決算予定は [Home Depot公式IR](https://ir.homedepot.com/events-and-presentations) の公表済みイベントから日付・時刻・出典リンクを毎日取得します。収録対象は現在Home Depotです。時刻は米国東部時間です。
+
+### 公式IRと移動平均線
+
+- 公式決算予定: [Home Depot](https://ir.homedepot.com/events-and-presentations)、[Walmart](https://corporate.walmart.com/news/events)。取得結果を銘柄別に表示し、0件と取得失敗を区別します。
+- 移動平均線: 銘柄と日足CSVを指定します。列は `date,close`（単一銘柄）か `symbol,date,close`（複数銘柄）、日付は YYYY-MM-DD、対象銘柄は201営業日以上。株式分割の影響を避けるには調整済み終値を close 列に入れてください。50日・200日線と直近の交差をブラウザで計算します。CSVは外部に送信されません。

@@ -1,5 +1,5 @@
 window.MARKET_CALENDAR = {
-  "updatedAt": "2026-11-11T07:38:15+09:00",
+  "updatedAt": "2026-11-11T07:56:37+09:00",
   "coverage": [
     "2026-11-01",
     "2026-12-31"
@@ -49,6 +49,15 @@ window.MARKET_CALENDAR = {
       "region": "米国",
       "detail": "Home Depot公式IR · 取引所の現地日付",
       "url": "https://ir.homedepot.com/events-and-presentations"
+    },
+    {
+      "date": "2026-11-19",
+      "time": "",
+      "title": "WMT FY2027 Q3 Earnings Release",
+      "category": "決算",
+      "region": "米国",
+      "detail": "Walmart公式IR · 7:00 a.m. CT（公式イベント時刻）",
+      "url": "https://corporate.walmart.com/news/events/fy2027-q3-earnings-release"
     },
     {
       "date": "2026-11-25",
@@ -185,5 +194,8 @@ window.MARKET_CALENDAR = {
     }
   ],
   "licensedData": false,
-  "issuerAvailable": true
+  "issuerStatus": {
+    "HD": 1,
+    "WMT": 1
+  }
 };

@@ -159,18 +159,46 @@ def issuer_earnings(today, end):
     return items
 
 
+def walmart_earnings(today, end):
+    root = "https://corporate.walmart.com"
+    soup = BeautifulSoup(fetch(root + "/news/events").text, "html.parser")
+    cards = soup.select(".CorporateEvent-item")
+    if not cards:
+        raise ValueError("Walmart IR event cards missing")
+    items = []
+    for card in cards:
+        link = card.select_one('.CorporateEvent-item-title a.Link[href^="/news/events/"][href$="-earnings-release"]')
+        if not link:
+            continue
+        info = card.select_one(".CorporateEvent-item-date")
+        if info is None:
+            raise ValueError("Walmart IR event details missing")
+        raw = " ".join(info.get_text(" ", strip=True).split())
+        date_text, _, _ = raw.partition("|")
+        local = datetime.strptime(date_text.strip().replace(".", ""), "%b %d, %Y").date()
+        if today <= local <= end:
+            items.append(dict(date=local.isoformat(), time="", title="WMT " + link.get_text(strip=True),
+                              category="決算", region="米国",
+                              detail="Walmart公式IR · " + raw.split("|", 1)[-1].strip().split("US/Central")[0].strip() + " CT（公式イベント時刻）",
+                              url=root + link["href"]))
+    return items
+
+
 def main():
     now = datetime.now(JST)
     start = now.date().replace(day=1)
     next_month = (start.replace(day=28) + timedelta(days=4)).replace(day=1)
     end = next_month.replace(day=calendar.monthrange(next_month.year, next_month.month)[1])
     events = economy(start - timedelta(days=1), end) + holidays(start, end)
-    try:
-        events.extend(issuer_earnings(now.date(), end))
-        issuer_available = True
-    except (requests.RequestException, ValueError) as error:
-        print(f"Home Depot IR unavailable: {type(error).__name__}")
-        issuer_available = False
+    issuer_status = {}
+    for symbol, source in {"HD": issuer_earnings, "WMT": walmart_earnings}.items():
+        try:
+            rows = source(now.astimezone(ZoneInfo("America/New_York")).date(), end)
+            events.extend(rows)
+            issuer_status[symbol] = len(rows)
+        except (requests.RequestException, ValueError) as error:
+            print(f"{symbol} IR unavailable: {type(error).__name__}: {error}")
+            issuer_status[symbol] = None
     trends = []
     enabled = os.getenv("ENABLE_LICENSED_DATA") == "true"
     if enabled:
@@ -179,7 +207,7 @@ def main():
     payload = dict(updatedAt=now.isoformat(timespec="seconds"), coverage=[start.isoformat(), end.isoformat()],
                    events=sorted((e for e in events if start.isoformat() <= e["date"] <= end.isoformat()),
                                  key=lambda e: (e["date"], e["time"], e["title"])),
-                   analystTrends=trends, news=market_news(), licensedData=enabled, issuerAvailable=issuer_available)
+                   analystTrends=trends, news=market_news(), licensedData=enabled, issuerStatus=issuer_status)
     temp = OUT.with_suffix(".tmp")
     temp.write_text("window.MARKET_CALENDAR = " + json.dumps(payload, ensure_ascii=False, indent=2) + ";\n", encoding="utf-8")
     temp.replace(OUT)

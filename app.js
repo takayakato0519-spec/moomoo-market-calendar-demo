@@ -94,9 +94,9 @@ renderCalendar();
 byId("category").addEventListener("change", renderCalendar);
 byId("updated").textContent = "更新 " + data.updatedAt.slice(0, 10) + " · JST";
 byId("coverage").textContent = data.coverage.join(" ～ ");
-byId("issuer-status").textContent = data.issuerAvailable
-  ? "Home Depotの公式IRで公表済みの決算予定をカレンダーに表示します。"
-  : "Home Depot公式IRの決算予定を取得できませんでした。";
+byId("issuer-status").textContent = Object.entries(data.issuerStatus || {}).map(
+  ([symbol, count]) => symbol + ": " + (count === null ? "取得失敗" : count + "件")
+).join(" · ");
 if (data.licensedData) {
   byId("licensed-status").textContent = "決算予定とアナリスト集計はFinnhubの対象7銘柄です。";
 }

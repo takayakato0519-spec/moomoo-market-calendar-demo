@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ja">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Market Calendar Demo</title><link rel="stylesheet" href="style.css"><script src="data/calendar.js" defer></script><script src="app.js" defer></script></head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Market Calendar Demo</title><link rel="stylesheet" href="style.css"><script src="data/calendar.js" defer></script><script src="app.js" defer></script><script src="cross.js" defer></script></head>
 <body>
 <header><div class="shell brand"><strong>MARKET CALENDAR</strong><span>MOOMOOAI / PUBLIC DEMO</span></div></header>
 <main class="shell">
@@ -24,6 +24,16 @@
   <h2 id="news-heading">市場ニュース</h2>
   <p class="note">米連邦準備制度理事会（FRB）の金融政策発表</p>
   <div id="news"></div>
+</section>
+<section class="panel heatmap">
+  <h2>銘柄の移動平均線</h2>
+  <p>日足CSV（date,close または symbol,date,close）から、50日・200日単純移動平均の交差を確認します。ファイルはブラウザ内だけで処理します。</p>
+  <form id="cross-form">
+    <label>銘柄 <input id="cross-symbol" placeholder="例: WMT" required></label>
+    <label>日足CSV <input id="cross-file" type="file" accept=".csv,text/csv" required></label>
+    <button>計算</button>
+  </form>
+  <p id="cross-result" role="status"></p>
 </section>
 <p class="note source">収録範囲 <span id="coverage"></span>。指標は日本時間、休場・決算予定は市場の現地日付で表示します。<a href="https://fred.stlouisfed.org/releases/calendar">FRED</a> · <a href="https://www.nyse.com/trade/hours-calendars">NYSE</a></p>
 </main>
