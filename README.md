@@ -37,3 +37,7 @@ python scripts/update_calendar.py
 
 - 公式決算予定: [Home Depot](https://ir.homedepot.com/events-and-presentations)、[Walmart](https://corporate.walmart.com/news/events)。取得結果を銘柄別に表示し、0件と取得失敗を区別します。
 - 移動平均線: 銘柄と日足CSVを指定します。列は `date,close`（単一銘柄）か `symbol,date,close`（複数銘柄）、日付は YYYY-MM-DD、対象銘柄は201営業日以上。株式分割の影響を避けるには調整済み終値を close 列に入れてください。50日・200日線と直近の交差をブラウザで計算します。CSVは外部に送信されません。
+
+公開画面: https://takayakato0519-spec.github.io/moomoo-market-calendar-demo/
+
+カレンダーの日付カードは非公開版のカレンダータブから移植しています。公開データに合わせた接続部分とイベント詳細は calendar-ui/src にあります。UI変更時は calendar-ui で npm ci と npm run build を実行し、calendar-assets を更新します。
