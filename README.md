@@ -1,21 +1,28 @@
 # MoomooAI 市場カレンダーデモ
 
-MoomooAIの市場カレンダーをもとに、米国の経済指標を月ごとに見渡せる画面を独立した静的ページとして再構成しました。日付を選ぶと、発表時刻と指標名を日本時間で確認できます。
+米国の主要な経済指標、NYSEの休場日を月間カレンダーに表示します。日付や種類を選ぶと、発表時刻と出典を確認できます。
 
-![2026年11月の市場カレンダーと選択日の発表予定](screenshot.jpg)
+![初版のカレンダー画面](screenshot.jpg)
 
 ## 起動方法
 
-このリポジトリをダウンロードし、ブラウザで `index.html` を開きます。Python 3 がある場合は、フォルダ内で以下を実行して [ローカル画面](http://127.0.0.1:8000/) を開くこともできます。
+リポジトリをダウンロードし、ブラウザで index.html を開きます。Python 3 がある場合は、以下で [ローカル画面](http://127.0.0.1:8000/) も開けます。
 
 ```sh
 python -m http.server 8000 --bind 127.0.0.1
 ```
 
-ビルド、ログイン、APIキーは不要です。
+## データ更新
 
-## データ
+GitHub Actions が毎日 11:23 JST に今月・翌月のデータを取得します。Actions の「Refresh public market calendar」から手動実行もできます。取得エラー時は前回の公開データを保持します。ローカルで更新する場合は以下を実行します。
 
-[米国労働統計局（BLS）の2026年11月発表予定](https://www.bls.gov/schedule/2026/11_sched.htm)から、CPI、雇用統計、JOLTSなど6件を収録しました。2026年11月11日確認時点のスナップショットです。発表時刻は米国東部時間から日本時間に換算し、日付をまたぐ場合は日本時間の日付で表示しています。最新の日程は出典を確認してください。
+```sh
+python -m pip install -r requirements.txt
+python scripts/update_calendar.py
+```
 
-公開対象はカレンダーの画面と公式日程のデータです。自動売買、発注、口座情報、本番APIへの接続は含みません。
+- 経済指標は [FRED](https://fred.stlouisfed.org/releases/calendar) のCPI、PPI、雇用統計、GDP、PCE、FOMC声明、JOLTSを収録。米国中部時間から日本時間へ換算します。
+- 休場は [NYSE](https://www.nyse.com/trade/hours-calendars) の公表表から全日休場を取得し、取引所の現地日付で表示します。
+- 決算予定・EPS予想・アナリスト推奨件数は、公開再配布を許諾する [Finnhub契約](https://api.finnhub.io/pricing-startups-and-enterprise) がある場合に利用できます。契約確認後、Actionsのシークレット FINNHUB_API_KEY と変数 ENABLE_LICENSED_DATA=true を設定します。対象は米国の主要7銘柄です。公開されるのは正規化したデータで、キーはActions内に保持されます。
+
+公開対象は市場情報の取得と表示です。自動売買、発注、口座情報、本番システムへの接続は含みません。
