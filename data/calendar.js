@@ -1,5 +1,5 @@
 window.MARKET_CALENDAR = {
-  "updatedAt": "2026-11-11T17:14:35+09:00",
+  "updatedAt": "2026-11-11T17:19:38+09:00",
   "coverage": [
     "2026-11-01",
     "2026-12-31"
@@ -216,8 +216,8 @@ window.MARKET_CALENDAR = {
       "title": "国内総生産（GDP）",
       "category": "経済指標",
       "region": "米国",
-      "detail": "BEA公式発表",
-      "url": "https://www.bea.gov/news/2026/gdp-third-estimate-industries-corporate-profits-state-gdp-and-state-personal-income-2nd",
+      "detail": "FRED公表カレンダー",
+      "url": "https://fred.stlouisfed.org/release?rid=53",
       "result": {
         "url": "https://www.bea.gov/news/2026/gdp-third-estimate-industries-corporate-profits-state-gdp-and-state-personal-income-2nd",
         "publishedAt": "2026-09-30T21:30:00+09:00",
@@ -250,12 +250,16 @@ window.MARKET_CALENDAR = {
             "current": "+60,000人",
             "previous": "+186,000人",
             "initialRelease": "+29,000人",
-            "revisionSource": "https://www.bls.gov/news.release/archives/empsit_11062026.htm"
+            "revisionSource": "https://fred.stlouisfed.org/series/PAYEMS",
+            "firstObserved": "+60,000人",
+            "revisions": []
           },
           {
             "label": "失業率",
             "current": "4.2%",
-            "previous": "4.1%"
+            "previous": "4.1%",
+            "firstObserved": "4.2%",
+            "revisions": []
           }
         ]
       }
@@ -398,12 +402,16 @@ window.MARKET_CALENDAR = {
           {
             "label": "非農業部門雇用者数 前月差",
             "current": "+165,000人",
-            "previous": "+60,000人"
+            "previous": "+60,000人",
+            "firstObserved": "+165,000人",
+            "revisions": []
           },
           {
             "label": "失業率",
             "current": "4.1%",
-            "previous": "4.2%"
+            "previous": "4.2%",
+            "firstObserved": "4.1%",
+            "revisions": []
           }
         ]
       }
