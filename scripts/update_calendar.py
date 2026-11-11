@@ -248,14 +248,33 @@ def attach_bls_results(events, now):
         previous = period.replace(day=1) - timedelta(days=1)
         def value(code, year, month):
             return series[code][year, month]
+        metrics = []
         try:
             if event["title"] == RELEASES[10]:
                 adjusted = value("CUSR0000SA0", period.year, period.month)
                 prior = value("CUSR0000SA0", previous.year, previous.month)
                 raw = value("CUUR0000SA0", period.year, period.month)
                 year_ago = series.get("CUUR0000SA0", {}).get((period.year - 1, period.month))
-                summary = f"CPI 前月比 {(adjusted / prior - 1) * 100:+.1f}％（季節調整済み）"
-                summary += f"・前年比 {(raw / year_ago - 1) * 100:+.1f}％" if year_ago else "・前年比は比較元の値なし"
+                adjusted_series = series["CUSR0000SA0"]
+                raw_series = series["CUUR0000SA0"]
+                earlier = previous.replace(day=1) - timedelta(days=1)
+                older = adjusted_series.get((earlier.year, earlier.month))
+                prior_raw = raw_series.get((previous.year, previous.month))
+                prior_year_ago = raw_series.get((previous.year - 1, previous.month))
+                metrics = [
+                    dict(label="CPI 前月比（季節調整済み）",
+                         current=f"{(adjusted / prior - 1) * 100:+.1f}%",
+                         previous=f"{(prior / older - 1) * 100:+.1f}%" if older else None),
+                    dict(label="CPI 前年同月比",
+                         current=f"{(raw / year_ago - 1) * 100:+.1f}%" if year_ago else None,
+                         previous=f"{(prior_raw / prior_year_ago - 1) * 100:+.1f}%"
+                         if prior_raw is not None and prior_year_ago else None),
+                ]
+                summary = "総合CPI"
+                if not year_ago:
+                    summary += ("・前年同月比は2025年10月の指数が未公表のため算出不可"
+                                if (period.year, period.month) == (2026, 10)
+                                else "・前年同月比は比較元の値を取得できませんでした")
                 release = "cpi"
             elif event["title"] == RELEASES[46]:
                 values = series["WPSFD4"]
@@ -279,8 +298,10 @@ def attach_bls_results(events, now):
             summary=f"{period.year}年{period.month}月分 · {summary}（BLS公表系列から計算、改定を含む）",
         )
         if release == "ppi":
-            event["result"]["metrics"] = [dict(label="PPI 前月比", current=f"{actual:+.1f}%",
+            metrics = [dict(label="PPI 前月比", current=f"{actual:+.1f}%",
                 previous=f"{(prior / older - 1) * 100:+.1f}%" if older else None)]
+        if metrics:
+            event["result"]["metrics"] = metrics
 
 
 def attach_bea_results(events, now):

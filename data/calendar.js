@@ -1,5 +1,5 @@
 window.MARKET_CALENDAR = {
-  "updatedAt": "2026-11-11T17:10:12+09:00",
+  "updatedAt": "2026-11-11T17:12:37+09:00",
   "coverage": [
     "2026-11-01",
     "2026-12-31"
@@ -192,7 +192,19 @@ window.MARKET_CALENDAR = {
       "result": {
         "url": "https://www.bls.gov/news.release/archives/cpi_10142026.htm",
         "publishedAt": "2026-10-14T21:30:00+09:00",
-        "summary": "2026年9月分 · CPI 前月比 +0.6％（季節調整済み）・前年比 +3.7％（BLS公表系列から計算、改定を含む）"
+        "summary": "2026年9月分 · 総合CPI（BLS公表系列から計算、改定を含む）",
+        "metrics": [
+          {
+            "label": "CPI 前月比（季節調整済み）",
+            "current": "+0.6%",
+            "previous": "+0.4%"
+          },
+          {
+            "label": "CPI 前年同月比",
+            "current": "+3.7%",
+            "previous": "+3.4%"
+          }
+        ]
       }
     },
     {
@@ -312,7 +324,19 @@ window.MARKET_CALENDAR = {
       "result": {
         "url": "https://www.bls.gov/news.release/archives/cpi_11102026.htm",
         "publishedAt": "2026-11-10T22:30:00+09:00",
-        "summary": "2026年10月分 · CPI 前月比 +0.4％（季節調整済み）・前年比は比較元の値なし（BLS公表系列から計算、改定を含む）"
+        "summary": "2026年10月分 · 総合CPI・前年同月比は2025年10月の指数が未公表のため算出不可（BLS公表系列から計算、改定を含む）",
+        "metrics": [
+          {
+            "label": "CPI 前月比（季節調整済み）",
+            "current": "+0.4%",
+            "previous": "+0.6%"
+          },
+          {
+            "label": "CPI 前年同月比",
+            "current": null,
+            "previous": "+3.7%"
+          }
+        ]
       }
     },
     {
