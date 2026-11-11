@@ -38,7 +38,7 @@ python scripts/update_calendar.py
 - 米国CPI、PPI、雇用統計、GDP、PCEの公表値を掲載します。対象期間を揃えた値がある場合は前回と今回を比較できます。
 - 雇用者数の前月差は[BLSの公表系列](https://www.bls.gov/ces/)から計算し、[ALFRED](https://alfred.stlouisfed.org/series?seid=PAYEMS)の発表日時点の値と異なる場合に初回値を併記します。
 - GDPはBEAの速報値と改定値が揃った場合、同じ四半期で比較できます。
-- 財務指標はHome Depot、Walmart、Apple、Microsoftの売上高・純利益・希薄化後EPSと公式原文を表示します。
+- 財務指標はHome Depot、Walmart、Apple、Microsoft、NVIDIAの売上高・純利益・希薄化後EPSと公式原文を表示します。
 
 ### 公式IRと移動平均線
 
