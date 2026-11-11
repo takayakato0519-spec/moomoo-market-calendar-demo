@@ -23,11 +23,11 @@
 | 表示機能・部品 | 公開版の対応 |
 | --- | --- |
 | 市場カレンダー、本日予定、発表結果 | 日付カードを移植。経済指標・休場に加え、Home Depot・Walmartの決算予定とNVIDIAの決算説明会を表示。発表済みではHome Depot・Walmart・Apple・Microsoft・NVIDIAの公式決算を掲載。 |
-| 市場ニュース | ニュースカードを移植。FRB・BEA・ECB・日本銀行・EIA・米国勢調査局と、決算を収録する5社の公式発表を発表元で絞り込み。 |
+| 市場ニュース | ニュースカードを移植。FRB・BEA・ECB・日本銀行・EIA・米国勢調査局・JPXと、決算を収録する5社の公式発表を発表元で絞り込み。 |
 | 財務指標カード | 共通の MetricCard を移植。Home Depot・Walmartの10-Q、Apple・Microsoft・NVIDIAの公式決算資料から売上高・純利益・希薄化後EPS、前期比と純利益率を表示。 |
 | 商品チャート | 原油2系列と天然ガスの現物価格を表示。私用版の先物予測・判断に依存する部分は除外。 |
 | 移動平均線 | 日足CSVで計算する独立画面を公開済み。私用版の候補抽出・判定は除外。 |
-| セクターヒートマップ、指数・為替、板、ストップ高 | セクターマップ、指数連動CFD、為替・金利、暗号資産の板ヒートマップとCSV数量表を公開。ストップ高は公開用データ源の確認が必要。 |
+| セクターヒートマップ、指数・為替、板、ストップ高 | セクターマップ、指数連動CFD、為替・金利、暗号資産の板ヒートマップとCSV数量表を公開。東証の制限値幅拡大はJPXの公式通知をニュースに掲載。全銘柄のストップ高・安一覧には、第三者向けの継続公開が許諾されたデータが必要。 |
 | アナリスト、目標株価、決算コンセンサス | データの公開表示・再配布を確認できた場合に対応。 |
 | 暗号資産の相場・チャート | 相場一覧とBTC/USDT無期限先物の板ヒートマップを公開。 |
 | ダウ理論・カタリスト・おすすめ銘柄 | チャートなどの表示部分を個別に確認。売買シグナル・採点・執行連携は除外。 |
@@ -39,3 +39,9 @@
 - [米国株セクターマップ](https://takayakato0519-spec.github.io/moomoo-market-calendar-demo/sectors.html)は、S&P 500構成銘柄の騰落をTradingViewの埋め込みで表示します。
 - [米国株価指数](https://takayakato0519-spec.github.io/moomoo-market-calendar-demo/indices.html)は、指数連動CFDの参考チャートと、S&P 500、NASDAQ 100、ダウ平均のFRED原典へのリンクを掲載します。
 - [暗号資産市場](https://takayakato0519-spec.github.io/moomoo-market-calendar-demo/crypto.html)は、TradingViewの銘柄一覧とBasisのBTC/USDT無期限先物の板ヒートマップを表示します。価格帯別の数量表は利用者のCSVをブラウザ内で読み込みます。
+
+### 東証の値幅データ
+
+[JPXのマーケットニュースRSS](https://www.jpx.co.jp/rss/index.html)から、制限値幅を拡大する場合の見出しと原文リンクを取得しています。制度の詳細は[JPXの制限値幅](https://www.jpx.co.jp/equities/trading/domestic/06.html)で確認できます。
+
+個人向けJ-Quants APIの公式FAQでは、取得データの配布と、データに基づく分析結果を第三者へ継続配信することに制限があります。公開版のストップ高・安一覧は、継続公開に対応する契約またはデータ提供元を確認してから実装します。 [J-Quants公式FAQ](https://jpx-jquants.com/ja?lang=ja) · [利用規約](https://jpx-jquants.com/ja/termsofservice?lang=ja)
