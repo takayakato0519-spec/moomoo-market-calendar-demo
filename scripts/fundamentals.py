@@ -245,8 +245,16 @@ def nvidia_filings(fetch, today):
                 values[key] = float(number) * scale
         if len(values) == len(labels):
             published = page.select_one(".article-date")
-            rows.append(dict(period=end.isoformat(), url=url, releaseUrl=url,
-                             releaseDate=release_date(published.get_text(strip=True)) if published else None, **values))
+            row = dict(period=end.isoformat(), url=url, releaseUrl=url,
+                       releaseDate=release_date(published.get_text(strip=True)) if published else None, **values)
+            for bullet in page.select("li"):
+                outlook = re.match(r"Revenue is expected to be [$]([0-9.,]+) billion, plus or minus ([0-9.]+)%",
+                                   bullet.get_text(" ", strip=True))
+                if outlook:
+                    row["nextRevenueOutlook"] = dict(midpoint=float(outlook[1].replace(",", "")) * 1e9,
+                                                     tolerance=float(outlook[2]) / 100)
+                    break
+            rows.append(row)
         if len(rows) == 4:
             break
     return dict(symbol="NVDA", name="NVIDIA Corporation", source=source,

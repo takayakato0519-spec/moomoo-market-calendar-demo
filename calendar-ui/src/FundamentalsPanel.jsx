@@ -30,6 +30,10 @@ export function FundamentalsPanel({ companies }) {
   const company = companies.find(row => row.symbol === symbol);
   if (!company) return <p>四半期報告書のデータを取得できていません。</p>;
   const latest = company.quarters[0];
+  const outlook = latest.nextRevenueOutlook;
+  const prior = company.quarters[1];
+  const priorOutlook = prior?.nextRevenueOutlook;
+  const priorDays = (Date.parse(latest.period) - Date.parse(prior?.period)) / 86400000;
   return (
     <section className="rounded-xl border border-teal-200 bg-teal-50 p-3">
       <div className="flex flex-wrap items-center justify-between gap-2">
@@ -44,6 +48,19 @@ export function FundamentalsPanel({ companies }) {
         <MetricCard label="純利益（億ドル）" value={billions(latest.netIncome)} sub={latest.period} tone="emerald" />
         <MetricCard label="希薄化後EPS（ドル）" value={latest.eps == null ? "—" : number.format(latest.eps)} sub={latest.period} tone="amber" />
       </div>
+      {outlook && (
+        <p className="mb-2 text-sm">
+          会社公表の次四半期売上高見通し {billions(outlook.midpoint)}億ドル（±{percent.format(outlook.tolerance)}）
+          {" · "}<a className="text-indigo-700 underline" href={latest.url}>見通しの原文</a>
+        </p>
+      )}
+      {priorOutlook && priorDays >= 75 && priorDays <= 105 && Number.isFinite(latest.revenue) && (
+        <p className="mb-3 text-sm">
+          今回の売上高 {billions(latest.revenue)}億ドル · 前回発表時の会社見通し {billions(priorOutlook.midpoint)}億ドル
+          {" · 中心値との差 "}{signedPercent.format(latest.revenue / priorOutlook.midpoint - 1)}
+          {" · "}<a className="text-indigo-700 underline" href={prior.url}>前回の原文</a>
+        </p>
+      )}
       <div className="overflow-x-auto">
         <table className="w-full whitespace-nowrap text-left text-sm">
           <thead><tr><th>四半期末</th><th>売上高（億ドル）</th><th>純利益（億ドル）</th><th>希薄化後EPS（ドル）</th><th>純利益率</th><th>提出書類</th></tr></thead>

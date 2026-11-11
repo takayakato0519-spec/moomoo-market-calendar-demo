@@ -1422,7 +1422,11 @@ window.MARKET_CALENDAR = {
           "releaseDate": "2026-08-26",
           "revenue": 96221000000.0,
           "netIncome": 59688000000.0,
-          "eps": 2.46
+          "eps": 2.46,
+          "nextRevenueOutlook": {
+            "midpoint": 108000000000.0,
+            "tolerance": 0.02
+          }
         },
         {
           "period": "2026-04-26",
@@ -1431,7 +1435,11 @@ window.MARKET_CALENDAR = {
           "releaseDate": "2026-05-20",
           "revenue": 81615000000.0,
           "netIncome": 58321000000.0,
-          "eps": 2.39
+          "eps": 2.39,
+          "nextRevenueOutlook": {
+            "midpoint": 91000000000.0,
+            "tolerance": 0.02
+          }
         },
         {
           "period": "2026-01-25",
@@ -1440,7 +1448,11 @@ window.MARKET_CALENDAR = {
           "releaseDate": "2026-02-25",
           "revenue": 68127000000.0,
           "netIncome": 42960000000.0,
-          "eps": 1.76
+          "eps": 1.76,
+          "nextRevenueOutlook": {
+            "midpoint": 78000000000.0,
+            "tolerance": 0.02
+          }
         },
         {
           "period": "2025-10-26",
@@ -1449,7 +1461,11 @@ window.MARKET_CALENDAR = {
           "releaseDate": "2025-11-19",
           "revenue": 57006000000.0,
           "netIncome": 31910000000.0,
-          "eps": 1.3
+          "eps": 1.3,
+          "nextRevenueOutlook": {
+            "midpoint": 65000000000.0,
+            "tolerance": 0.02
+          }
         }
       ]
     }
