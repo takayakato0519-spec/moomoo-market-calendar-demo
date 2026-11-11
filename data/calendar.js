@@ -1,5 +1,5 @@
 window.MARKET_CALENDAR = {
-  "updatedAt": "2026-11-11T14:21:25+09:00",
+  "updatedAt": "2026-11-11T14:33:18+09:00",
   "coverage": [
     "2026-11-01",
     "2026-12-31"
@@ -436,6 +436,12 @@ window.MARKET_CALENDAR = {
   "analystTrends": [],
   "news": [
     {
+      "title": "マネーストック（10月）",
+      "url": "https://www.boj.or.jp/statistics/money/ms/ms2610.pdf",
+      "publisher": "日本銀行",
+      "date": "2026-11-11T08:50:00+09:00"
+    },
+    {
       "title": "Philip R. Lane: The science and practice of monetary policy communication: the ECB experience",
       "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261110_1~9725b7aa07.en.html",
       "publisher": "ECB",
@@ -446,6 +452,48 @@ window.MARKET_CALENDAR = {
       "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261110~9422461bad.en.html",
       "publisher": "ECB",
       "date": "2026-11-10T23:00:00+09:00"
+    },
+    {
+      "title": "貸出・預金動向（10月）",
+      "url": "https://www.boj.or.jp/statistics/dl/depo/kashi/kasi2610.pdf",
+      "publisher": "日本銀行",
+      "date": "2026-11-10T08:50:00+09:00"
+    },
+    {
+      "title": "金融政策決定会合における主な意見（10月29、30日開催分）",
+      "url": "https://www.boj.or.jp/mopo/mpmsche_minu/opinion_2026/opi261030.pdf",
+      "publisher": "日本銀行",
+      "date": "2026-11-10T08:50:00+09:00"
+    },
+    {
+      "title": "コール市場残高（10月）",
+      "url": "https://www.boj.or.jp/statistics/market/short/call/call.xlsx",
+      "publisher": "日本銀行",
+      "date": "2026-11-09T15:00:00+09:00"
+    },
+    {
+      "title": "消費活動指数",
+      "url": "https://www.boj.or.jp/research/research_data/cai/index.htm",
+      "publisher": "日本銀行",
+      "date": "2026-11-09T14:00:00+09:00"
+    },
+    {
+      "title": "マネタリーベースと日本銀行の取引（10月）",
+      "url": "https://www.boj.or.jp/statistics/boj/other/mbt/mbt2610.pdf",
+      "publisher": "日本銀行",
+      "date": "2026-11-09T08:50:00+09:00"
+    },
+    {
+      "title": "日本銀行の対政府取引（10月）",
+      "url": "https://www.boj.or.jp/statistics/boj/other/tseifu/release/2026/seifu2610.pdf",
+      "publisher": "日本銀行",
+      "date": "2026-11-09T08:50:00+09:00"
+    },
+    {
+      "title": "オペレーション（10月）",
+      "url": "https://www.boj.or.jp/statistics/boj/fm/ope/m_release/2026/ope2610.xlsx",
+      "publisher": "日本銀行",
+      "date": "2026-11-09T08:50:00+09:00"
     },
     {
       "title": "Christine Lagarde: Interview with Yomiuri Shimbun",

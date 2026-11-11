@@ -337,19 +337,19 @@ def attach_bea_results(events, now):
     return headlines
 
 
-def ecb_news():
+def official_rss_news(feed, host, publisher):
     try:
-        root = ElementTree.fromstring(fetch("https://www.ecb.europa.eu/rss/press.html").content)
+        root = ElementTree.fromstring(fetch(feed).content)
         items = []
         for entry in root.findall("./channel/item")[:8]:
             title, url, stamp = (entry.findtext(field, "").strip() for field in ("title", "link", "pubDate"))
             target = urlsplit(url)
-            if title and stamp and target.scheme == "https" and target.hostname == "www.ecb.europa.eu":
-                items.append(dict(title=title, url=url, publisher="ECB",
+            if title and stamp and target.scheme in ("http", "https") and target.hostname == host:
+                items.append(dict(title=title, url=target._replace(scheme="https").geturl(), publisher=publisher,
                                   date=parsedate_to_datetime(stamp).astimezone(JST).isoformat()))
         return items
     except (requests.RequestException, ElementTree.ParseError, ValueError) as error:
-        print(f"ECB news unavailable: {error}")
+        print(f"{publisher} news unavailable: {error}")
         return []
 
 
@@ -560,7 +560,8 @@ def main():
     payload = dict(updatedAt=now.isoformat(timespec="seconds"), coverage=[start.isoformat(), end.isoformat()],
                    events=sorted((e for e in events if (start.isoformat() <= e["date"] <= end.isoformat()) or e.get("result")),
                                  key=lambda e: (e["date"], e["time"], e["title"])),
-                   analystTrends=trends, news=sorted(news + bea_news[:12] + ecb_news() + filings + issuer_news,
+                   analystTrends=trends, news=sorted(news + bea_news[:12] + official_rss_news("https://www.ecb.europa.eu/rss/press.html", "www.ecb.europa.eu", "ECB")
+                                                    + official_rss_news("https://www.boj.or.jp/rss/whatsnew.xml", "www.boj.or.jp", "日本銀行") + filings + issuer_news,
                                                     key=lambda item: item["date"], reverse=True),
                    fundamentals=fundamentals,
                    energyPrices=fred_history(now, previous.get("energyPrices", []), ENERGY_SERIES),
