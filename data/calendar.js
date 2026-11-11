@@ -250,7 +250,7 @@ window.MARKET_CALENDAR = {
             "current": "+60,000人",
             "previous": "+186,000人",
             "initialRelease": "+29,000人",
-            "revisionSource": "https://fred.stlouisfed.org/series/PAYEMS",
+            "revisionSource": "https://www.bls.gov/news.release/archives/empsit_11062026.htm",
             "firstObserved": "+60,000人",
             "revisions": []
           },
