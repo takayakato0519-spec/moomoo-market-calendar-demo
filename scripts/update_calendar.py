@@ -219,6 +219,7 @@ def nvidia_earnings(today, end):
 
 def attach_fomc_results(events, news, start):
     prior_range = None
+    prior_url = None
     for item in reversed(news):
         if not re.fullmatch(r"https://www\.federalreserve\.gov/newsevents/pressreleases/monetary\d{8}a\.htm", item["url"]):
             continue
@@ -249,8 +250,9 @@ def attach_fomc_results(events, news, start):
                              category="経済指標", region="米国", detail="FRB公式発表", url=item["url"])
                 events.append(event)
             metrics = [dict(label="政策金利の誘導目標", current=current_range, previous=prior_range)] if current_range else []
-            event["result"] = dict(url=item["url"], publishedAt=item["date"], summary=summary, metrics=metrics)
+            event["result"] = dict(url=item["url"], publishedAt=item["date"], summary=summary, metrics=metrics, previousSource=prior_url)
         prior_range = current_range
+        prior_url = item["url"] if current_range else None
 
 
 def payroll_at_release(day, period, previous):

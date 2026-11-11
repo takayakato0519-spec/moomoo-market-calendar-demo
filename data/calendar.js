@@ -642,7 +642,8 @@ window.MARKET_CALENDAR = {
             "current": "3.75〜4%",
             "previous": "3.75〜4%"
           }
-        ]
+        ],
+        "previousSource": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm"
       }
     },
     {

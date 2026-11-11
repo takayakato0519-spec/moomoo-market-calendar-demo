@@ -86,6 +86,7 @@ export function MarketCalendarPanel({ events, today, newestFirst = false }) {
                       {ev.result.consensusAvailable === false && <p>市場予想：公開可能なデータなし</p>}
                       <time dateTime={ev.result.publishedAt}>{ev.result.publishedAt.slice(0, 16).replace("T", " ")}{ev.result.publishedAt.includes("T") ? " JST" : "（現地日付）"}</time>
                       {" · "}<a className="text-indigo-700 underline" href={ev.result.url}>公式発表の原文</a>
+                      {ev.result.previousSource && <>{" · "}<a className="text-indigo-700 underline" href={ev.result.previousSource}>前回発表の原文</a></>}
                       {ev.result.filingUrl && <>{" · "}<a className="text-indigo-700 underline" href={ev.result.filingUrl}>四半期報告書</a></>}
                     </div>
                   )}
