@@ -516,6 +516,9 @@ def preserve_result_history(events, observed_at):
             earlier = next((row for row in previous.get("metrics", []) if row["label"] == metric["label"]), None)
             if not earlier:
                 continue
+            for field in ("initialRelease", "revisionSource"):
+                if field in earlier:
+                    metric.setdefault(field, earlier[field])
             metric["firstObserved"] = earlier.get("firstObserved", earlier["current"])
             metric["revisions"] = earlier.get("revisions", [])
             if metric["current"] != earlier["current"]:

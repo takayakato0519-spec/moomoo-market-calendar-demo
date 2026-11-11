@@ -74,7 +74,7 @@ export function MarketCalendarPanel({ events, today, newestFirst = false }) {
                             <React.Fragment key={metric.label}>
                               <tr><th scope="row">{metric.label}</th><td>{metric.previous ?? "—"}</td><td>{metric.current}</td><td>{metric.change ?? "—"}</td></tr>
                               {metric.initialRelease && (
-                                <tr><td colSpan={4}>同じ四半期の速報値 {metric.initialRelease} · 改定値 {metric.current}</td></tr>
+                                <tr><td colSpan={4}>初回公表値 {metric.initialRelease} · 改定値 {metric.current}{metric.revisionSource && <> · <a href={metric.revisionSource} target="_blank" rel="noopener noreferrer">改定の原文</a></>}</td></tr>
                               )}
                               {metric.revisions?.length > 0 && (
                                 <tr><td colSpan={4}>初回取得 {metric.firstObserved} · 改定 {metric.revisions.map(revision => revision.value).join(" → ")}</td></tr>

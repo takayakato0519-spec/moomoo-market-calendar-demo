@@ -248,7 +248,9 @@ window.MARKET_CALENDAR = {
           {
             "label": "非農業部門雇用者数 前月差",
             "current": "+60,000人",
-            "previous": "+186,000人"
+            "previous": "+186,000人",
+            "initialRelease": "+29,000人",
+            "revisionSource": "https://www.bls.gov/news.release/archives/empsit_11062026.htm"
           },
           {
             "label": "失業率",
