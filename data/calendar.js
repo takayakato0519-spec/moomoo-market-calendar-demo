@@ -1,5 +1,5 @@
 window.MARKET_CALENDAR = {
-  "updatedAt": "2026-11-11T17:29:39+09:00",
+  "updatedAt": "2026-11-11T17:33:49+09:00",
   "coverage": [
     "2026-11-01",
     "2026-12-31"
@@ -711,6 +711,15 @@ window.MARKET_CALENDAR = {
       "region": "米国",
       "detail": "Home Depot公式IR · 取引所の現地日付",
       "url": "https://ir.homedepot.com/events-and-presentations"
+    },
+    {
+      "date": "2026-11-17",
+      "time": "14:00 PT",
+      "title": "NVDA 決算説明会",
+      "category": "決算",
+      "region": "米国",
+      "detail": "NVIDIA公式発表 · 説明会の現地時刻",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-sets-conference-call-for-third-quarter-financial-results-6928873"
     },
     {
       "date": "2026-11-19",
@@ -2172,6 +2181,7 @@ window.MARKET_CALENDAR = {
   "licensedData": false,
   "issuerStatus": {
     "HD": 1,
-    "WMT": 1
+    "WMT": 1,
+    "NVDA": 1
   }
 };
