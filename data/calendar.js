@@ -1,5 +1,5 @@
 window.MARKET_CALENDAR = {
-  "updatedAt": "2026-11-11T17:12:37+09:00",
+  "updatedAt": "2026-11-11T17:14:35+09:00",
   "coverage": [
     "2026-11-01",
     "2026-12-31"
@@ -178,7 +178,19 @@ window.MARKET_CALENDAR = {
       "result": {
         "url": "https://www.bls.gov/news.release/archives/empsit_10022026.htm",
         "publishedAt": "2026-10-02T21:30:00+09:00",
-        "summary": "2026年9月分 · 非農業部門雇用者数 前月比 +60,000人・失業率 4.2％（BLS公表系列から計算、改定を含む）"
+        "summary": "2026年9月分 · 非農業部門雇用者数 前月比 +60,000人・失業率 4.2％（BLS公表系列から計算、改定を含む）",
+        "metrics": [
+          {
+            "label": "非農業部門雇用者数 前月差",
+            "current": "+60,000人",
+            "previous": "+186,000人"
+          },
+          {
+            "label": "失業率",
+            "current": "4.2%",
+            "previous": "4.1%"
+          }
+        ]
       }
     },
     {
@@ -197,12 +209,16 @@ window.MARKET_CALENDAR = {
           {
             "label": "CPI 前月比（季節調整済み）",
             "current": "+0.6%",
-            "previous": "+0.4%"
+            "previous": "+0.4%",
+            "firstObserved": "+0.6%",
+            "revisions": []
           },
           {
             "label": "CPI 前年同月比",
             "current": "+3.7%",
-            "previous": "+3.4%"
+            "previous": "+3.4%",
+            "firstObserved": "+3.7%",
+            "revisions": []
           }
         ]
       }
@@ -310,7 +326,19 @@ window.MARKET_CALENDAR = {
       "result": {
         "url": "https://www.bls.gov/news.release/archives/empsit_11062026.htm",
         "publishedAt": "2026-11-06T22:30:00+09:00",
-        "summary": "2026年10月分 · 非農業部門雇用者数 前月比 +165,000人・失業率 4.1％（BLS公表系列から計算、改定を含む）"
+        "summary": "2026年10月分 · 非農業部門雇用者数 前月比 +165,000人・失業率 4.1％（BLS公表系列から計算、改定を含む）",
+        "metrics": [
+          {
+            "label": "非農業部門雇用者数 前月差",
+            "current": "+165,000人",
+            "previous": "+60,000人"
+          },
+          {
+            "label": "失業率",
+            "current": "4.1%",
+            "previous": "4.2%"
+          }
+        ]
       }
     },
     {
@@ -329,12 +357,16 @@ window.MARKET_CALENDAR = {
           {
             "label": "CPI 前月比（季節調整済み）",
             "current": "+0.4%",
-            "previous": "+0.6%"
+            "previous": "+0.6%",
+            "firstObserved": "+0.4%",
+            "revisions": []
           },
           {
             "label": "CPI 前年同月比",
             "current": null,
-            "previous": "+3.7%"
+            "previous": "+3.7%",
+            "firstObserved": null,
+            "revisions": []
           }
         ]
       }
