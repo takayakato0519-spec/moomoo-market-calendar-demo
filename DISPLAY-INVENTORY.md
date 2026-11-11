@@ -33,3 +33,9 @@
 | ダウ理論・カタリスト・おすすめ銘柄 | チャートなどの表示部分を個別に確認。売買シグナル・採点・執行連携は除外。 |
 | ホーム、資産、注文、取引履歴、ポジション、運用ログ、成績、レバレッジ運用 | 個人情報・発注・運用依存の画面は除外。汎用の表示部品は単体で確認して再利用。 |
 為替・金利タブは、米ドル／円、米国10年国債利回り、FRB貿易加重ドル指数の公表系列を表示します。株価指数の再掲載は別途、提供元の利用条件を確認します。
+
+## 追加公開した市場画面
+
+- [米国株セクターマップ](https://takayakato0519-spec.github.io/moomoo-market-calendar-demo/sectors.html)は、S&P 500構成銘柄の騰落をTradingViewの埋め込みで表示します。
+- [米国株価指数](https://takayakato0519-spec.github.io/moomoo-market-calendar-demo/indices.html)は、S&P 500、NASDAQ 100、ダウ平均のFRED原典へのリンクを掲載します。
+- [暗号資産市場](https://takayakato0519-spec.github.io/moomoo-market-calendar-demo/crypto.html)は、TradingViewの銘柄一覧とBasisのBTC/USDT無期限先物の板ヒートマップを表示します。価格帯別の数量表は未移植です。
