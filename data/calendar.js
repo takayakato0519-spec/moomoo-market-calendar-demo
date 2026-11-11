@@ -88,22 +88,25 @@ window.MARKET_CALENDAR = {
         "metrics": [
           {
             "label": "売上高",
-            "current": "418億ドル",
+            "current": "417.65億ドル",
             "previous": null,
-            "change": null,
-            "firstObserved": "418億ドル",
-            "revisions": []
+            "change": null
+          },
+          {
+            "label": "純利益",
+            "current": "32.89億ドル",
+            "previous": null,
+            "change": null
           },
           {
             "label": "希薄化後EPS",
-            "current": "3.3ドル",
+            "current": "3.30ドル",
             "previous": null,
-            "change": null,
-            "firstObserved": "3.3ドル",
-            "revisions": []
+            "change": null
           }
         ],
-        "consensusAvailable": false
+        "consensusAvailable": false,
+        "filingUrl": "https://ir.homedepot.com/~/media/Files/H/HomeDepot-IR/reports-and-presentations/quarterly-earnings/2026/hd-q1-2026-10q.pdf"
       }
     },
     {
@@ -311,22 +314,25 @@ window.MARKET_CALENDAR = {
         "metrics": [
           {
             "label": "売上高",
-            "current": "479億ドル",
-            "previous": "418億ドル",
-            "change": "+61億ドル",
-            "firstObserved": "479億ドル",
-            "revisions": []
+            "current": "478.61億ドル",
+            "previous": "417.65億ドル",
+            "change": "+60.96億ドル"
+          },
+          {
+            "label": "純利益",
+            "current": "47.66億ドル",
+            "previous": "32.89億ドル",
+            "change": "+14.77億ドル"
           },
           {
             "label": "希薄化後EPS",
             "current": "4.79ドル",
-            "previous": "3.3ドル",
-            "change": "+1.49ドル",
-            "firstObserved": "4.79ドル",
-            "revisions": []
+            "previous": "3.30ドル",
+            "change": "+1.49ドル"
           }
         ],
-        "consensusAvailable": false
+        "consensusAvailable": false,
+        "filingUrl": "https://ir.homedepot.com/~/media/Files/H/HomeDepot-IR/reports-and-presentations/quarterly-earnings/2026/hd-q2-2026-10q.pdf"
       }
     },
     {

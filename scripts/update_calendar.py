@@ -618,22 +618,28 @@ def filing_comparison(quarters, index):
     return metrics
 
 
-def add_walmart_filing_metrics(events, companies):
-    quarters = next((company["quarters"] for company in companies if company["symbol"] == "WMT"), [])
+def add_retail_filing_metrics(events, companies):
+    filings = {company["symbol"]: company["quarters"] for company in companies}
     for event in events:
         result = event.get("result")
-        if event["title"] != "WMT 決算発表" or not result:
+        if event["title"] not in ("HD 決算発表", "WMT 決算発表") or not result:
             continue
-        release = re.search(r"/walmart-releases-q([1-4])-fy([0-9]{2})-earnings", result["url"])
-        if not release:
-            continue
-        fiscal_quarter, fiscal_year = map(int, release.groups())
-        period_month = (4, 7, 10, 1)[fiscal_quarter - 1]
-        period_year = 2000 + fiscal_year - (fiscal_quarter != 4)
+        symbol = event["title"].split()[0]
+        quarters = filings.get(symbol, [])
+        release_day = date.fromisoformat(event["date"])
+        walmart_release = re.search(r"/walmart-releases-q([1-4])-fy([0-9]{2})-earnings", result["url"])
         for index, quarter in enumerate(quarters):
             period = date.fromisoformat(quarter["period"])
-            if (period.year, period.month) != (period_year, period_month):
+            if not 0 <= (release_day - period).days <= 45:
                 continue
+            if symbol == "WMT":
+                if not walmart_release:
+                    break
+                fiscal_quarter, fiscal_year = map(int, walmart_release.groups())
+                period_month = (4, 7, 10, 1)[fiscal_quarter - 1]
+                period_year = 2000 + fiscal_year - (fiscal_quarter != 4)
+                if (period.year, period.month) != (period_year, period_month):
+                    continue
             metrics = filing_comparison(quarters, index)
             labels = {metric["label"] for metric in metrics}
             result["metrics"] = [metric for metric in result.get("metrics", []) if metric["label"] not in labels] + metrics
@@ -695,7 +701,7 @@ def main():
         previous = {}
     fundamentals = company_fundamentals(fetch, now.date(), previous.get("fundamentals", []))
     add_issuer_release_events(events, fundamentals, now.date())
-    add_walmart_filing_metrics(events, fundamentals)
+    add_retail_filing_metrics(events, fundamentals)
     issuer_news = []
     for event in events:
         result = event.get("result")
