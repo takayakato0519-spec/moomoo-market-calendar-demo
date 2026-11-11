@@ -9,6 +9,14 @@ const signedPercent = new Intl.NumberFormat("ja-JP", {
   style: "percent", maximumFractionDigits: 1, signDisplay: "exceptZero",
 });
 
+const percent = new Intl.NumberFormat("ja-JP", { style: "percent", maximumFractionDigits: 1 });
+
+function netMargin(row) {
+  return row.revenue > 0 && Number.isFinite(row.netIncome)
+    ? percent.format(row.netIncome / row.revenue)
+    : "—";
+}
+
 function quarterChange(current, previous, key) {
   const days = (Date.parse(current.period) - Date.parse(previous?.period)) / 86400000;
   if (!(days >= 75 && days <= 105) || !Number.isFinite(current[key]) || !(previous[key] > 0)) {
@@ -38,7 +46,7 @@ export function FundamentalsPanel({ companies }) {
       </div>
       <div className="overflow-x-auto">
         <table className="w-full whitespace-nowrap text-left text-sm">
-          <thead><tr><th>四半期末</th><th>売上高（億ドル）</th><th>純利益（億ドル）</th><th>希薄化後EPS（ドル）</th><th>提出書類</th></tr></thead>
+          <thead><tr><th>四半期末</th><th>売上高（億ドル）</th><th>純利益（億ドル）</th><th>希薄化後EPS（ドル）</th><th>純利益率</th><th>提出書類</th></tr></thead>
           <tbody>{company.quarters.map((row, index) => (
             <tr key={row.period} className="border-t border-teal-200">
               <th scope="row" className="py-2 pr-3">{row.period}</th>
@@ -52,12 +60,13 @@ export function FundamentalsPanel({ companies }) {
                   <div className="text-xs text-slate-600">前期比 {quarterChange(row, company.quarters[index + 1], key)}</div>
                 </td>
               ))}
+              <td className="pr-3">{netMargin(row)}</td>
               <td><a className="text-indigo-700 underline" href={row.url}>公式原文</a></td>
             </tr>
           ))}</tbody>
         </table>
       </div>
-      <p className="mt-2 text-xs text-slate-600">約3カ月の実績を表示。連続する前四半期の値があり、その値が正の場合に前期比を表示します。</p>
+      <p className="mt-2 text-xs text-slate-600">約3カ月の実績を表示。純利益率は純利益を売上高で割って計算します。連続する前四半期の値があり、その値が正の場合に前期比を表示します。</p>
       <a className="text-xs text-indigo-700 underline" href={company.source}>財務資料の出典</a>
     </section>
   );
