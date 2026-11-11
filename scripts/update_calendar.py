@@ -289,6 +289,18 @@ def attach_bls_results(events, now):
                 jobs = value("CES0000000001", period.year, period.month) - value("CES0000000001", previous.year, previous.month)
                 rate = value("LNS14000000", period.year, period.month)
                 summary = f"非農業部門雇用者数 前月比 {jobs * 1000:+,.0f}人・失業率 {rate:.1f}％"
+                earlier = previous.replace(day=1) - timedelta(days=1)
+                earlier_jobs = series["CES0000000001"].get((earlier.year, earlier.month))
+                prior_jobs = value("CES0000000001", previous.year, previous.month)
+                prior_rate = series["LNS14000000"].get((previous.year, previous.month))
+                metrics = [
+                    dict(label="非農業部門雇用者数 前月差",
+                         current=f"{jobs * 1000:+,.0f}人",
+                         previous=f"{(prior_jobs - earlier_jobs) * 1000:+,.0f}人"
+                         if earlier_jobs is not None else None),
+                    dict(label="失業率", current=f"{rate:.1f}%",
+                         previous=f"{prior_rate:.1f}%" if prior_rate is not None else None),
+                ]
                 release = "empsit"
         except (KeyError, ZeroDivisionError):
             continue
