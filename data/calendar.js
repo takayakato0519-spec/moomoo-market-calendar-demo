@@ -1,5 +1,5 @@
 window.MARKET_CALENDAR = {
-  "updatedAt": "2026-11-11T17:53:29+09:00",
+  "updatedAt": "2026-11-11T18:01:45+09:00",
   "coverage": [
     "2026-11-01",
     "2026-12-31"
@@ -280,6 +280,8 @@ window.MARKET_CALENDAR = {
             "label": "コアPCE価格指数 前月比",
             "current": "0.1%",
             "previous": "0.3%",
+            "firstObserved": "0.1%",
+            "revisions": [],
             "change": "-0.2ポイント"
           }
         ]
@@ -446,6 +448,8 @@ window.MARKET_CALENDAR = {
             "label": "コアPCE価格指数 前月比",
             "current": "0.2%",
             "previous": "0.1%",
+            "firstObserved": "0.2%",
+            "revisions": [],
             "change": "+0.1ポイント"
           }
         ]
@@ -659,6 +663,8 @@ window.MARKET_CALENDAR = {
             "label": "コアPCE価格指数 前月比",
             "current": "0.3%",
             "previous": "0.3%",
+            "firstObserved": "0.3%",
+            "revisions": [],
             "change": "0ポイント"
           }
         ]
