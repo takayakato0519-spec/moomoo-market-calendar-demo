@@ -15,6 +15,7 @@ from urllib.parse import urljoin
 from zoneinfo import ZoneInfo
 
 import requests
+from fundamentals import company_fundamentals
 from bs4 import BeautifulSoup
 
 FRED = "https://fred.stlouisfed.org/releases/calendar"
@@ -352,6 +353,30 @@ def ecb_news():
         return []
 
 
+def energy_prices(now, previous):
+    cached = {row["code"]: row for row in previous}
+    results = []
+    for code, name, unit in (
+        ("DCOILWTICO", "WTI原油", "ドル／バレル"),
+        ("DCOILBRENTEU", "ブレント原油", "ドル／バレル"),
+        ("DHHNGSP", "ヘンリーハブ天然ガス", "ドル／MMBtu"),
+    ):
+        try:
+            response = fetch("https://fred.stlouisfed.org/graph/fredgraph.csv",
+                             params={"id": code, "cosd": (now.date() - timedelta(days=75)).isoformat()})
+            history = [dict(date=row["observation_date"], price=float(row[code]))
+                       for row in csv.DictReader(StringIO(response.text)) if row.get(code) not in (None, "", ".")]
+            if len(history) < 2:
+                raise ValueError("insufficient price observations")
+            results.append(dict(code=code, name=name, unit=unit, history=history[-30:],
+                                url=f"https://fred.stlouisfed.org/series/{code}"))
+        except (requests.RequestException, KeyError, ValueError) as error:
+            print(f"EIA {code}: {error}")
+            if code in cached:
+                results.append(cached[code])
+    return results
+
+
 def attach_earnings_results(events, now):
     first_day = now.date() - timedelta(days=220)
     sources = {}
@@ -506,10 +531,20 @@ def main():
     attach_earnings_results(events, now)
     preserve_result_history(events, now.isoformat(timespec="seconds"))
     compare_gdp_estimates(events)
+    try:
+        previous = json.loads(OUT.read_text(encoding="utf-8").removeprefix("window.MARKET_CALENDAR = ").strip().removesuffix(";"))
+    except (OSError, ValueError):
+        previous = {}
+    fundamentals = company_fundamentals(fetch, now.date(), previous.get("fundamentals", []))
+    filings = [dict(title=f'{company["symbol"]} 四半期報告書（Form 10-Q）',
+                    url=company["quarters"][0]["url"], date=company["quarters"][0]["filed"], publisher="SEC EDGAR")
+               for company in fundamentals]
     payload = dict(updatedAt=now.isoformat(timespec="seconds"), coverage=[start.isoformat(), end.isoformat()],
                    events=sorted((e for e in events if (start.isoformat() <= e["date"] <= end.isoformat()) or e.get("result")),
                                  key=lambda e: (e["date"], e["time"], e["title"])),
-                   analystTrends=trends, news=sorted(news + bea_news[:12] + ecb_news(), key=lambda item: item["date"], reverse=True),
+                   analystTrends=trends, news=sorted(news + bea_news[:12] + ecb_news() + filings, key=lambda item: item["date"], reverse=True),
+                   fundamentals=fundamentals,
+                   energyPrices=energy_prices(now, previous.get("energyPrices", [])),
                    licensedData=enabled, issuerStatus=issuer_status)
     temp = OUT.with_suffix(".tmp")
     temp.write_text("window.MARKET_CALENDAR = " + json.dumps(payload, ensure_ascii=False, indent=2) + ";\n", encoding="utf-8")

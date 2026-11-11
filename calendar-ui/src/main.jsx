@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { EnergyPanel } from "./EnergyPanel";
+import { FundamentalsPanel } from "./FundamentalsPanel";
 import { NewsPanel } from "./NewsPanel";
 import { createRoot } from "react-dom/client";
 import { MarketCalendarPanel } from "./MarketCalendarPanel";
@@ -33,6 +35,8 @@ function PublicMarketTabs() {
     ["calendar", "📅 カレンダー"],
     ["results", "発表済み"],
     ["news", "📰 ニュース"],
+    ["fundamentals", "決算書・財務指標"],
+    ["energy", "商品価格"],
   ];
   return (
     <>
@@ -52,6 +56,12 @@ function PublicMarketTabs() {
         : <p className="text-center py-10 text-slate-500 text-sm">{today} の収録イベントはありません。</p>)}
       {tab === "results" && <MarketCalendarPanel events={events.filter(event => event.result)} today={today} newestFirst />}
       {tab === "news" && <NewsPanel news={data.news} />}
+      {tab === "fundamentals" && <>
+        <FundamentalsPanel companies={data.fundamentals ?? []} />
+        <h3 className="mb-2 mt-4 font-semibold">企業の公式決算発表</h3>
+        <MarketCalendarPanel events={events.filter(event => event.type === "earnings" && event.result)} today={today} newestFirst />
+      </>}
+      {tab === "energy" && <EnergyPanel series={data.energyPrices ?? []} />}
     </>
   );
 }

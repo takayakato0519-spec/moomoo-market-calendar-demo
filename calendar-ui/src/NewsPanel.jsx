@@ -1,7 +1,7 @@
 import React from "react";
 
 export function NewsPanel({ news }) {
-  const items = news.filter(item => ["https://www.federalreserve.gov/", "https://www.bea.gov/", "https://www.ecb.europa.eu/"].some(prefix => item.url.startsWith(prefix))).map(item => ({
+  const items = news.filter(item => ["https://www.federalreserve.gov/", "https://www.bea.gov/", "https://www.ecb.europa.eu/", "https://www.sec.gov/Archives/edgar/"].some(prefix => item.url.startsWith(prefix))).map(item => ({
     _sym: "市場全体",
     publisher: item.publisher || "FRB",
     title: item.title,
