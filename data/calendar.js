@@ -273,7 +273,8 @@ window.MARKET_CALENDAR = {
             "current": "-0.1%",
             "previous": "0.5%",
             "firstObserved": "-0.1%",
-            "revisions": []
+            "revisions": [],
+            "change": "-0.6ポイント"
           }
         ]
       }
@@ -294,7 +295,8 @@ window.MARKET_CALENDAR = {
           {
             "label": "実質GDP 前期比年率",
             "current": "1.5%",
-            "previous": "2.1%"
+            "previous": "2.1%",
+            "change": "-0.6ポイント"
           }
         ]
       }
@@ -431,7 +433,8 @@ window.MARKET_CALENDAR = {
             "current": "0.2%",
             "previous": "-0.1%",
             "firstObserved": "0.2%",
-            "revisions": []
+            "revisions": [],
+            "change": "+0.3ポイント"
           }
         ]
       }
@@ -453,7 +456,8 @@ window.MARKET_CALENDAR = {
             "label": "実質GDP 前期比年率",
             "current": "1.5%",
             "previous": "2.1%",
-            "initialRelease": "1.5%"
+            "initialRelease": "1.5%",
+            "change": "-0.6ポイント"
           }
         ]
       }
@@ -475,7 +479,8 @@ window.MARKET_CALENDAR = {
             "label": "実質GDP 前期比年率",
             "current": "2.2%",
             "previous": "2.5%",
-            "initialRelease": "1.5%"
+            "initialRelease": "1.5%",
+            "change": "-0.3ポイント"
           }
         ]
       }
@@ -507,7 +512,8 @@ window.MARKET_CALENDAR = {
             "current": "4.2%",
             "previous": "4.1%",
             "firstObserved": "4.2%",
-            "revisions": []
+            "revisions": [],
+            "change": "+0.1ポイント"
           }
         ]
       }
@@ -530,14 +536,16 @@ window.MARKET_CALENDAR = {
             "current": "+0.6%",
             "previous": "+0.4%",
             "firstObserved": "+0.6%",
-            "revisions": []
+            "revisions": [],
+            "change": "+0.2ポイント"
           },
           {
             "label": "CPI 前年同月比",
             "current": "+3.7%",
             "previous": "+3.4%",
             "firstObserved": "+3.7%",
-            "revisions": []
+            "revisions": [],
+            "change": "+0.3ポイント"
           }
         ]
       }
@@ -560,7 +568,8 @@ window.MARKET_CALENDAR = {
             "current": "+1.3%",
             "previous": "+0.5%",
             "firstObserved": "+1.3%",
-            "revisions": []
+            "revisions": [],
+            "change": "+0.8ポイント"
           }
         ]
       }
@@ -631,7 +640,8 @@ window.MARKET_CALENDAR = {
             "current": "0.5%",
             "previous": "0.3%",
             "firstObserved": "0.5%",
-            "revisions": []
+            "revisions": [],
+            "change": "+0.2ポイント"
           }
         ]
       }
@@ -654,7 +664,8 @@ window.MARKET_CALENDAR = {
             "current": "3.4%",
             "previous": "2.2%",
             "firstObserved": "3.4%",
-            "revisions": []
+            "revisions": [],
+            "change": "+1.2ポイント"
           }
         ]
       }
@@ -727,7 +738,8 @@ window.MARKET_CALENDAR = {
             "current": "4.1%",
             "previous": "4.2%",
             "firstObserved": "4.1%",
-            "revisions": []
+            "revisions": [],
+            "change": "-0.1ポイント"
           }
         ]
       }
@@ -750,7 +762,8 @@ window.MARKET_CALENDAR = {
             "current": "+0.4%",
             "previous": "+0.6%",
             "firstObserved": "+0.4%",
-            "revisions": []
+            "revisions": [],
+            "change": "-0.2ポイント"
           },
           {
             "label": "CPI 前年同月比",

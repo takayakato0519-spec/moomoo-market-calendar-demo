@@ -666,6 +666,18 @@ def add_issuer_release_events(events, companies, today):
                                            metrics=metrics)))
 
 
+def add_percentage_point_changes(events):
+    for event in events:
+        if event["category"] != "経済指標":
+            continue
+        for metric in (event.get("result") or {}).get("metrics", []):
+            current = metric.get("current") or ""
+            previous = metric.get("previous") or ""
+            if re.fullmatch(r"[+-]?[0-9]+(?:[.][0-9]+)?%", current) and re.fullmatch(r"[+-]?[0-9]+(?:[.][0-9]+)?%", previous):
+                difference = round(float(current[:-1]) - float(previous[:-1]), 2)
+                metric["change"] = f"{difference:+g}ポイント" if difference else "0ポイント"
+
+
 def main():
     now = datetime.now(JST)
     start = now.date().replace(day=1)
@@ -695,6 +707,7 @@ def main():
     attach_earnings_results(events, now)
     preserve_result_history(events, now.isoformat(timespec="seconds"))
     compare_gdp_estimates(events)
+    add_percentage_point_changes(events)
     try:
         previous = json.loads(OUT.read_text(encoding="utf-8").removeprefix("window.MARKET_CALENDAR = ").strip().removesuffix(";"))
     except (OSError, ValueError):
