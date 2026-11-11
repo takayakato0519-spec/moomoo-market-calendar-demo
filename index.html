@@ -7,8 +7,18 @@
   <section class="intro"><div><p class="eyebrow">MARKET OVERVIEW</p><h1>市場カレンダー</h1><p>米国の主要な経済指標とNYSEの休場を日付ごとに確認。</p></div></section>
   <section class="panel" aria-labelledby="calendar-title">
     <h2 id="calendar-title">市場環境</h2>
-    <p><a href="crypto.html">暗号資産市場を見る</a> · <a href="sectors.html">米国株セクターマップ</a> · <a href="indices.html">米国株価指数</a></p><div id="market-calendar"></div>
+    <p><a href="crypto.html">暗号資産市場を見る</a> · <a href="sectors.html">米国株セクターマップ</a> · <a href="indices.html">米国株価指数</a> · <a href="#us-earnings">米国株の今週の決算</a></p><div id="market-calendar"></div>
   </section>
+<section class="panel" id="us-earnings" aria-labelledby="us-earnings-title">
+  <h2 id="us-earnings-title">米国株の今週の決算</h2>
+  <p>企業または取引所が確認した決算日を、ATLASのカレンダーで表示します。</p>
+  <iframe title="ATLASの米国株決算カレンダー"
+          src="https://www.atlas-stocks.com/embed/earnings/week?market=US&amp;lang=en&amp;theme=light&amp;rows=8"
+          width="100%" height="600" loading="lazy" referrerpolicy="no-referrer"
+          style="display:block;border:0"></iframe>
+  <p><a href="https://www.atlas-stocks.com/calendar/earnings">Earnings calendar by ATLAS</a>
+    · <a href="https://www.tradingview.com/earnings-calendar/">市場予想と実績をTradingViewで確認</a></p>
+</section>
 <section class="panel heatmap">
   <h2>銘柄の移動平均線</h2>
   <p>日足CSV（date,close または symbol,date,close）から、50日・200日単純移動平均の交差を確認します。ファイルはブラウザ内だけで処理します。</p>
