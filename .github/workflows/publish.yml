@@ -32,6 +32,7 @@ jobs:
           cp index.html style.css cross.js _site/
           cp -r calendar-assets _site/
           cp data/calendar.js _site/data/
+          sed -i -E "s@data/calendar\.js(\?[^\"]*)?@data/calendar.js?v=${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}@g" _site/index.html
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
