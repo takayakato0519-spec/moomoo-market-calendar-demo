@@ -635,7 +635,14 @@ window.MARKET_CALENDAR = {
       "result": {
         "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
         "publishedAt": "2026-10-29T03:00:00+09:00",
-        "summary": "政策金利の誘導目標：3.75〜4％"
+        "summary": "政策金利の誘導目標：3.75〜4%",
+        "metrics": [
+          {
+            "label": "政策金利の誘導目標",
+            "current": "3.75〜4%",
+            "previous": "3.75〜4%"
+          }
+        ]
       }
     },
     {

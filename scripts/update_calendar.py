@@ -136,7 +136,7 @@ def market_news():
             items.append(dict(title=title, url=url, date=parsedate_to_datetime(stamp).astimezone(JST).isoformat()))
     if not items:
         raise ValueError("No Federal Reserve news found")
-    return sorted(items, key=lambda item: item["date"], reverse=True)[:8]
+    return sorted(items, key=lambda item: item["date"], reverse=True)
 
 
 def issuer_earnings(today, end):
@@ -218,33 +218,39 @@ def nvidia_earnings(today, end):
 
 
 def attach_fomc_results(events, news, start):
-    for item in news:
+    prior_range = None
+    for item in reversed(news):
         if not re.fullmatch(r"https://www\.federalreserve\.gov/newsevents/pressreleases/monetary\d{8}a\.htm", item["url"]):
             continue
         if item["title"].casefold() != "federal reserve issues fomc statement":
             continue
         stamp = datetime.fromisoformat(item["date"])
         day = stamp.date().isoformat()
-        if stamp.date() < start:
+        if stamp.date() < start - timedelta(days=90):
             continue
         event = next((e for e in events if e["title"] == RELEASES[101] and e["date"] == day), None)
-        if event is None:
-            event = dict(date=day, time=stamp.strftime("%H:%M"), title=RELEASES[101],
-                         category="経済指標", region="米国", detail="FRB公式発表", url=item["url"])
-            events.append(event)
+        current_range = None
         summary = "FOMC声明が公表されました。"
         try:
             page = BeautifulSoup(fetch(item["url"]).text, "html.parser")
             body = " ".join(page.get_text(" ", strip=True).split())
-            match = re.search(r"target range for the federal funds rate (?:at|to) ([\d.]+(?:-\d+/\d+)?)\s*(?:to|[–-])\s*([\d.]+(?:-\d+/\d+)?)\s*percent", body, re.I)
+            match = re.search(r"target range for the federal funds rate(?: by [^.;]+?)? (?:at|to) ([\d.]+(?:-\d+/\d+)?)\s*(?:to|[–-])\s*([\d.]+(?:-\d+/\d+)?)\s*percent", body, re.I)
             if match:
                 def rate(value):
                     whole, separator, fraction = value.partition("-")
                     return float(whole) + (float(Fraction(fraction)) if separator else 0)
-                summary = f"政策金利の誘導目標：{rate(match[1]):g}〜{rate(match[2]):g}％"
+                current_range = f"{rate(match[1]):g}〜{rate(match[2]):g}%"
+                summary = f"政策金利の誘導目標：{current_range}"
         except requests.RequestException:
             pass
-        event["result"] = dict(url=item["url"], publishedAt=item["date"], summary=summary)
+        if stamp.date() >= start:
+            if event is None:
+                event = dict(date=day, time=stamp.strftime("%H:%M"), title=RELEASES[101],
+                             category="経済指標", region="米国", detail="FRB公式発表", url=item["url"])
+                events.append(event)
+            metrics = [dict(label="政策金利の誘導目標", current=current_range, previous=prior_range)] if current_range else []
+            event["result"] = dict(url=item["url"], publishedAt=item["date"], summary=summary, metrics=metrics)
+        prior_range = current_range
 
 
 def payroll_at_release(day, period, previous):
@@ -745,7 +751,7 @@ def main():
     payload = dict(updatedAt=now.isoformat(timespec="seconds"), coverage=[start.isoformat(), end.isoformat()],
                    events=sorted((e for e in events if (start.isoformat() <= e["date"] <= end.isoformat()) or e.get("result")),
                                  key=lambda e: (e["date"], e["time"], e["title"])),
-                   analystTrends=trends, news=sorted(news + bea_news[:12] + official_rss_news("https://www.ecb.europa.eu/rss/press.html", "www.ecb.europa.eu", "ECB")
+                   analystTrends=trends, news=sorted(news[:8] + bea_news[:12] + official_rss_news("https://www.ecb.europa.eu/rss/press.html", "www.ecb.europa.eu", "ECB")
                                                     + official_rss_news("https://www.boj.or.jp/rss/whatsnew.xml", "www.boj.or.jp", "日本銀行")
                                                     + official_rss_news("https://www.eia.gov/rss/todayinenergy.xml", "www.eia.gov", "EIA")
                                                     + official_rss_news("https://www.census.gov/economic-indicators/indicator.xml", "www.census.gov", "U.S. Census Bureau")
