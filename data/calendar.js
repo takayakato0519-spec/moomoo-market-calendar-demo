@@ -87,6 +87,27 @@ window.MARKET_CALENDAR = {
       }
     },
     {
+      "date": "2026-07-30",
+      "time": "21:30",
+      "title": "国内総生産（GDP）",
+      "category": "経済指標",
+      "region": "米国",
+      "detail": "BEA公式発表",
+      "url": "https://www.bea.gov/news/2026/gdp-advance-estimate-2nd-quarter-2026",
+      "result": {
+        "url": "https://www.bea.gov/news/2026/gdp-advance-estimate-2nd-quarter-2026",
+        "publishedAt": "2026-07-30T21:30:00+09:00",
+        "summary": "GDP (Advance Estimate), 2nd Quarter 2026",
+        "metrics": [
+          {
+            "label": "実質GDP 前期比年率",
+            "current": "1.5%",
+            "previous": "2.1%"
+          }
+        ]
+      }
+    },
+    {
       "date": "2026-08-18",
       "time": "",
       "title": "HD 決算発表",
@@ -163,6 +184,50 @@ window.MARKET_CALENDAR = {
             "previous": "-0.1%",
             "firstObserved": "0.2%",
             "revisions": []
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-08-26",
+      "time": "21:30",
+      "title": "国内総生産（GDP）",
+      "category": "経済指標",
+      "region": "米国",
+      "detail": "BEA公式発表",
+      "url": "https://www.bea.gov/news/2026/gdp-second-estimate-and-corporate-profits-2nd-quarter-2026",
+      "result": {
+        "url": "https://www.bea.gov/news/2026/gdp-second-estimate-and-corporate-profits-2nd-quarter-2026",
+        "publishedAt": "2026-08-26T21:30:00+09:00",
+        "summary": "GDP (Second Estimate) and Corporate Profits, 2nd Quarter 2026",
+        "metrics": [
+          {
+            "label": "実質GDP 前期比年率",
+            "current": "1.5%",
+            "previous": "2.1%",
+            "initialRelease": "1.5%"
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-09-30",
+      "time": "21:30",
+      "title": "国内総生産（GDP）",
+      "category": "経済指標",
+      "region": "米国",
+      "detail": "BEA公式発表",
+      "url": "https://www.bea.gov/news/2026/gdp-third-estimate-industries-corporate-profits-state-gdp-and-state-personal-income-2nd",
+      "result": {
+        "url": "https://www.bea.gov/news/2026/gdp-third-estimate-industries-corporate-profits-state-gdp-and-state-personal-income-2nd",
+        "publishedAt": "2026-09-30T21:30:00+09:00",
+        "summary": "GDP (Third Estimate), 2nd Quarter 2026",
+        "metrics": [
+          {
+            "label": "実質GDP 前期比年率",
+            "current": "2.2%",
+            "previous": "2.5%",
+            "initialRelease": "1.5%"
           }
         ]
       }
