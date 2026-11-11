@@ -1,17 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 
 export function NewsPanel({ news }) {
-  const items = news.filter(item => ["https://www.federalreserve.gov/", "https://www.bea.gov/", "https://www.ecb.europa.eu/", "https://www.sec.gov/Archives/edgar/"].some(prefix => item.url.startsWith(prefix))).map(item => ({
+  const [publisher, setPublisher] = useState("");
+  const entries = news.filter(item => ["https://www.federalreserve.gov/", "https://www.bea.gov/", "https://www.ecb.europa.eu/", "https://www.sec.gov/Archives/edgar/", "https://ir.homedepot.com/news-releases/", "https://corporate.walmart.com/news/"].some(prefix => item.url.startsWith(prefix))).map(item => ({
     _sym: "市場全体",
     publisher: item.publisher || "FRB",
     title: item.title,
     link: item.url,
     published_at: item.date,
   }));
+  const publishers = [...new Set(entries.map(item => item.publisher))].sort();
+  const items = publisher ? entries.filter(item => item.publisher === publisher) : entries;
   return (
     <div className="space-y-2">
       <div className="flex items-center gap-2 mb-3 flex-wrap">
         <span className="text-xs text-slate-500 font-bold">公式発表</span>
+        <label className="text-xs">発表元 <select value={publisher} onChange={event => setPublisher(event.target.value)}>
+          <option value="">すべて</option>
+          {publishers.map(name => <option key={name}>{name}</option>)}
+        </select></label>
         <span className="text-[10px] text-slate-400 ml-auto">{items.length}件</span>
       </div>
               {items.map((item) => {

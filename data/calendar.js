@@ -1,5 +1,5 @@
 window.MARKET_CALENDAR = {
-  "updatedAt": "2026-11-11T14:04:17+09:00",
+  "updatedAt": "2026-11-11T14:09:02+09:00",
   "coverage": [
     "2026-11-01",
     "2026-12-31"
@@ -543,6 +543,18 @@ window.MARKET_CALENDAR = {
       "date": "2026-08-20T03:00:00+09:00"
     },
     {
+      "title": "WMT 決算発表 · 総収益 前年同期比 +5.9％",
+      "url": "https://corporate.walmart.com/news/2026/08/20/walmart-releases-q2-fy27-earnings",
+      "date": "2026-08-20",
+      "publisher": "Walmart公式IR"
+    },
+    {
+      "title": "HD 決算発表 · 売上高 479億ドル・希薄化後EPS 4.79ドル",
+      "url": "https://ir.homedepot.com/news-releases/2026/08-18-2026-110040463",
+      "date": "2026-08-18",
+      "publisher": "Home Depot公式IR"
+    },
+    {
       "title": "Personal Income and Outlays, June 2026",
       "url": "https://www.bea.gov/news/2026/personal-income-and-outlays-june-2026",
       "date": "2026-07-30T21:30:00+09:00",
@@ -582,6 +594,18 @@ window.MARKET_CALENDAR = {
       "url": "https://www.bea.gov/news/2026/personal-income-and-outlays-april-2026",
       "date": "2026-05-28T21:30:00+09:00",
       "publisher": "BEA"
+    },
+    {
+      "title": "WMT 決算発表 · 総収益 前年同期比 +7.3％",
+      "url": "https://corporate.walmart.com/news/2026/05/21/walmart-releases-q1-fy27-earnings",
+      "date": "2026-05-21",
+      "publisher": "Walmart公式IR"
+    },
+    {
+      "title": "HD 決算発表 · 売上高 418億ドル・希薄化後EPS 3.30ドル",
+      "url": "https://ir.homedepot.com/news-releases/2026/05-19-2026-110111934",
+      "date": "2026-05-19",
+      "publisher": "Home Depot公式IR"
     },
     {
       "title": "Personal Income and Outlays, January 2026",
