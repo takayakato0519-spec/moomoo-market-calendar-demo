@@ -1,11 +1,11 @@
 import React from "react";
 import { CartesianGrid, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 
-export function EnergyPanel({ series }) {
-  if (!series.length) return <p>商品価格を取得できていません。</p>;
+export function EnergyPanel({ series, title = "エネルギー現物価格", source = "米EIA公表系列（FRED）" }) {
+  if (!series.length) return <p>データを取得できていません。</p>;
   return (
     <section>
-      <h3 className="mb-2 font-semibold">エネルギー現物価格</h3>
+      <h3 className="mb-2 font-semibold">{title}</h3>
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {series.map(item => {
           const latest = item.history.at(-1);
@@ -17,7 +17,7 @@ export function EnergyPanel({ series }) {
               <p className="mb-2 text-sm">
                 <strong>{latest.price.toFixed(2)}</strong> {item.unit}
                 <span className={delta >= 0 ? "ml-2 text-green-700" : "ml-2 text-rose-700"}>
-                  {delta >= 0 ? "+" : ""}{delta.toFixed(2)}
+                  {delta >= 0 ? "+" : ""}{delta.toFixed(2)}{item.unit === "%" ? "ポイント" : ""}
                 </span>
               </p>
               <div className="h-28">
@@ -32,7 +32,7 @@ export function EnergyPanel({ series }) {
                 </ResponsiveContainer>
               </div>
               <p className="text-xs text-slate-600">{latest.date} · 前回観測値との差</p>
-              <a className="text-xs text-indigo-700 underline" href={item.url}>米EIA公表系列（FRED）</a>
+              <a className="text-xs text-indigo-700 underline" href={item.url}>{source}</a>
             </article>
           );
         })}

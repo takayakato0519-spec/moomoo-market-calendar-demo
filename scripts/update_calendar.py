@@ -353,14 +353,21 @@ def ecb_news():
         return []
 
 
-def energy_prices(now, previous):
+ENERGY_SERIES = (
+    ("DCOILWTICO", "WTI原油", "ドル／バレル"),
+    ("DCOILBRENTEU", "ブレント原油", "ドル／バレル"),
+    ("DHHNGSP", "ヘンリーハブ天然ガス", "ドル／MMBtu"),
+)
+MARKET_SERIES = (
+    ("DEXJPUS", "米ドル／円", "円／ドル"),
+    ("DGS10", "米国10年国債利回り", "%"),
+)
+
+
+def fred_history(now, previous, series):
     cached = {row["code"]: row for row in previous}
     results = []
-    for code, name, unit in (
-        ("DCOILWTICO", "WTI原油", "ドル／バレル"),
-        ("DCOILBRENTEU", "ブレント原油", "ドル／バレル"),
-        ("DHHNGSP", "ヘンリーハブ天然ガス", "ドル／MMBtu"),
-    ):
+    for code, name, unit in series:
         try:
             response = fetch("https://fred.stlouisfed.org/graph/fredgraph.csv",
                              params={"id": code, "cosd": (now.date() - timedelta(days=75)).isoformat()})
@@ -371,7 +378,7 @@ def energy_prices(now, previous):
             results.append(dict(code=code, name=name, unit=unit, history=history[-30:],
                                 url=f"https://fred.stlouisfed.org/series/{code}"))
         except (requests.RequestException, KeyError, ValueError) as error:
-            print(f"EIA {code}: {error}")
+            print(f"FRED {code}: {error}")
             if code in cached:
                 results.append(cached[code])
     return results
@@ -555,7 +562,8 @@ def main():
                    analystTrends=trends, news=sorted(news + bea_news[:12] + ecb_news() + filings + issuer_news,
                                                     key=lambda item: item["date"], reverse=True),
                    fundamentals=fundamentals,
-                   energyPrices=energy_prices(now, previous.get("energyPrices", [])),
+                   energyPrices=fred_history(now, previous.get("energyPrices", []), ENERGY_SERIES),
+                   marketRates=fred_history(now, previous.get("marketRates", []), MARKET_SERIES),
                    licensedData=enabled, issuerStatus=issuer_status)
     temp = OUT.with_suffix(".tmp")
     temp.write_text("window.MARKET_CALENDAR = " + json.dumps(payload, ensure_ascii=False, indent=2) + ";\n", encoding="utf-8")

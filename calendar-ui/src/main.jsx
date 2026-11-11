@@ -37,6 +37,7 @@ function PublicMarketTabs() {
     ["news", "📰 ニュース"],
     ["fundamentals", "決算書・財務指標"],
     ["energy", "商品価格"],
+    ["rates", "為替・金利"],
   ];
   return (
     <>
@@ -62,6 +63,7 @@ function PublicMarketTabs() {
         <MarketCalendarPanel events={events.filter(event => event.type === "earnings" && event.result)} today={today} newestFirst />
       </>}
       {tab === "energy" && <EnergyPanel series={data.energyPrices ?? []} />}
+      {tab === "rates" && <EnergyPanel series={data.marketRates ?? []} title="為替・米国債利回り" source="FRB公表系列（FRED）" />}
     </>
   );
 }
