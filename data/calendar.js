@@ -1,5 +1,5 @@
 window.MARKET_CALENDAR = {
-  "updatedAt": "2026-11-11T17:04:27+09:00",
+  "updatedAt": "2026-11-11T17:07:53+09:00",
   "coverage": [
     "2026-11-01",
     "2026-12-31"
@@ -538,16 +538,16 @@ window.MARKET_CALENDAR = {
       "date": "2026-11-05T16:30:00+09:00"
     },
     {
-      "title": "U.S. International Trade in Goods and Services",
-      "url": "https://www.census.gov/foreign-trade/index.html",
-      "publisher": "U.S. Census Bureau",
-      "date": "2026-11-04T22:30:00+09:00"
-    },
-    {
       "title": "U.S. International Trade in Goods and Services, September 2026",
       "url": "https://www.bea.gov/news/2026/us-international-trade-goods-and-services-september-2026",
       "date": "2026-11-04T22:30:00+09:00",
       "publisher": "BEA"
+    },
+    {
+      "title": "U.S. International Trade in Goods and Services",
+      "url": "https://www.census.gov/foreign-trade/index.html",
+      "publisher": "U.S. Census Bureau",
+      "date": "2026-11-04T22:30:00+09:00"
     },
     {
       "title": "ECB wage tracker suggests slightly higher wage growth in first three quarters of 2027 compared with the full year of 2026",
