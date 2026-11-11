@@ -218,6 +218,23 @@ def attach_fomc_results(events, news, start):
         event["result"] = dict(url=item["url"], publishedAt=item["date"], summary=summary)
 
 
+def payroll_at_release(day, period, previous):
+    """Read BLS payroll levels as published on the release date via ALFRED."""
+    try:
+        response = fetch("https://alfred.stlouisfed.org/graph/alfredgraph.csv",
+                         params={"id": "PAYEMS", "vintage_date": day.isoformat(),
+                                 "cosd": previous.replace(day=1).isoformat(),
+                                 "coed": period.replace(day=1).isoformat()})
+        column = f"PAYEMS_{day:%Y%m%d}"
+        levels = {row["observation_date"]: int(row[column])
+                  for row in csv.DictReader(StringIO(response.text)) if row[column] not in ("", ".")}
+        return (levels[period.replace(day=1).isoformat()]
+                - levels[previous.replace(day=1).isoformat()]) * 1000
+    except (requests.RequestException, ValueError, KeyError) as error:
+        print(f"ALFRED payroll vintage {day}: {error}")
+        return None
+
+
 def attach_bls_results(events, now):
     series = {}
     for code in ("CUSR0000SA0", "CUUR0000SA0", "CES0000000001", "LNS14000000", "WPSFD4"):
@@ -301,6 +318,10 @@ def attach_bls_results(events, now):
                     dict(label="失業率", current=f"{rate:.1f}%",
                          previous=f"{prior_rate:.1f}%" if prior_rate is not None else None),
                 ]
+                initial_jobs = payroll_at_release(day, period, previous)
+                if initial_jobs is not None and initial_jobs != round(jobs * 1000):
+                    metrics[0]["initialRelease"] = f"{initial_jobs:+,}人"
+                    metrics[0]["revisionSource"] = "https://fred.stlouisfed.org/series/PAYEMS"
                 release = "empsit"
         except (KeyError, ZeroDivisionError):
             continue
