@@ -29,7 +29,7 @@ jobs:
       - name: Stage public site
         run: |
           mkdir -p _site/data
-          cp index.html crypto.html sectors.html indices.html style.css cross.js _site/
+          cp index.html crypto.html sectors.html indices.html style.css cross.js depth.js _site/
           cp -r calendar-assets _site/
           cp data/calendar.js _site/data/
           sed -i -E "s@data/calendar\.js(\?[^\"]*)?@data/calendar.js?v=${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}@g" _site/index.html
