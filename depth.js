@@ -1,7 +1,10 @@
 "use strict";
 
-document.getElementById("depth-file").addEventListener("change", async event => {
-  const file = event.target.files[0];
+const input = document.getElementById("depth-file");
+let selection = 0;
+
+async function displayDepth(file) {
+  const currentSelection = ++selection;
   const status = document.getElementById("depth-status");
   const table = document.getElementById("depth-table");
   const body = table.tBodies[0];
@@ -12,7 +15,7 @@ document.getElementById("depth-file").addEventListener("change", async event => 
   try {
     if (file.size > 1000000) throw new Error("1 MB以下のCSVを選んでください。");
     const content = await file.text();
-    if (event.target.files[0] !== file) return;
+    if (currentSelection !== selection) return;
     const [header, ...lines] = content.trim().split(/\r?\n/);
     if (header.trim().toLowerCase() !== "side,price,size") throw new Error("列名は side,price,size にしてください。");
     const levels = { bid: new Map(), ask: new Map() };
@@ -38,10 +41,17 @@ document.getElementById("depth-file").addEventListener("change", async event => 
       }
     }
     if (!body.rows.length) throw new Error("表示できるデータがありません。");
-    status.textContent = "CSVのスナップショットを表示しています（各側最大20件）。";
+    status.textContent = file.name === "example.csv" ? "サンプルデータを表示しています。" : "CSVのスナップショットを表示しています（各側最大20件）。";
     table.hidden = false;
   } catch (error) {
+    if (currentSelection !== selection) return;
     body.replaceChildren();
     status.textContent = error.message;
   }
+}
+input.addEventListener("change", () => displayDepth(input.files[0]));
+document.getElementById("depth-example").addEventListener("click", () => {
+  input.value = "";
+  const sample = "side,price,size\nbid,100,2\nbid,101,3\nbid,101,4\nask,103,5\nask,102,6";
+  displayDepth(new File([sample], "example.csv", { type: "text/csv" }));
 });

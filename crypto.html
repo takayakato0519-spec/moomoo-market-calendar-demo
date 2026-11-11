@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ja">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>暗号資産市場</title><link rel="stylesheet" href="style.css"><script src="depth.js" defer></script></head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>暗号資産市場</title><link rel="stylesheet" href="style.css"><script src="depth.js?v=2" defer></script></head>
 <body>
 <main class="shell">
   <p><a href="./">市場カレンダーに戻る</a></p>
@@ -27,6 +27,7 @@
     <h2>板の数量表（CSV）</h2>
     <p>1銘柄の板データを <code>side,price,size</code> の順で読み込みます。sideは買いが <code>bid</code>、売りが <code>ask</code> です。ファイルはブラウザ内だけで処理します。</p>
     <label>板データ <input id="depth-file" type="file" accept=".csv,text/csv"></label>
+    <button id="depth-example" type="button">サンプルを表示</button>
     <p id="depth-status" role="status"></p>
     <table id="depth-table" hidden><thead><tr><th scope="col">売買区分</th><th scope="col">価格</th><th scope="col">数量</th></tr></thead><tbody></tbody></table>
   </section>
