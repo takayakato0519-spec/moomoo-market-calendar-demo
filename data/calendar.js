@@ -466,6 +466,12 @@ window.MARKET_CALENDAR = {
       "date": "2026-11-10T08:50:00+09:00"
     },
     {
+      "title": "Monthly Wholesale Trade: Sales and Inventories",
+      "url": "https://www.census.gov/wholesale/index.html",
+      "publisher": "U.S. Census Bureau",
+      "date": "2026-11-10T00:00:00+09:00"
+    },
+    {
       "title": "コール市場残高（10月）",
       "url": "https://www.boj.or.jp/statistics/market/short/call/call.xlsx",
       "publisher": "日本銀行",
@@ -532,6 +538,12 @@ window.MARKET_CALENDAR = {
       "date": "2026-11-05T16:30:00+09:00"
     },
     {
+      "title": "U.S. International Trade in Goods and Services",
+      "url": "https://www.census.gov/foreign-trade/index.html",
+      "publisher": "U.S. Census Bureau",
+      "date": "2026-11-04T22:30:00+09:00"
+    },
+    {
       "title": "U.S. International Trade in Goods and Services, September 2026",
       "url": "https://www.bea.gov/news/2026/us-international-trade-goods-and-services-september-2026",
       "date": "2026-11-04T22:30:00+09:00",
@@ -544,10 +556,22 @@ window.MARKET_CALENDAR = {
       "date": "2026-11-04T09:00:00+09:00"
     },
     {
+      "title": "Manufacturers' Shipments, Inventories, and Orders",
+      "url": "https://www.census.gov/manufacturing/m3/",
+      "publisher": "U.S. Census Bureau",
+      "date": "2026-11-04T00:00:00+09:00"
+    },
+    {
       "title": "Global refinery inputs fell sharply in the second quarter of 2026 before modest recovery",
       "url": "https://www.eia.gov/todayinenergy/detail.php?id=68404",
       "publisher": "EIA",
       "date": "2026-11-03T23:00:00+09:00"
+    },
+    {
+      "title": "Construction Spending",
+      "url": "https://www.census.gov/construction/c30/c30index.html",
+      "publisher": "U.S. Census Bureau",
+      "date": "2026-11-03T00:00:00+09:00"
     },
     {
       "title": "Boris Vujčić: Integrated, open and resilient: Europe’s strengths in a fragmenting world",
@@ -583,6 +607,30 @@ window.MARKET_CALENDAR = {
       "title": "Federal Reserve issues FOMC statement",
       "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
       "date": "2026-10-29T03:00:00+09:00"
+    },
+    {
+      "title": "Housing Vacancies and Homeownership",
+      "url": "https://www.census.gov/housing/hvs/",
+      "publisher": "U.S. Census Bureau",
+      "date": "2026-10-28T23:00:00+09:00"
+    },
+    {
+      "title": "Rental Vacancy Rate",
+      "url": "https://www.census.gov/housing/hvs/",
+      "publisher": "U.S. Census Bureau",
+      "date": "2026-10-28T23:00:00+09:00"
+    },
+    {
+      "title": "Advance U.S. International Trade in Goods",
+      "url": "https://www.census.gov/econ/indicators/index.html",
+      "publisher": "U.S. Census Bureau",
+      "date": "2026-10-28T21:30:00+09:00"
+    },
+    {
+      "title": "Advance Wholesale Inventories",
+      "url": "https://www.census.gov/econ/indicators/index.html",
+      "publisher": "U.S. Census Bureau",
+      "date": "2026-10-28T21:30:00+09:00"
     },
     {
       "title": "U.S. refineries have been running at very high rates in 2026",
