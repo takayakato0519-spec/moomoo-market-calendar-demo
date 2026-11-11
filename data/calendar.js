@@ -824,6 +824,24 @@ window.MARKET_CALENDAR = {
   "analystTrends": [],
   "news": [
     {
+      "title": "[東証]新規上場の承認（ETF）：iシェアーズ　米国成長株式 キャピタル ＆ プレミアムインカム アクティブ ETF（ブラックロック･ジャパン）",
+      "url": "https://www.jpx.co.jp/news/1070/20261111.html",
+      "publisher": "JPX",
+      "date": "2026-11-11T16:00:00+09:00"
+    },
+    {
+      "title": "[東証]制限値幅の拡大：1銘柄",
+      "url": "https://www.jpx.co.jp/news/1030/20261111-01.html",
+      "publisher": "JPX",
+      "date": "2026-11-11T15:45:00+09:00"
+    },
+    {
+      "title": "[東証]上場廃止等の決定：（株）動力",
+      "url": "https://www.jpx.co.jp/news/1021/20261111-18.html",
+      "publisher": "JPX",
+      "date": "2026-11-11T13:15:00+09:00"
+    },
+    {
       "title": "マネーストック（10月）",
       "url": "https://www.boj.or.jp/statistics/money/ms/ms2610.pdf",
       "publisher": "日本銀行",
@@ -842,6 +860,30 @@ window.MARKET_CALENDAR = {
       "date": "2026-11-10T23:00:00+09:00"
     },
     {
+      "title": "[東証]新規上場の承認（グロース市場）：（株）Ｂｅｙｏｎｔ",
+      "url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
+      "publisher": "JPX",
+      "date": "2026-11-10T16:00:00+09:00"
+    },
+    {
+      "title": "[東証]監理銘柄（確認中）の指定：北陸電気工業（株）",
+      "url": "https://www.jpx.co.jp/news/1023/20261110-13.html",
+      "publisher": "JPX",
+      "date": "2026-11-10T15:40:00+09:00"
+    },
+    {
+      "title": "[東証]監理銘柄（確認中）の指定：（株）加地テック",
+      "url": "https://www.jpx.co.jp/news/1023/20261110-11.html",
+      "publisher": "JPX",
+      "date": "2026-11-10T14:40:00+09:00"
+    },
+    {
+      "title": "[東証]新規上場日の初値決定前の気配運用について：（株）アイグローブ",
+      "url": "https://www.jpx.co.jp/news/1031/20261110_01.html",
+      "publisher": "JPX",
+      "date": "2026-11-10T13:00:00+09:00"
+    },
+    {
       "title": "貸出・預金動向（10月）",
       "url": "https://www.boj.or.jp/statistics/dl/depo/kashi/kasi2610.pdf",
       "publisher": "日本銀行",
@@ -858,6 +900,12 @@ window.MARKET_CALENDAR = {
       "url": "https://www.census.gov/wholesale/index.html",
       "publisher": "U.S. Census Bureau",
       "date": "2026-11-10T00:00:00+09:00"
+    },
+    {
+      "title": "[OSE]制限値幅の拡大：日本たばこ産業株式会社　株式に係る有価証券オプション取引",
+      "url": "https://www.jpx.co.jp/news/2020/20261109-01.html",
+      "publisher": "JPX",
+      "date": "2026-11-09T18:00:00+09:00"
     },
     {
       "title": "コール市場残高（10月）",
