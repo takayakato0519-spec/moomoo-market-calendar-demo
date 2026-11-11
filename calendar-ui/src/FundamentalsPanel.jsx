@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import { MetricCard } from "./MetricCard";
+
 const number = new Intl.NumberFormat("ja-JP", { maximumFractionDigits: 2 });
 const billions = value => value == null ? "—" : number.format(value / 1e8);
 
@@ -7,6 +9,7 @@ export function FundamentalsPanel({ companies }) {
   const [symbol, setSymbol] = useState(companies[0]?.symbol);
   const company = companies.find(row => row.symbol === symbol);
   if (!company) return <p>四半期報告書のデータを取得できていません。</p>;
+  const latest = company.quarters[0];
   return (
     <section className="rounded-xl border border-teal-200 bg-teal-50 p-3">
       <div className="flex flex-wrap items-center justify-between gap-2">
@@ -16,6 +19,11 @@ export function FundamentalsPanel({ companies }) {
         </select></label>
       </div>
       <p className="mb-2 text-sm text-slate-700">{company.name} · {company.publisher ?? "SEC EDGAR"}の四半期報告書</p>
+      <div className="mb-3 grid gap-2 sm:grid-cols-3">
+        <MetricCard label="売上高（億ドル）" value={billions(latest.revenue)} sub={latest.period} tone="teal" />
+        <MetricCard label="純利益（億ドル）" value={billions(latest.netIncome)} sub={latest.period} tone="emerald" />
+        <MetricCard label="希薄化後EPS（ドル）" value={latest.eps == null ? "—" : number.format(latest.eps)} sub={latest.period} tone="amber" />
+      </div>
       <div className="overflow-x-auto">
         <table className="w-full whitespace-nowrap text-left text-sm">
           <thead><tr><th>四半期末</th><th>売上高（億ドル）</th><th>純利益（億ドル）</th><th>希薄化後EPS（ドル）</th><th>提出書類</th></tr></thead>
