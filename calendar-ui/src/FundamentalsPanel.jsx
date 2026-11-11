@@ -15,7 +15,7 @@ export function FundamentalsPanel({ companies }) {
           {companies.map(row => <option key={row.symbol}>{row.symbol}</option>)}
         </select></label>
       </div>
-      <p className="mb-2 text-sm text-slate-700">{company.name} · SEC EDGARの四半期報告書</p>
+      <p className="mb-2 text-sm text-slate-700">{company.name} · {company.publisher ?? "SEC EDGAR"}の四半期報告書</p>
       <div className="overflow-x-auto">
         <table className="w-full whitespace-nowrap text-left text-sm">
           <thead><tr><th>四半期末</th><th>売上高（億ドル）</th><th>純利益（億ドル）</th><th>希薄化後EPS（ドル）</th><th>提出書類</th></tr></thead>
@@ -30,7 +30,7 @@ export function FundamentalsPanel({ companies }) {
         </table>
       </div>
       <p className="mt-2 text-xs text-slate-600">10-Qに記載された約3カ月の実績。通期報告書で公表される第4四半期は対象外です。</p>
-      <a className="text-xs text-indigo-700 underline" href={company.source}>SEC公式データ</a>
+      <a className="text-xs text-indigo-700 underline" href={company.source}>財務資料の出典</a>
     </section>
   );
 }

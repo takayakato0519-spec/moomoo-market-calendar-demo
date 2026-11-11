@@ -1,5 +1,5 @@
 window.MARKET_CALENDAR = {
-  "updatedAt": "2026-11-11T14:01:18+09:00",
+  "updatedAt": "2026-11-11T14:04:17+09:00",
   "coverage": [
     "2026-11-01",
     "2026-12-31"
@@ -596,7 +596,44 @@ window.MARKET_CALENDAR = {
       "publisher": "BEA"
     }
   ],
-  "fundamentals": [],
+  "fundamentals": [
+    {
+      "symbol": "WMT",
+      "name": "Walmart Inc.",
+      "source": "https://stock.walmart.com/financial-information/financial-results",
+      "publisher": "Walmart公式IR",
+      "quarters": [
+        {
+          "period": "2026-07-31",
+          "url": "https://stock.walmart.com/sec-filings/all-sec-filings/content/0000104169-26-000154/wmt-20260731.htm",
+          "revenue": 186100000000.0,
+          "netIncome": 6366000000.0,
+          "eps": 0.8
+        },
+        {
+          "period": "2026-04-30",
+          "url": "https://stock.walmart.com/sec-filings/all-sec-filings/content/0000104169-26-000102/wmt-20260430.htm",
+          "revenue": 175684000000.0,
+          "netIncome": 5330000000.0,
+          "eps": 0.67
+        },
+        {
+          "period": "2025-10-31",
+          "url": "https://stock.walmart.com/sec-filings/all-sec-filings/content/0000104169-25-000191/wmt-20251031.htm",
+          "revenue": 177769000000.0,
+          "netIncome": 6143000000.0,
+          "eps": 0.77
+        },
+        {
+          "period": "2025-07-31",
+          "url": "https://stock.walmart.com/sec-filings/all-sec-filings/content/0000104169-25-000137/wmt-20250731.htm",
+          "revenue": 175750000000.0,
+          "netIncome": 7026000000.0,
+          "eps": 0.88
+        }
+      ]
+    }
+  ],
   "energyPrices": [
     {
       "code": "DCOILWTICO",

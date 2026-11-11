@@ -538,7 +538,7 @@ def main():
     fundamentals = company_fundamentals(fetch, now.date(), previous.get("fundamentals", []))
     filings = [dict(title=f'{company["symbol"]} 四半期報告書（Form 10-Q）',
                     url=company["quarters"][0]["url"], date=company["quarters"][0]["filed"], publisher="SEC EDGAR")
-               for company in fundamentals]
+               for company in fundamentals if company["quarters"][0].get("filed")]
     payload = dict(updatedAt=now.isoformat(timespec="seconds"), coverage=[start.isoformat(), end.isoformat()],
                    events=sorted((e for e in events if (start.isoformat() <= e["date"] <= end.isoformat()) or e.get("result")),
                                  key=lambda e: (e["date"], e["time"], e["title"])),
