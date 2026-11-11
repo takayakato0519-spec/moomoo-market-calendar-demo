@@ -872,6 +872,42 @@ window.MARKET_CALENDAR = {
           "eps": 2.84
         }
       ]
+    },
+    {
+      "symbol": "MSFT",
+      "name": "Microsoft Corporation",
+      "source": "https://www.microsoft.com/en-us/investor/earnings/",
+      "publisher": "Microsoft公式IR",
+      "quarters": [
+        {
+          "period": "2026-09-30",
+          "url": "https://www.microsoft.com/en-us/investor/earnings/fy-2027-q1/press-release-webcast",
+          "revenue": 92279000000.0,
+          "netIncome": 36629000000.0,
+          "eps": 4.92
+        },
+        {
+          "period": "2026-06-30",
+          "url": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast",
+          "revenue": 90007000000.0,
+          "netIncome": 35766000000.0,
+          "eps": 4.81
+        },
+        {
+          "period": "2026-03-31",
+          "url": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q3/press-release-webcast",
+          "revenue": 82886000000.0,
+          "netIncome": 31778000000.0,
+          "eps": 4.27
+        },
+        {
+          "period": "2025-12-31",
+          "url": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q2/press-release-webcast",
+          "revenue": 81273000000.0,
+          "netIncome": 38458000000.0,
+          "eps": 5.16
+        }
+      ]
     }
   ],
   "energyPrices": [

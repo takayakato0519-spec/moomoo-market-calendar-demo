@@ -144,6 +144,51 @@ def apple_filings(fetch, today):
                 publisher="Apple公式Newsroom", quarters=rows)
 
 
+def microsoft_filings(fetch, today):
+    source = "https://www.microsoft.com/en-us/investor/earnings/"
+    rows = []
+    calendar_quarter = today.year * 4 + (today.month - 1) // 3
+    labels = {"total revenue": ("revenue", 1_000_000),
+              "net income": ("netIncome", 1_000_000), "diluted": ("eps", 1)}
+    for offset in range(1, 6):
+        year, quarter = divmod(calendar_quarter - offset, 4)
+        fiscal_year = year + (quarter >= 2)
+        fiscal_quarter = (quarter + 2) % 4 + 1
+        url = f"{source}fy-{fiscal_year}-q{fiscal_quarter}/press-release-webcast"
+        try:
+            page = BeautifulSoup(fetch(url).text, "html.parser")
+        except requests.HTTPError as error:
+            if error.response is not None and error.response.status_code == 404:
+                continue
+            raise
+        period = re.search(r"quarter ended ([A-Za-z]+ [0-9]{1,2}, [0-9]{4})",
+                           page.get_text(" ", strip=True), re.I)
+        if not period:
+            continue
+        end = datetime.strptime(period[1], "%B %d, %Y").date()
+        if end.year != year or (end.month - 1) // 3 != quarter:
+            continue
+        for table in page.select("table"):
+            if "INCOME STATEMENTS" not in table.stripped_strings:
+                continue
+            values = {}
+            for row in table.select("tr"):
+                cells = [" ".join(cell.get_text().split()) for cell in row.find_all(["th", "td"], recursive=False)]
+                if len(cells) < 2 or cells[0].lower() not in labels:
+                    continue
+                key, scale = labels[cells[0].lower()]
+                number = cells[1].replace("$", "").replace(",", "").replace("(", "-").replace(")", "")
+                if key not in values and re.fullmatch(r"-?[0-9]+(?:[.][0-9]+)?", number):
+                    values[key] = float(number) * scale
+            if len(values) == len(labels):
+                rows.append(dict(period=end.isoformat(), url=url, **values))
+                break
+        if len(rows) == 4:
+            break
+    return dict(symbol="MSFT", name="Microsoft Corporation", source=source,
+                publisher="Microsoft公式IR", quarters=rows)
+
+
 def quarterly_facts(facts, unit, tags, today):
     periods = {}
     for tag in tags:
@@ -182,7 +227,8 @@ def company_fundamentals(fetch, today, previous):
             companies.append(dict(symbol=symbol, name=payload["entityName"], source=source, quarters=rows))
         except (requests.RequestException, ValueError, KeyError) as error:
             print(f"EDGAR {symbol}: {error}")
-            providers = {"HD": home_depot_filings, "WMT": walmart_filings, "AAPL": apple_filings}
+            providers = {"HD": home_depot_filings, "WMT": walmart_filings, "AAPL": apple_filings,
+                         "MSFT": microsoft_filings}
             if symbol in providers:
                 try:
                     provider = providers[symbol]
