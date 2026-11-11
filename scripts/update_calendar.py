@@ -618,9 +618,12 @@ def add_issuer_release_events(events, companies, today):
                                                ("eps", "希薄化後EPS", 1, "ドル")):
                 current = quarter.get(key)
                 previous = prior.get(key)
-                if current is not None:
-                    metrics.append(dict(label=label, current=f"{current / scale:.2f}{suffix}",
-                                        previous=f"{previous / scale:.2f}{suffix}" if previous is not None else None))
+                if current is None:
+                    continue
+                change = (current - previous) / scale if previous is not None else None
+                metrics.append(dict(label=label, current=f"{current / scale:.2f}{suffix}",
+                                    previous=f"{previous / scale:.2f}{suffix}" if previous is not None else None,
+                                    change=f"{change:+.2f}{suffix}" if change is not None else None))
             url = quarter["releaseUrl"]
             events.append(dict(date=day, time="", title=title, category="決算", region="米国",
                                detail="企業公式IR・現地日付", url=url,

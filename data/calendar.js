@@ -21,17 +21,20 @@ window.MARKET_CALENDAR = {
           {
             "label": "売上高",
             "current": "828.86億ドル",
-            "previous": "812.73億ドル"
+            "previous": "812.73億ドル",
+            "change": "+16.13億ドル"
           },
           {
             "label": "純利益",
             "current": "317.78億ドル",
-            "previous": "384.58億ドル"
+            "previous": "384.58億ドル",
+            "change": "-66.80億ドル"
           },
           {
             "label": "希薄化後EPS",
             "current": "4.27ドル",
-            "previous": "5.16ドル"
+            "previous": "5.16ドル",
+            "change": "-0.89ドル"
           }
         ]
       }
@@ -52,17 +55,20 @@ window.MARKET_CALENDAR = {
           {
             "label": "売上高",
             "current": "1111.84億ドル",
-            "previous": "1437.56億ドル"
+            "previous": "1437.56億ドル",
+            "change": "-325.72億ドル"
           },
           {
             "label": "純利益",
             "current": "295.78億ドル",
-            "previous": "420.97億ドル"
+            "previous": "420.97億ドル",
+            "change": "-125.19億ドル"
           },
           {
             "label": "希薄化後EPS",
             "current": "2.01ドル",
-            "previous": "2.84ドル"
+            "previous": "2.84ドル",
+            "change": "-0.83ドル"
           }
         ]
       }
@@ -116,17 +122,20 @@ window.MARKET_CALENDAR = {
           {
             "label": "売上高",
             "current": "816.15億ドル",
-            "previous": "681.27億ドル"
+            "previous": "681.27億ドル",
+            "change": "+134.88億ドル"
           },
           {
             "label": "純利益",
             "current": "583.21億ドル",
-            "previous": "429.60億ドル"
+            "previous": "429.60億ドル",
+            "change": "+153.61億ドル"
           },
           {
             "label": "希薄化後EPS",
             "current": "2.39ドル",
-            "previous": "1.76ドル"
+            "previous": "1.76ドル",
+            "change": "+0.63ドル"
           }
         ]
       }
@@ -172,17 +181,20 @@ window.MARKET_CALENDAR = {
           {
             "label": "売上高",
             "current": "900.07億ドル",
-            "previous": "828.86億ドル"
+            "previous": "828.86億ドル",
+            "change": "+71.21億ドル"
           },
           {
             "label": "純利益",
             "current": "357.66億ドル",
-            "previous": "317.78億ドル"
+            "previous": "317.78億ドル",
+            "change": "+39.88億ドル"
           },
           {
             "label": "希薄化後EPS",
             "current": "4.81ドル",
-            "previous": "4.27ドル"
+            "previous": "4.27ドル",
+            "change": "+0.54ドル"
           }
         ]
       }
@@ -203,17 +215,20 @@ window.MARKET_CALENDAR = {
           {
             "label": "売上高",
             "current": "1094.17億ドル",
-            "previous": "1111.84億ドル"
+            "previous": "1111.84億ドル",
+            "change": "-17.67億ドル"
           },
           {
             "label": "純利益",
             "current": "297.89億ドル",
-            "previous": "295.78億ドル"
+            "previous": "295.78億ドル",
+            "change": "+2.11億ドル"
           },
           {
             "label": "希薄化後EPS",
             "current": "2.02ドル",
-            "previous": "2.01ドル"
+            "previous": "2.01ドル",
+            "change": "+0.01ドル"
           }
         ]
       }
@@ -336,17 +351,20 @@ window.MARKET_CALENDAR = {
           {
             "label": "売上高",
             "current": "962.21億ドル",
-            "previous": "816.15億ドル"
+            "previous": "816.15億ドル",
+            "change": "+146.06億ドル"
           },
           {
             "label": "純利益",
             "current": "596.88億ドル",
-            "previous": "583.21億ドル"
+            "previous": "583.21億ドル",
+            "change": "+13.67億ドル"
           },
           {
             "label": "希薄化後EPS",
             "current": "2.46ドル",
-            "previous": "2.39ドル"
+            "previous": "2.39ドル",
+            "change": "+0.07ドル"
           }
         ]
       }
@@ -519,17 +537,20 @@ window.MARKET_CALENDAR = {
           {
             "label": "売上高",
             "current": "922.79億ドル",
-            "previous": "900.07億ドル"
+            "previous": "900.07億ドル",
+            "change": "+22.72億ドル"
           },
           {
             "label": "純利益",
             "current": "366.29億ドル",
-            "previous": "357.66億ドル"
+            "previous": "357.66億ドル",
+            "change": "+8.63億ドル"
           },
           {
             "label": "希薄化後EPS",
             "current": "4.92ドル",
-            "previous": "4.81ドル"
+            "previous": "4.81ドル",
+            "change": "+0.11ドル"
           }
         ]
       }
@@ -610,17 +631,20 @@ window.MARKET_CALENDAR = {
           {
             "label": "売上高",
             "current": "1144.77億ドル",
-            "previous": "1094.17億ドル"
+            "previous": "1094.17億ドル",
+            "change": "+50.60億ドル"
           },
           {
             "label": "純利益",
             "current": "307.11億ドル",
-            "previous": "297.89億ドル"
+            "previous": "297.89億ドル",
+            "change": "+9.22億ドル"
           },
           {
             "label": "希薄化後EPS",
             "current": "2.10ドル",
-            "previous": "2.02ドル"
+            "previous": "2.02ドル",
+            "change": "+0.08ドル"
           }
         ]
       }
