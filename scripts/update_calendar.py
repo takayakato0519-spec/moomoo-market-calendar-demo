@@ -757,7 +757,8 @@ def main():
                                                     + official_rss_news("https://www.boj.or.jp/rss/whatsnew.xml", "www.boj.or.jp", "日本銀行")
                                                     + official_rss_news("https://www.eia.gov/rss/todayinenergy.xml", "www.eia.gov", "EIA")
                                                     + official_rss_news("https://www.census.gov/economic-indicators/indicator.xml", "www.census.gov", "U.S. Census Bureau")
-                                                    + official_rss_news("https://www.jpx.co.jp/rss/markets_news.xml", "www.jpx.co.jp", "JPX") + filings + issuer_news,
+                                                    + official_rss_news("https://www.jpx.co.jp/rss/markets_news.xml", "www.jpx.co.jp", "JPX")
+                                                    + official_rss_news("https://www.sec.gov/news/pressreleases.rss", "www.sec.gov", "SEC") + filings + issuer_news,
                                                     key=lambda item: item["date"], reverse=True),
                    fundamentals=fundamentals,
                    energyPrices=fred_history(now, previous.get("energyPrices", []), ENERGY_SERIES),

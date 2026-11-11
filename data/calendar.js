@@ -967,6 +967,12 @@ window.MARKET_CALENDAR = {
       "date": "2026-11-11T01:45:00+09:00"
     },
     {
+      "title": "SEC Announces Enforcement Annual Results for Fiscal Year 2026",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-113-sec-announces-enforcement-annual-results-fiscal-year-2026",
+      "publisher": "SEC",
+      "date": "2026-11-11T01:15:35+09:00"
+    },
+    {
       "title": "Piero Cipollone: Cash and the digital euro: two sides of the same coin",
       "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261110~9422461bad.en.html",
       "publisher": "ECB",
@@ -1087,6 +1093,12 @@ window.MARKET_CALENDAR = {
       "date": "2026-11-05T16:30:00+09:00"
     },
     {
+      "title": "SEC Adopts Amendments to Update Definitions of Small Entity for Investment Companies and Investment Advisers",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-112-sec-adopts-amendments-update-definitions-small-entity-investment-companies-investment-advisers",
+      "publisher": "SEC",
+      "date": "2026-11-05T01:28:00+09:00"
+    },
+    {
       "title": "U.S. International Trade in Goods and Services, September 2026",
       "url": "https://www.bea.gov/news/2026/us-international-trade-goods-and-services-september-2026",
       "date": "2026-11-04T22:30:00+09:00",
@@ -1135,10 +1147,22 @@ window.MARKET_CALENDAR = {
       "publisher": "Apple公式Newsroom"
     },
     {
+      "title": "SEC Issues Exemptive Relief from Treasury Clearing Requirements for Certain Inter-Affiliate and Non-U.S. Repo Transactions",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-111-sec-issues-exemptive-relief-treasury-clearing-requirements-certain-inter-affiliate-non-us-repo",
+      "publisher": "SEC",
+      "date": "2026-10-31T04:30:00+09:00"
+    },
+    {
       "title": "The share of solar generation with co-located battery storage is increasing",
       "url": "https://www.eia.gov/todayinenergy/detail.php?id=68384",
       "publisher": "EIA",
       "date": "2026-10-30T23:00:00+09:00"
+    },
+    {
+      "title": "Two Entities Charged in $130 Million Fraud Scheme That Used False SEC Filings to Boost Investor Confidence",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-110-two-entities-charged-130-million-fraud-scheme-used-false-sec-filings-boost-investor-confidence",
+      "publisher": "SEC",
+      "date": "2026-10-30T01:42:37+09:00"
     },
     {
       "title": "LNG imports make up increasing share of Colombia's natural gas supply",
@@ -1194,10 +1218,34 @@ window.MARKET_CALENDAR = {
       "publisher": "Microsoft公式IR"
     },
     {
+      "title": "SEC Announces Fiscal Year 2027 Examination Priorities",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-109-sec-announces-fiscal-year-2027-examination-priorities",
+      "publisher": "SEC",
+      "date": "2026-10-23T23:10:00+09:00"
+    },
+    {
       "title": "U.S. refineries have been running at very high rates in 2026",
       "url": "https://www.eia.gov/todayinenergy/detail.php?id=68344",
       "publisher": "EIA",
       "date": "2026-10-22T23:00:00+09:00"
+    },
+    {
+      "title": "SEC and AMF Announce Supervisory MOU To Enhance Cooperation for Investment Advisers and Investment Service Providers",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-108-sec-amf-announce-supervisory-mou-enhance-cooperation-investment-advisers-investment-service",
+      "publisher": "SEC",
+      "date": "2026-10-20T22:25:16+09:00"
+    },
+    {
+      "title": "SEC, FSA Hold Autumn Financial Regulatory Dialogue",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-107-sec-fsa-hold-autumn-financial-regulatory-dialogue",
+      "publisher": "SEC",
+      "date": "2026-10-20T21:51:00+09:00"
+    },
+    {
+      "title": "SEC Announces Roundtable on Machine-Understandable Data in the Age of Super Intelligence",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-106-sec-announces-roundtable-machine-understandable-data-age-super-intelligence",
+      "publisher": "SEC",
+      "date": "2026-10-20T02:19:43+09:00"
     },
     {
       "title": "Hybrid sales rise while battery electric sales remain lower after tax credit expiration",

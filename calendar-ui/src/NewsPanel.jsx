@@ -3,7 +3,7 @@ import React, { useState } from "react";
 export function NewsPanel({ news }) {
   const [publisher, setPublisher] = useState("");
   const [query, setQuery] = useState("");
-  const entries = news.filter(item => ["https://www.federalreserve.gov/", "https://www.bea.gov/", "https://www.ecb.europa.eu/", "https://www.boj.or.jp/", "https://www.eia.gov/todayinenergy/", "https://www.census.gov/", "https://www.jpx.co.jp/news/", "https://www.apple.com/newsroom/", "https://www.microsoft.com/en-us/investor/earnings/", "https://nvidianews.nvidia.com/news/", "https://www.sec.gov/Archives/edgar/", "https://ir.homedepot.com/news-releases/", "https://corporate.walmart.com/news/"].some(prefix => item.url.startsWith(prefix))).map(item => ({
+  const entries = news.filter(item => ["https://www.federalreserve.gov/", "https://www.bea.gov/", "https://www.ecb.europa.eu/", "https://www.boj.or.jp/", "https://www.eia.gov/todayinenergy/", "https://www.census.gov/", "https://www.jpx.co.jp/news/", "https://www.apple.com/newsroom/", "https://www.microsoft.com/en-us/investor/earnings/", "https://nvidianews.nvidia.com/news/", "https://www.sec.gov/Archives/edgar/", "https://www.sec.gov/newsroom/press-releases/", "https://ir.homedepot.com/news-releases/", "https://corporate.walmart.com/news/"].some(prefix => item.url.startsWith(prefix))).map(item => ({
     _sym: "市場全体",
     publisher: item.publisher || "FRB",
     title: item.title,
