@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 export function NewsPanel({ news }) {
   const [publisher, setPublisher] = useState("");
+  const [query, setQuery] = useState("");
   const entries = news.filter(item => ["https://www.federalreserve.gov/", "https://www.bea.gov/", "https://www.ecb.europa.eu/", "https://www.boj.or.jp/", "https://www.eia.gov/todayinenergy/", "https://www.census.gov/", "https://www.jpx.co.jp/news/", "https://www.apple.com/newsroom/", "https://www.microsoft.com/en-us/investor/earnings/", "https://nvidianews.nvidia.com/news/", "https://www.sec.gov/Archives/edgar/", "https://ir.homedepot.com/news-releases/", "https://corporate.walmart.com/news/"].some(prefix => item.url.startsWith(prefix))).map(item => ({
     _sym: "市場全体",
     publisher: item.publisher || "FRB",
@@ -10,7 +11,11 @@ export function NewsPanel({ news }) {
     published_at: item.date,
   }));
   const publishers = [...new Set(entries.map(item => item.publisher))].sort();
-  const items = publisher ? entries.filter(item => item.publisher === publisher) : entries;
+  const terms = query.normalize("NFKC").toLowerCase().trim().split(/\s+/).filter(Boolean);
+  const items = entries.filter(item =>
+    (!publisher || item.publisher === publisher)
+    && terms.every(term => item.title.normalize("NFKC").toLowerCase().includes(term))
+  );
   return (
     <div className="space-y-2">
       <div className="flex items-center gap-2 mb-3 flex-wrap">
@@ -19,8 +24,11 @@ export function NewsPanel({ news }) {
           <option value="">すべて</option>
           {publishers.map(name => <option key={name}>{name}</option>)}
         </select></label>
-        <span className="text-[10px] text-slate-400 ml-auto">{items.length}件</span>
+        <label className="text-xs">見出し検索 <input type="search" value={query}
+          onChange={event => setQuery(event.target.value)} className="rounded border px-2 py-1" /></label>
+        <span className="text-[10px] text-slate-400 ml-auto" role="status">{items.length}件</span>
       </div>
+      {items.length === 0 && <p className="text-sm">条件に一致するニュースはありません。</p>}
               {items.map((item) => {
                 const score = item.sentiment_score ?? 0;
                 const isJP = item._sym?.endsWith(".T");
