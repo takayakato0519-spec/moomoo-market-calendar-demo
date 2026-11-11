@@ -366,6 +366,22 @@ def attach_bls_results(events, now):
             event["result"]["metrics"] = metrics
 
 
+def pce_price_metrics(page):
+    labels = {"PCE price index": "PCE価格指数 前月比",
+              "PCE price index excluding food and energy": "コアPCE価格指数 前月比"}
+    metrics = {}
+    for row in page.select("tr"):
+        cells = [cell.get_text(" ", strip=True) for cell in row.find_all(["th", "td"], recursive=False)]
+        if not cells or cells[0] not in labels:
+            continue
+        values = [value.replace("−", "-") + "%" for value in cells[1:]
+                  if re.fullmatch(r"[-−]?[0-9]+(?:[.][0-9]+)?", value)]
+        if len(values) >= 2:
+            label = labels[cells[0]]
+            metrics.setdefault(label, dict(label=label, current=values[-1], previous=values[-2]))
+    return [metrics[label] for label in labels.values() if label in metrics]
+
+
 def attach_bea_results(events, now):
     try:
         root = ElementTree.fromstring(fetch("https://apps.bea.gov/rss/rss.xml").content)
@@ -392,21 +408,18 @@ def attach_bea_results(events, now):
             previous = re.search(r"real GDP (increased|decreased) ([\d.]+) percent", description)
             current = ("-" if "decreased at an annual rate" in description else "") + match[1] + "%"
             prior = (("-" if previous[1] == "decreased" else "") + previous[2] + "%") if previous else None
-            label, release = "実質GDP 前期比年率", 53
+            metrics = [dict(label="実質GDP 前期比年率", current=current, previous=prior)]
+            release = 53
         elif title.startswith("Personal Income and Outlays,"):
             try:
                 page = BeautifulSoup(fetch(url).text, "html.parser")
             except requests.RequestException as error:
                 print(f"BEA release unavailable: {error}")
                 continue
-            row = next((row for row in page.select("tr")
-                        if row.find(["th", "td"]) and row.find(["th", "td"]).get_text(" ", strip=True) == "PCE price index"), None)
-            values = [cell.get_text(strip=True) for cell in row.find_all(["td", "th"])[1:]] if row else []
-            values = [value.replace("−", "-") + "%" for value in values if re.fullmatch(r"[-−]?[\d.]+", value)]
-            if len(values) < 2:
+            metrics = pce_price_metrics(page)
+            if not metrics:
                 continue
-            prior, current = values[-2:]
-            label, release = "PCE価格指数 前月比", 54
+            release = 54
         else:
             continue
         day = stamp.date().isoformat()
@@ -416,7 +429,7 @@ def attach_bea_results(events, now):
                          category="経済指標", region="米国", detail="BEA公式発表", url=url)
             events.append(event)
         event["result"] = dict(url=url, publishedAt=stamp.isoformat(), summary=title,
-                               metrics=[dict(label=label, current=current, previous=prior)])
+                               metrics=metrics)
     return headlines
 
 

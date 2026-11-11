@@ -275,6 +275,12 @@ window.MARKET_CALENDAR = {
             "firstObserved": "-0.1%",
             "revisions": [],
             "change": "-0.6ポイント"
+          },
+          {
+            "label": "コアPCE価格指数 前月比",
+            "current": "0.1%",
+            "previous": "0.3%",
+            "change": "-0.2ポイント"
           }
         ]
       }
@@ -435,6 +441,12 @@ window.MARKET_CALENDAR = {
             "firstObserved": "0.2%",
             "revisions": [],
             "change": "+0.3ポイント"
+          },
+          {
+            "label": "コアPCE価格指数 前月比",
+            "current": "0.2%",
+            "previous": "0.1%",
+            "change": "+0.1ポイント"
           }
         ]
       }
@@ -642,6 +654,12 @@ window.MARKET_CALENDAR = {
             "firstObserved": "0.5%",
             "revisions": [],
             "change": "+0.2ポイント"
+          },
+          {
+            "label": "コアPCE価格指数 前月比",
+            "current": "0.3%",
+            "previous": "0.3%",
+            "change": "0ポイント"
           }
         ]
       }
