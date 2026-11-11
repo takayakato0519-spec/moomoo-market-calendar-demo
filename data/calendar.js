@@ -1039,6 +1039,42 @@ window.MARKET_CALENDAR = {
           "eps": 5.16
         }
       ]
+    },
+    {
+      "symbol": "NVDA",
+      "name": "NVIDIA Corporation",
+      "source": "https://nvidianews.nvidia.com/",
+      "publisher": "NVIDIA公式Newsroom",
+      "quarters": [
+        {
+          "period": "2026-07-26",
+          "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
+          "revenue": 96221000000.0,
+          "netIncome": 59688000000.0,
+          "eps": 2.46
+        },
+        {
+          "period": "2026-04-26",
+          "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-first-quarter-fiscal-2027",
+          "revenue": 81615000000.0,
+          "netIncome": 58321000000.0,
+          "eps": 2.39
+        },
+        {
+          "period": "2026-01-25",
+          "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026",
+          "revenue": 68127000000.0,
+          "netIncome": 42960000000.0,
+          "eps": 1.76
+        },
+        {
+          "period": "2025-10-26",
+          "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2026",
+          "revenue": 57006000000.0,
+          "netIncome": 31910000000.0,
+          "eps": 1.3
+        }
+      ]
     }
   ],
   "energyPrices": [

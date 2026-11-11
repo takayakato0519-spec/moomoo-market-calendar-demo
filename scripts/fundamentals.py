@@ -189,6 +189,55 @@ def microsoft_filings(fetch, today):
                 publisher="Microsoft公式IR", quarters=rows)
 
 
+def nvidia_filings(fetch, today):
+    source = "https://nvidianews.nvidia.com/"
+    slugs = ("fourth-quarter-and-fiscal", "first-quarter-fiscal",
+             "second-quarter-fiscal", "third-quarter-fiscal")
+    labels = {"Revenue": ("revenue", 1_000_000),
+              "Net income": ("netIncome", 1_000_000), "Diluted earnings per share": ("eps", 1)}
+    rows = []
+    calendar_quarter = today.year * 4 + (today.month - 1) // 3
+    for offset in range(5):
+        year, quarter = divmod(calendar_quarter - offset, 4)
+        fiscal_year = year + (quarter != 0)
+        url = f"{source}news/nvidia-announces-financial-results-for-{slugs[quarter]}-{fiscal_year}"
+        try:
+            page = BeautifulSoup(fetch(url).text, "html.parser")
+        except requests.HTTPError as error:
+            if error.response is not None and error.response.status_code == 404:
+                continue
+            raise
+        tables = page.select("table")
+        statement = next((t for t in tables if "CONSOLIDATED STATEMENTS OF INCOME" in t.get_text(" ", strip=True)), None)
+        gaap = next((t for t in tables if next(t.stripped_strings, "") == "GAAP"), None)
+        if statement is None or gaap is None:
+            continue
+        heading = " ".join(statement.get_text(" ", strip=True).split()).split("Revenue", 1)[0]
+        period = re.search(r"([A-Z][a-z]+ [0-9]{1,2}),.*?([0-9]{4})", heading)
+        if not period:
+            continue
+        end = datetime.strptime(f"{period[1]}, {period[2]}", "%B %d, %Y").date()
+        if end > today or end.year != year or (end.month - 1) // 3 != quarter:
+            continue
+        values = {}
+        for row in gaap.select("tr"):
+            cells = [" ".join(cell.get_text().split()) for cell in row.find_all(["th", "td"], recursive=False)]
+            if cells and cells[0] == "Non-GAAP":
+                break
+            if not cells or cells[0] not in labels:
+                continue
+            key, scale = labels[cells[0]]
+            number = next((cell for cell in cells[1:] if cell), "").replace("$", "").replace(",", "").strip()
+            if re.fullmatch(r"-?[0-9]+(?:[.][0-9]+)?", number):
+                values[key] = float(number) * scale
+        if len(values) == len(labels):
+            rows.append(dict(period=end.isoformat(), url=url, **values))
+        if len(rows) == 4:
+            break
+    return dict(symbol="NVDA", name="NVIDIA Corporation", source=source,
+                publisher="NVIDIA公式Newsroom", quarters=rows)
+
+
 def quarterly_facts(facts, unit, tags, today):
     periods = {}
     for tag in tags:
@@ -228,7 +277,7 @@ def company_fundamentals(fetch, today, previous):
         except (requests.RequestException, ValueError, KeyError) as error:
             print(f"EDGAR {symbol}: {error}")
             providers = {"HD": home_depot_filings, "WMT": walmart_filings, "AAPL": apple_filings,
-                         "MSFT": microsoft_filings}
+                         "MSFT": microsoft_filings, "NVDA": nvidia_filings}
             if symbol in providers:
                 try:
                     provider = providers[symbol]
