@@ -569,6 +569,36 @@ def compare_gdp_estimates(events):
             metric["initialRelease"] = first[key]
 
 
+def add_issuer_release_events(events, companies, today):
+    cutoff = (today - timedelta(days=220)).isoformat()
+    for company in companies:
+        symbol = company["symbol"]
+        for index, quarter in enumerate(company["quarters"]):
+            day = quarter.get("releaseDate")
+            if not day or not cutoff <= day <= today.isoformat():
+                continue
+            title = f"{symbol} 決算発表"
+            if any(row["date"] == day and row["title"] == title for row in events):
+                continue
+            prior = company["quarters"][index + 1] if index + 1 < len(company["quarters"]) else {}
+            if prior and not 75 <= (date.fromisoformat(quarter["period"]) - date.fromisoformat(prior["period"])).days <= 105:
+                prior = {}
+            metrics = []
+            for key, label, scale, suffix in (("revenue", "売上高", 1e8, "億ドル"),
+                                               ("netIncome", "純利益", 1e8, "億ドル"),
+                                               ("eps", "希薄化後EPS", 1, "ドル")):
+                current = quarter.get(key)
+                previous = prior.get(key)
+                if current is not None:
+                    metrics.append(dict(label=label, current=f"{current / scale:.2f}{suffix}",
+                                        previous=f"{previous / scale:.2f}{suffix}" if previous is not None else None))
+            url = quarter["releaseUrl"]
+            events.append(dict(date=day, time="", title=title, category="決算", region="米国",
+                               detail="企業公式IR・現地日付", url=url,
+                               result=dict(url=url, publishedAt=day, summary=f"{quarter['period']}終了四半期",
+                                           metrics=metrics)))
+
+
 def main():
     now = datetime.now(JST)
     start = now.date().replace(day=1)
@@ -603,13 +633,15 @@ def main():
     except (OSError, ValueError):
         previous = {}
     fundamentals = company_fundamentals(fetch, now.date(), previous.get("fundamentals", []))
+    add_issuer_release_events(events, fundamentals, now.date())
     issuer_news = []
     for event in events:
         result = event.get("result")
         if event["category"] != "決算" or not result:
             continue
         publisher = {"ir.homedepot.com": "Home Depot公式IR",
-                     "corporate.walmart.com": "Walmart公式IR"}.get(urlsplit(result["url"]).hostname)
+                     "corporate.walmart.com": "Walmart公式IR", "www.apple.com": "Apple公式Newsroom",
+                     "www.microsoft.com": "Microsoft公式IR", "nvidianews.nvidia.com": "NVIDIA公式Newsroom"}.get(urlsplit(result["url"]).hostname)
         if publisher:
             issuer_news.append(dict(title=f'{event["title"]} · {result["summary"]}',
                                     url=result["url"], date=result["publishedAt"], publisher=publisher))

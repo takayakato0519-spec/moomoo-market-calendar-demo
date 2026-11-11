@@ -97,6 +97,13 @@ def walmart_filings(fetch, today):
     return dict(symbol="WMT", name="Walmart Inc.", source=WALMART_IR, publisher="Walmart公式IR", quarters=rows)
 
 
+def release_date(text):
+    try:
+        return datetime.strptime(text, "%B %d, %Y").date().isoformat()
+    except ValueError:
+        return None
+
+
 def apple_filings(fetch, today):
     source = "https://www.apple.com/newsroom/"
     rows = []
@@ -135,7 +142,10 @@ def apple_filings(fetch, today):
                 if period and len(values) == 3:
                     end = datetime.strptime(period[1], "%B %d, %Y").date()
                     if end <= today:
-                        rows.append(dict(period=end.isoformat(), url=url, **values))
+                        published = article.select_one(".category-eyebrow__date")
+                        rows.append(dict(period=end.isoformat(), url=url, releaseUrl=release,
+                                         releaseDate=release_date(published.get_text(strip=True)) if published else None,
+                                         **values))
                         break
             if len(rows) == 4:
                 return dict(symbol="AAPL", name="Apple Inc.", source=source,
@@ -181,7 +191,10 @@ def microsoft_filings(fetch, today):
                 if key not in values and re.fullmatch(r"-?[0-9]+(?:[.][0-9]+)?", number):
                     values[key] = float(number) * scale
             if len(values) == len(labels):
-                rows.append(dict(period=end.isoformat(), url=url, **values))
+                published = re.search(r"([A-Z][a-z]+ [0-9]{1,2}, [0-9]{4})[^A-Za-z0-9]+Microsoft Corp",
+                                      page.get_text(" ", strip=True))
+                rows.append(dict(period=end.isoformat(), url=url, releaseUrl=url,
+                                 releaseDate=release_date(published[1]) if published else None, **values))
                 break
         if len(rows) == 4:
             break
@@ -231,7 +244,9 @@ def nvidia_filings(fetch, today):
             if re.fullmatch(r"-?[0-9]+(?:[.][0-9]+)?", number):
                 values[key] = float(number) * scale
         if len(values) == len(labels):
-            rows.append(dict(period=end.isoformat(), url=url, **values))
+            published = page.select_one(".article-date")
+            rows.append(dict(period=end.isoformat(), url=url, releaseUrl=url,
+                             releaseDate=release_date(published.get_text(strip=True)) if published else None, **values))
         if len(rows) == 4:
             break
     return dict(symbol="NVDA", name="NVIDIA Corporation", source=source,

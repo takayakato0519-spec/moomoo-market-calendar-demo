@@ -1,10 +1,72 @@
 window.MARKET_CALENDAR = {
-  "updatedAt": "2026-11-11T17:24:32+09:00",
+  "updatedAt": "2026-11-11T17:29:39+09:00",
   "coverage": [
     "2026-11-01",
     "2026-12-31"
   ],
   "events": [
+    {
+      "date": "2026-04-29",
+      "time": "",
+      "title": "MSFT 決算発表",
+      "category": "決算",
+      "region": "米国",
+      "detail": "企業公式IR・現地日付",
+      "url": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q3/press-release-webcast",
+      "result": {
+        "url": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q3/press-release-webcast",
+        "publishedAt": "2026-04-29",
+        "summary": "2026-03-31終了四半期",
+        "metrics": [
+          {
+            "label": "売上高",
+            "current": "828.86億ドル",
+            "previous": "812.73億ドル"
+          },
+          {
+            "label": "純利益",
+            "current": "317.78億ドル",
+            "previous": "384.58億ドル"
+          },
+          {
+            "label": "希薄化後EPS",
+            "current": "4.27ドル",
+            "previous": "5.16ドル"
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-04-30",
+      "time": "",
+      "title": "AAPL 決算発表",
+      "category": "決算",
+      "region": "米国",
+      "detail": "企業公式IR・現地日付",
+      "url": "https://www.apple.com/newsroom/2026/04/apple-reports-second-quarter-results/",
+      "result": {
+        "url": "https://www.apple.com/newsroom/2026/04/apple-reports-second-quarter-results/",
+        "publishedAt": "2026-04-30",
+        "summary": "2026-03-28終了四半期",
+        "metrics": [
+          {
+            "label": "売上高",
+            "current": "1111.84億ドル",
+            "previous": "1437.56億ドル"
+          },
+          {
+            "label": "純利益",
+            "current": "295.78億ドル",
+            "previous": "420.97億ドル"
+          },
+          {
+            "label": "希薄化後EPS",
+            "current": "2.01ドル",
+            "previous": "2.84ドル"
+          }
+        ]
+      }
+    },
     {
       "date": "2026-05-19",
       "time": "",
@@ -39,6 +101,37 @@ window.MARKET_CALENDAR = {
       }
     },
     {
+      "date": "2026-05-20",
+      "time": "",
+      "title": "NVDA 決算発表",
+      "category": "決算",
+      "region": "米国",
+      "detail": "企業公式IR・現地日付",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-first-quarter-fiscal-2027",
+      "result": {
+        "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-first-quarter-fiscal-2027",
+        "publishedAt": "2026-05-20",
+        "summary": "2026-04-26終了四半期",
+        "metrics": [
+          {
+            "label": "売上高",
+            "current": "816.15億ドル",
+            "previous": "681.27億ドル"
+          },
+          {
+            "label": "純利益",
+            "current": "583.21億ドル",
+            "previous": "429.60億ドル"
+          },
+          {
+            "label": "希薄化後EPS",
+            "current": "2.39ドル",
+            "previous": "1.76ドル"
+          }
+        ]
+      }
+    },
+    {
       "date": "2026-05-21",
       "time": "",
       "title": "WMT 決算発表",
@@ -61,6 +154,68 @@ window.MARKET_CALENDAR = {
           }
         ],
         "consensusAvailable": false
+      }
+    },
+    {
+      "date": "2026-07-29",
+      "time": "",
+      "title": "MSFT 決算発表",
+      "category": "決算",
+      "region": "米国",
+      "detail": "企業公式IR・現地日付",
+      "url": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast",
+      "result": {
+        "url": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast",
+        "publishedAt": "2026-07-29",
+        "summary": "2026-06-30終了四半期",
+        "metrics": [
+          {
+            "label": "売上高",
+            "current": "900.07億ドル",
+            "previous": "828.86億ドル"
+          },
+          {
+            "label": "純利益",
+            "current": "357.66億ドル",
+            "previous": "317.78億ドル"
+          },
+          {
+            "label": "希薄化後EPS",
+            "current": "4.81ドル",
+            "previous": "4.27ドル"
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-07-30",
+      "time": "",
+      "title": "AAPL 決算発表",
+      "category": "決算",
+      "region": "米国",
+      "detail": "企業公式IR・現地日付",
+      "url": "https://www.apple.com/newsroom/2026/07/apple-reports-third-quarter-results/",
+      "result": {
+        "url": "https://www.apple.com/newsroom/2026/07/apple-reports-third-quarter-results/",
+        "publishedAt": "2026-07-30",
+        "summary": "2026-06-27終了四半期",
+        "metrics": [
+          {
+            "label": "売上高",
+            "current": "1094.17億ドル",
+            "previous": "1111.84億ドル"
+          },
+          {
+            "label": "純利益",
+            "current": "297.89億ドル",
+            "previous": "295.78億ドル"
+          },
+          {
+            "label": "希薄化後EPS",
+            "current": "2.02ドル",
+            "previous": "2.01ドル"
+          }
+        ]
       }
     },
     {
@@ -163,6 +318,37 @@ window.MARKET_CALENDAR = {
           }
         ],
         "consensusAvailable": false
+      }
+    },
+    {
+      "date": "2026-08-26",
+      "time": "",
+      "title": "NVDA 決算発表",
+      "category": "決算",
+      "region": "米国",
+      "detail": "企業公式IR・現地日付",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
+      "result": {
+        "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
+        "publishedAt": "2026-08-26",
+        "summary": "2026-07-26終了四半期",
+        "metrics": [
+          {
+            "label": "売上高",
+            "current": "962.21億ドル",
+            "previous": "816.15億ドル"
+          },
+          {
+            "label": "純利益",
+            "current": "596.88億ドル",
+            "previous": "583.21億ドル"
+          },
+          {
+            "label": "希薄化後EPS",
+            "current": "2.46ドル",
+            "previous": "2.39ドル"
+          }
+        ]
       }
     },
     {
@@ -318,6 +504,37 @@ window.MARKET_CALENDAR = {
       }
     },
     {
+      "date": "2026-10-28",
+      "time": "",
+      "title": "MSFT 決算発表",
+      "category": "決算",
+      "region": "米国",
+      "detail": "企業公式IR・現地日付",
+      "url": "https://www.microsoft.com/en-us/investor/earnings/fy-2027-q1/press-release-webcast",
+      "result": {
+        "url": "https://www.microsoft.com/en-us/investor/earnings/fy-2027-q1/press-release-webcast",
+        "publishedAt": "2026-10-28",
+        "summary": "2026-09-30終了四半期",
+        "metrics": [
+          {
+            "label": "売上高",
+            "current": "922.79億ドル",
+            "previous": "900.07億ドル"
+          },
+          {
+            "label": "純利益",
+            "current": "366.29億ドル",
+            "previous": "357.66億ドル"
+          },
+          {
+            "label": "希薄化後EPS",
+            "current": "4.92ドル",
+            "previous": "4.81ドル"
+          }
+        ]
+      }
+    },
+    {
       "date": "2026-10-29",
       "time": "03:00",
       "title": "FOMC声明",
@@ -373,6 +590,37 @@ window.MARKET_CALENDAR = {
             "previous": "2.2%",
             "firstObserved": "3.4%",
             "revisions": []
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-11-02",
+      "time": "",
+      "title": "AAPL 決算発表",
+      "category": "決算",
+      "region": "米国",
+      "detail": "企業公式IR・現地日付",
+      "url": "https://www.apple.com/newsroom/2026/11/apple-reports-fourth-quarter-results/",
+      "result": {
+        "url": "https://www.apple.com/newsroom/2026/11/apple-reports-fourth-quarter-results/",
+        "publishedAt": "2026-11-02",
+        "summary": "2026-09-26終了四半期",
+        "metrics": [
+          {
+            "label": "売上高",
+            "current": "1144.77億ドル",
+            "previous": "1094.17億ドル"
+          },
+          {
+            "label": "純利益",
+            "current": "307.11億ドル",
+            "previous": "297.89億ドル"
+          },
+          {
+            "label": "希薄化後EPS",
+            "current": "2.10ドル",
+            "previous": "2.02ドル"
           }
         ]
       }
@@ -711,6 +959,12 @@ window.MARKET_CALENDAR = {
       "date": "2026-11-02T18:30:00+09:00"
     },
     {
+      "title": "AAPL 決算発表 · 2026-09-26終了四半期",
+      "url": "https://www.apple.com/newsroom/2026/11/apple-reports-fourth-quarter-results/",
+      "date": "2026-11-02",
+      "publisher": "Apple公式Newsroom"
+    },
+    {
       "title": "The share of solar generation with co-located battery storage is increasing",
       "url": "https://www.eia.gov/todayinenergy/detail.php?id=68384",
       "publisher": "EIA",
@@ -764,6 +1018,12 @@ window.MARKET_CALENDAR = {
       "date": "2026-10-28T21:30:00+09:00"
     },
     {
+      "title": "MSFT 決算発表 · 2026-09-30終了四半期",
+      "url": "https://www.microsoft.com/en-us/investor/earnings/fy-2027-q1/press-release-webcast",
+      "date": "2026-10-28",
+      "publisher": "Microsoft公式IR"
+    },
+    {
       "title": "U.S. refineries have been running at very high rates in 2026",
       "url": "https://www.eia.gov/todayinenergy/detail.php?id=68344",
       "publisher": "EIA",
@@ -813,6 +1073,12 @@ window.MARKET_CALENDAR = {
       "date": "2026-08-26T03:00:00+09:00"
     },
     {
+      "title": "NVDA 決算発表 · 2026-07-26終了四半期",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
+      "date": "2026-08-26",
+      "publisher": "NVIDIA公式Newsroom"
+    },
+    {
       "title": "Minutes of the Federal Open Market Committee, July 28–29, 2026",
       "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260819a.htm",
       "date": "2026-08-20T03:00:00+09:00"
@@ -839,6 +1105,18 @@ window.MARKET_CALENDAR = {
       "title": "Federal Reserve issues FOMC statement",
       "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm",
       "date": "2026-07-30T03:00:00+09:00"
+    },
+    {
+      "title": "AAPL 決算発表 · 2026-06-27終了四半期",
+      "url": "https://www.apple.com/newsroom/2026/07/apple-reports-third-quarter-results/",
+      "date": "2026-07-30",
+      "publisher": "Apple公式Newsroom"
+    },
+    {
+      "title": "MSFT 決算発表 · 2026-06-30終了四半期",
+      "url": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast",
+      "date": "2026-07-29",
+      "publisher": "Microsoft公式IR"
     },
     {
       "title": "Direct Investment by Country and Industry, 2025",
@@ -877,10 +1155,28 @@ window.MARKET_CALENDAR = {
       "publisher": "Walmart公式IR"
     },
     {
+      "title": "NVDA 決算発表 · 2026-04-26終了四半期",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-first-quarter-fiscal-2027",
+      "date": "2026-05-20",
+      "publisher": "NVIDIA公式Newsroom"
+    },
+    {
       "title": "HD 決算発表 · 売上高 418億ドル・希薄化後EPS 3.30ドル",
       "url": "https://ir.homedepot.com/news-releases/2026/05-19-2026-110111934",
       "date": "2026-05-19",
       "publisher": "Home Depot公式IR"
+    },
+    {
+      "title": "AAPL 決算発表 · 2026-03-28終了四半期",
+      "url": "https://www.apple.com/newsroom/2026/04/apple-reports-second-quarter-results/",
+      "date": "2026-04-30",
+      "publisher": "Apple公式Newsroom"
+    },
+    {
+      "title": "MSFT 決算発表 · 2026-03-31終了四半期",
+      "url": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q3/press-release-webcast",
+      "date": "2026-04-29",
+      "publisher": "Microsoft公式IR"
     },
     {
       "title": "Personal Income and Outlays, January 2026",
@@ -977,6 +1273,8 @@ window.MARKET_CALENDAR = {
         {
           "period": "2026-09-26",
           "url": "https://www.apple.com/newsroom/pdfs/fy2026q4/FY26_Q4_Consolidated_Financial_Statements.pdf",
+          "releaseUrl": "https://www.apple.com/newsroom/2026/11/apple-reports-fourth-quarter-results/",
+          "releaseDate": "2026-11-02",
           "revenue": 114477000000.0,
           "netIncome": 30711000000.0,
           "eps": 2.1
@@ -984,6 +1282,8 @@ window.MARKET_CALENDAR = {
         {
           "period": "2026-06-27",
           "url": "https://www.apple.com/newsroom/pdfs/fy2026q3/FY26_Q3_Consolidated_Financial_Statements.pdf",
+          "releaseUrl": "https://www.apple.com/newsroom/2026/07/apple-reports-third-quarter-results/",
+          "releaseDate": "2026-07-30",
           "revenue": 109417000000.0,
           "netIncome": 29789000000.0,
           "eps": 2.02
@@ -991,6 +1291,8 @@ window.MARKET_CALENDAR = {
         {
           "period": "2026-03-28",
           "url": "https://www.apple.com/newsroom/pdfs/fy2026q2/FY26_Q2_Consolidated_Financial_Statements.pdf",
+          "releaseUrl": "https://www.apple.com/newsroom/2026/04/apple-reports-second-quarter-results/",
+          "releaseDate": "2026-04-30",
           "revenue": 111184000000.0,
           "netIncome": 29578000000.0,
           "eps": 2.01
@@ -998,6 +1300,8 @@ window.MARKET_CALENDAR = {
         {
           "period": "2025-12-27",
           "url": "https://www.apple.com/newsroom/pdfs/fy2026-q1/FY26_Q1_Consolidated_Financial_Statements.pdf",
+          "releaseUrl": "https://www.apple.com/newsroom/2026/01/apple-reports-first-quarter-results/",
+          "releaseDate": "2026-01-29",
           "revenue": 143756000000.0,
           "netIncome": 42097000000.0,
           "eps": 2.84
@@ -1013,6 +1317,8 @@ window.MARKET_CALENDAR = {
         {
           "period": "2026-09-30",
           "url": "https://www.microsoft.com/en-us/investor/earnings/fy-2027-q1/press-release-webcast",
+          "releaseUrl": "https://www.microsoft.com/en-us/investor/earnings/fy-2027-q1/press-release-webcast",
+          "releaseDate": "2026-10-28",
           "revenue": 92279000000.0,
           "netIncome": 36629000000.0,
           "eps": 4.92
@@ -1020,6 +1326,8 @@ window.MARKET_CALENDAR = {
         {
           "period": "2026-06-30",
           "url": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast",
+          "releaseUrl": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast",
+          "releaseDate": "2026-07-29",
           "revenue": 90007000000.0,
           "netIncome": 35766000000.0,
           "eps": 4.81
@@ -1027,6 +1335,8 @@ window.MARKET_CALENDAR = {
         {
           "period": "2026-03-31",
           "url": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q3/press-release-webcast",
+          "releaseUrl": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q3/press-release-webcast",
+          "releaseDate": "2026-04-29",
           "revenue": 82886000000.0,
           "netIncome": 31778000000.0,
           "eps": 4.27
@@ -1034,6 +1344,8 @@ window.MARKET_CALENDAR = {
         {
           "period": "2025-12-31",
           "url": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q2/press-release-webcast",
+          "releaseUrl": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q2/press-release-webcast",
+          "releaseDate": "2026-01-28",
           "revenue": 81273000000.0,
           "netIncome": 38458000000.0,
           "eps": 5.16
@@ -1049,6 +1361,8 @@ window.MARKET_CALENDAR = {
         {
           "period": "2026-07-26",
           "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
+          "releaseUrl": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
+          "releaseDate": "2026-08-26",
           "revenue": 96221000000.0,
           "netIncome": 59688000000.0,
           "eps": 2.46
@@ -1056,6 +1370,8 @@ window.MARKET_CALENDAR = {
         {
           "period": "2026-04-26",
           "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-first-quarter-fiscal-2027",
+          "releaseUrl": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-first-quarter-fiscal-2027",
+          "releaseDate": "2026-05-20",
           "revenue": 81615000000.0,
           "netIncome": 58321000000.0,
           "eps": 2.39
@@ -1063,6 +1379,8 @@ window.MARKET_CALENDAR = {
         {
           "period": "2026-01-25",
           "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026",
+          "releaseUrl": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026",
+          "releaseDate": "2026-02-25",
           "revenue": 68127000000.0,
           "netIncome": 42960000000.0,
           "eps": 1.76
@@ -1070,6 +1388,8 @@ window.MARKET_CALENDAR = {
         {
           "period": "2025-10-26",
           "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2026",
+          "releaseUrl": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2026",
+          "releaseDate": "2025-11-19",
           "revenue": 57006000000.0,
           "netIncome": 31910000000.0,
           "eps": 1.3
