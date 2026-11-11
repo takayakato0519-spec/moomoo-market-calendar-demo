@@ -769,11 +769,11 @@ window.MARKET_CALENDAR = {
           "eps": 2.01
         },
         {
-          "period": "2025-09-27",
-          "url": "https://www.apple.com/newsroom/pdfs/fy2025-q4/FY25_Q4_Consolidated_Financial_Statements.pdf",
-          "revenue": 102466000000.0,
-          "netIncome": 27466000000.0,
-          "eps": 1.85
+          "period": "2025-12-27",
+          "url": "https://www.apple.com/newsroom/pdfs/fy2026-q1/FY26_Q1_Consolidated_Financial_Statements.pdf",
+          "revenue": 143756000000.0,
+          "netIncome": 42097000000.0,
+          "eps": 2.84
         }
       ]
     }

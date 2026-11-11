@@ -125,9 +125,10 @@ def apple_filings(fetch, today):
                 statement = " ".join(pdf.pages[0].extract_text().split())
                 period = re.search(r"Three Months Ended.*?([A-Za-z]+ [0-9]{1,2}, [0-9]{4})", statement)
                 values = {}
-                for key, label, scale in (("revenue", r"Total net sales (?:[(]1[)] )?", 1_000_000),
+                # Some Apple PDFs insert a space within the word "sales".
+                for key, label, scale in (("revenue", r"Total net sal ?es (?:[(]1[)] )?", 1_000_000),
                                           ("netIncome", "Net income ", 1_000_000),
-                                          ("eps", "Diluted ", 1)):
+                                          ("eps", r"Earnings per share:.*?Diluted ", 1)):
                     match = re.search(label + r"[$]? *([0-9,.]+)", statement)
                     if match:
                         values[key] = float(match[1].replace(",", "")) * scale
