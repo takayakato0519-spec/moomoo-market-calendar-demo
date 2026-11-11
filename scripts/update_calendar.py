@@ -361,6 +361,7 @@ ENERGY_SERIES = (
 MARKET_SERIES = (
     ("DEXJPUS", "米ドル／円", "円／ドル"),
     ("DGS10", "米国10年国債利回り", "%"),
+    ("DTWEXBGS", "FRB貿易加重ドル指数", "指数（2006年1月＝100）"),
 )
 
 
