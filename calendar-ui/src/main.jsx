@@ -10,6 +10,7 @@ const data = window.MARKET_CALENDAR;
 const today = new Intl.DateTimeFormat("sv-SE", {timeZone: "Asia/Tokyo"}).format(new Date());
 const sourceHosts = new Set([
   "fred.stlouisfed.org", "www.nyse.com", "www.federalreserve.gov", "www.bea.gov", "ir.homedepot.com", "corporate.walmart.com",
+  "www.apple.com", "www.microsoft.com", "nvidianews.nvidia.com",
 ]);
 const events = data.events.filter(event => {
   try {
@@ -29,6 +30,8 @@ const events = data.events.filter(event => {
 }));
 function PublicMarketTabs() {
   const [tab, setTab] = useState("calendar");
+  const [resultType, setResultType] = useState("");
+  const released = events.filter(event => event.result && (!resultType || event.type === resultType));
   const todaysEvents = events.filter(event => event.date === today);
   const tabs = [
     ["schedule", "🗓 本日予定"],
@@ -55,7 +58,17 @@ function PublicMarketTabs() {
       {tab === "schedule" && (todaysEvents.length
         ? <MarketCalendarPanel events={todaysEvents} today={today} />
         : <p className="text-center py-10 text-slate-500 text-sm">{today} の収録イベントはありません。</p>)}
-      {tab === "results" && <MarketCalendarPanel events={events.filter(event => event.result)} today={today} newestFirst />}
+      {tab === "results" && <>
+        <label className="mb-3 block text-sm">発表の種類 <select value={resultType}
+          onChange={event => setResultType(event.target.value)}>
+          <option value="">すべて</option>
+          <option value="macro">経済指標</option>
+          <option value="earnings">企業決算</option>
+        </select></label>
+        {released.length
+          ? <MarketCalendarPanel events={released} today={today} newestFirst />
+          : <p className="text-sm">該当する発表はありません。</p>}
+      </>}
       {tab === "news" && <NewsPanel news={data.news} />}
       {tab === "fundamentals" && <>
         <FundamentalsPanel companies={data.fundamentals ?? []} />
