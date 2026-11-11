@@ -1,5 +1,5 @@
 window.MARKET_CALENDAR = {
-  "updatedAt": "2026-11-11T18:01:45+09:00",
+  "updatedAt": "2026-11-11T18:07:53+09:00",
   "coverage": [
     "2026-11-01",
     "2026-12-31"
@@ -640,7 +640,9 @@ window.MARKET_CALENDAR = {
           {
             "label": "政策金利の誘導目標",
             "current": "3.75〜4%",
-            "previous": "3.75〜4%"
+            "previous": "3.75〜4%",
+            "firstObserved": "3.75〜4%",
+            "revisions": []
           }
         ],
         "previousSource": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm"
