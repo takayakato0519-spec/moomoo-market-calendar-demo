@@ -194,4 +194,3 @@ def company_fundamentals(fetch, today, previous):
             if symbol in cached:
                 companies.append(cached[symbol])
     return companies
-
