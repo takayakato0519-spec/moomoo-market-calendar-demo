@@ -561,7 +561,8 @@ def main():
                    events=sorted((e for e in events if (start.isoformat() <= e["date"] <= end.isoformat()) or e.get("result")),
                                  key=lambda e: (e["date"], e["time"], e["title"])),
                    analystTrends=trends, news=sorted(news + bea_news[:12] + official_rss_news("https://www.ecb.europa.eu/rss/press.html", "www.ecb.europa.eu", "ECB")
-                                                    + official_rss_news("https://www.boj.or.jp/rss/whatsnew.xml", "www.boj.or.jp", "日本銀行") + filings + issuer_news,
+                                                    + official_rss_news("https://www.boj.or.jp/rss/whatsnew.xml", "www.boj.or.jp", "日本銀行")
+                                                    + official_rss_news("https://www.eia.gov/rss/todayinenergy.xml", "www.eia.gov", "EIA") + filings + issuer_news,
                                                     key=lambda item: item["date"], reverse=True),
                    fundamentals=fundamentals,
                    energyPrices=fred_history(now, previous.get("energyPrices", []), ENERGY_SERIES),
