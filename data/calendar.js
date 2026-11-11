@@ -1,5 +1,5 @@
 window.MARKET_CALENDAR = {
-  "updatedAt": "2026-11-11T17:02:17+09:00",
+  "updatedAt": "2026-11-11T17:04:27+09:00",
   "coverage": [
     "2026-11-01",
     "2026-12-31"
@@ -502,10 +502,22 @@ window.MARKET_CALENDAR = {
       "date": "2026-11-07T23:00:00+09:00"
     },
     {
+      "title": "U.S. crude oil imports from Venezuela in July were highest since 2017",
+      "url": "https://www.eia.gov/todayinenergy/detail.php?id=68425",
+      "publisher": "EIA",
+      "date": "2026-11-06T23:00:00+09:00"
+    },
+    {
       "title": "ECB publishes consolidated banking data for end-June 2026",
       "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261106~356f2fc73a.en.html",
       "publisher": "ECB",
       "date": "2026-11-06T18:00:00+09:00"
+    },
+    {
+      "title": "Refineries have shifted production away from gasoline to middle distillates",
+      "url": "https://www.eia.gov/todayinenergy/detail.php?id=68424",
+      "publisher": "EIA",
+      "date": "2026-11-05T23:00:00+09:00"
     },
     {
       "title": "Isabel Schnabel: Navigating stormy waters: reflections on monetary policy",
@@ -532,10 +544,28 @@ window.MARKET_CALENDAR = {
       "date": "2026-11-04T09:00:00+09:00"
     },
     {
+      "title": "Global refinery inputs fell sharply in the second quarter of 2026 before modest recovery",
+      "url": "https://www.eia.gov/todayinenergy/detail.php?id=68404",
+      "publisher": "EIA",
+      "date": "2026-11-03T23:00:00+09:00"
+    },
+    {
       "title": "Boris Vujčić: Integrated, open and resilient: Europe’s strengths in a fragmenting world",
       "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp.261102~70003226e9.en.html",
       "publisher": "ECB",
       "date": "2026-11-02T18:30:00+09:00"
+    },
+    {
+      "title": "The share of solar generation with co-located battery storage is increasing",
+      "url": "https://www.eia.gov/todayinenergy/detail.php?id=68384",
+      "publisher": "EIA",
+      "date": "2026-10-30T23:00:00+09:00"
+    },
+    {
+      "title": "LNG imports make up increasing share of Colombia's natural gas supply",
+      "url": "https://www.eia.gov/todayinenergy/detail.php?id=68364",
+      "publisher": "EIA",
+      "date": "2026-10-29T23:00:00+09:00"
     },
     {
       "title": "GDP (Advance Estimate), 3rd Quarter 2026",
@@ -553,6 +583,24 @@ window.MARKET_CALENDAR = {
       "title": "Federal Reserve issues FOMC statement",
       "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
       "date": "2026-10-29T03:00:00+09:00"
+    },
+    {
+      "title": "U.S. refineries have been running at very high rates in 2026",
+      "url": "https://www.eia.gov/todayinenergy/detail.php?id=68344",
+      "publisher": "EIA",
+      "date": "2026-10-22T23:00:00+09:00"
+    },
+    {
+      "title": "Hybrid sales rise while battery electric sales remain lower after tax credit expiration",
+      "url": "https://www.eia.gov/todayinenergy/detail.php?id=68325",
+      "publisher": "EIA",
+      "date": "2026-10-19T23:00:00+09:00"
+    },
+    {
+      "title": "U.S. small-scale solar generation has quadrupled in the last decade",
+      "url": "https://www.eia.gov/todayinenergy/detail.php?id=68324",
+      "publisher": "EIA",
+      "date": "2026-10-16T23:00:00+09:00"
     },
     {
       "title": "Minutes of the Board's discount rate meetings on August 17, September 9, and September 16, 2026",
