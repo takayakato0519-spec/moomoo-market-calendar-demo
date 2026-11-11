@@ -1,5 +1,5 @@
 window.MARKET_CALENDAR = {
-  "updatedAt": "2026-11-11T17:19:38+09:00",
+  "updatedAt": "2026-11-11T17:24:32+09:00",
   "coverage": [
     "2026-11-01",
     "2026-12-31"
