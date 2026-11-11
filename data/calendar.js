@@ -1,5 +1,5 @@
 window.MARKET_CALENDAR = {
-  "updatedAt": "2026-11-11T14:09:02+09:00",
+  "updatedAt": "2026-11-11T14:13:08+09:00",
   "coverage": [
     "2026-11-01",
     "2026-12-31"
@@ -621,6 +621,42 @@ window.MARKET_CALENDAR = {
     }
   ],
   "fundamentals": [
+    {
+      "symbol": "HD",
+      "name": "The Home Depot, Inc.",
+      "source": "https://ir.homedepot.com/financial-reports/quarterly-earnings/2026",
+      "publisher": "Home Depot公式IR",
+      "quarters": [
+        {
+          "period": "2026-08-02",
+          "url": "https://ir.homedepot.com/~/media/Files/H/HomeDepot-IR/reports-and-presentations/quarterly-earnings/2026/hd-q2-2026-10q.pdf",
+          "revenue": 47861000000.0,
+          "netIncome": 4766000000.0,
+          "eps": 4.79
+        },
+        {
+          "period": "2026-05-03",
+          "url": "https://ir.homedepot.com/~/media/Files/H/HomeDepot-IR/reports-and-presentations/quarterly-earnings/2026/hd-q1-2026-10q.pdf",
+          "revenue": 41765000000.0,
+          "netIncome": 3289000000.0,
+          "eps": 3.3
+        },
+        {
+          "period": "2025-11-02",
+          "url": "https://ir.homedepot.com/~/media/Files/H/HomeDepot-IR/reports-and-presentations/quarterly-earnings/2025/hd-q3-2025-10q.pdf",
+          "revenue": 41352000000.0,
+          "netIncome": 3601000000.0,
+          "eps": 3.62
+        },
+        {
+          "period": "2025-08-03",
+          "url": "https://ir.homedepot.com/~/media/Files/H/HomeDepot-IR/reports-and-presentations/quarterly-earnings/2025/hd-q2-2025-10q.pdf",
+          "revenue": 45277000000.0,
+          "netIncome": 4551000000.0,
+          "eps": 4.58
+        }
+      ]
+    },
     {
       "symbol": "WMT",
       "name": "Walmart Inc.",

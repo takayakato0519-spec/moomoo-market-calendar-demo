@@ -1,10 +1,13 @@
 """Read public financial statement facts from SEC EDGAR."""
-from datetime import date
+from datetime import date, datetime
+from io import BytesIO
 import re
-from urllib.parse import urlsplit
+from urllib.parse import urljoin, urlsplit
 
 import requests
 from bs4 import BeautifulSoup
+from pypdf import PdfReader
+from pypdf.errors import PdfReadError
 
 COMPANIES = {"HD": 354950, "WMT": 104169, "AAPL": 320193, "MSFT": 789019, "NVDA": 1045810}
 METRICS = {
@@ -14,6 +17,43 @@ METRICS = {
 }
 
 WALMART_IR = "https://stock.walmart.com/financial-information/financial-results"
+HD_IR = "https://ir.homedepot.com/financial-reports/quarterly-earnings/"
+
+
+def home_depot_filings(fetch, today):
+    rows = []
+    headers = {"User-Agent": "Mozilla/5.0"}
+    for year in (today.year, today.year - 1):
+        source = HD_IR + str(year)
+        archive = BeautifulSoup(fetch(source, headers=headers).text, "html.parser")
+        for link in archive.select("a[href]"):
+            url = urljoin(source, link["href"])
+            target = urlsplit(url)
+            if target.scheme != "https" or target.hostname != "ir.homedepot.com":
+                continue
+            if not re.search(r"/hd-q[123]-\d{4}-10q\.pdf$", target.path, re.I):
+                continue
+            try:
+                pdf = PdfReader(BytesIO(fetch(url, headers=headers).content))
+                text = "\n".join(page.extract_text() for page in pdf.pages[:8])
+                period = re.search(r"For the quarterly period ended\s+([A-Za-z]+ \d{1,2}, \d{4})", text, re.I)
+                if not period:
+                    continue
+                end = datetime.strptime(period[1], "%B %d, %Y").date()
+                values = {}
+                for key, label, multiplier in (("revenue", "Net sales", 1_000_000),
+                                                ("netIncome", "Net earnings", 1_000_000),
+                                                ("eps", "Diluted earnings per share", 1)):
+                    match = re.search(rf"^\s*{label}[ \t]+\$[ \t]*([\d,.]+)", text, re.M)
+                    if match:
+                        values[key] = float(match[1].replace(",", "")) * multiplier
+                if end <= today and len(values) == 3:
+                    rows.append(dict(period=end.isoformat(), url=url, **values))
+            except (requests.RequestException, ValueError, PdfReadError) as error:
+                print(f"Home Depot 10-Q: {error}")
+    unique = {row["period"]: row for row in rows}
+    return dict(symbol="HD", name="The Home Depot, Inc.", source=HD_IR + str(today.year),
+                publisher="Home Depot公式IR", quarters=sorted(unique.values(), key=lambda row: row["period"], reverse=True)[:4])
 
 
 def walmart_filings(fetch, today):
@@ -95,14 +135,15 @@ def company_fundamentals(fetch, today, previous):
             companies.append(dict(symbol=symbol, name=payload["entityName"], source=source, quarters=rows))
         except (requests.RequestException, ValueError, KeyError) as error:
             print(f"EDGAR {symbol}: {error}")
-            if symbol == "WMT":
+            if symbol in ("HD", "WMT"):
                 try:
-                    fallback = walmart_filings(fetch, today)
+                    provider = home_depot_filings if symbol == "HD" else walmart_filings
+                    fallback = provider(fetch, today)
                     if fallback["quarters"]:
                         companies.append(fallback)
                         continue
                 except (requests.RequestException, ValueError, KeyError) as fallback_error:
-                    print(f"Walmart IR filings: {fallback_error}")
+                    print(f"{symbol} IR filings: {fallback_error}")
             if symbol in cached:
                 companies.append(cached[symbol])
     return companies
