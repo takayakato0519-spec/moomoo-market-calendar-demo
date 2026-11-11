@@ -1,5 +1,5 @@
 window.MARKET_CALENDAR = {
-  "updatedAt": "2026-11-11T14:33:18+09:00",
+  "updatedAt": "2026-11-11T16:58:45+09:00",
   "coverage": [
     "2026-11-01",
     "2026-12-31"
@@ -738,6 +738,42 @@ window.MARKET_CALENDAR = {
           "revenue": 175750000000.0,
           "netIncome": 7026000000.0,
           "eps": 0.88
+        }
+      ]
+    },
+    {
+      "symbol": "AAPL",
+      "name": "Apple Inc.",
+      "source": "https://www.apple.com/newsroom/",
+      "publisher": "Apple公式Newsroom",
+      "quarters": [
+        {
+          "period": "2026-09-26",
+          "url": "https://www.apple.com/newsroom/pdfs/fy2026q4/FY26_Q4_Consolidated_Financial_Statements.pdf",
+          "revenue": 114477000000.0,
+          "netIncome": 30711000000.0,
+          "eps": 2.1
+        },
+        {
+          "period": "2026-06-27",
+          "url": "https://www.apple.com/newsroom/pdfs/fy2026q3/FY26_Q3_Consolidated_Financial_Statements.pdf",
+          "revenue": 109417000000.0,
+          "netIncome": 29789000000.0,
+          "eps": 2.02
+        },
+        {
+          "period": "2026-03-28",
+          "url": "https://www.apple.com/newsroom/pdfs/fy2026q2/FY26_Q2_Consolidated_Financial_Statements.pdf",
+          "revenue": 111184000000.0,
+          "netIncome": 29578000000.0,
+          "eps": 2.01
+        },
+        {
+          "period": "2025-09-27",
+          "url": "https://www.apple.com/newsroom/pdfs/fy2025-q4/FY25_Q4_Consolidated_Financial_Statements.pdf",
+          "revenue": 102466000000.0,
+          "netIncome": 27466000000.0,
+          "eps": 1.85
         }
       ]
     }

@@ -97,6 +97,52 @@ def walmart_filings(fetch, today):
     return dict(symbol="WMT", name="Walmart Inc.", source=WALMART_IR, publisher="Walmart公式IR", quarters=rows)
 
 
+def apple_filings(fetch, today):
+    source = "https://www.apple.com/newsroom/"
+    rows = []
+    release_months = (("fourth", (11, 10)), ("third", (8, 7)),
+                      ("second", (5, 4)), ("first", (2, 1)))
+    for year in (today.year, today.year - 1):
+        for quarter, months in release_months:
+            for month in months:
+                if (year, month) > (today.year, today.month):
+                    continue
+                release = f"{source}{year}/{month:02d}/apple-reports-{quarter}-quarter-results/"
+                try:
+                    response = fetch(release)
+                except requests.HTTPError as error:
+                    if error.response is not None and error.response.status_code == 404:
+                        continue
+                    raise
+                article = BeautifulSoup(response.text, "html.parser")
+                link = article.find("a", href=re.compile(r"Consolidated_Financial_Statements[.]pdf", re.I))
+                if not link:
+                    continue
+                url = urljoin(release, link["href"])
+                if not url.startswith(source + "pdfs/"):
+                    continue
+                pdf = PdfReader(BytesIO(fetch(url).content))
+                statement = " ".join(pdf.pages[0].extract_text().split())
+                period = re.search(r"Three Months Ended.*?([A-Za-z]+ [0-9]{1,2}, [0-9]{4})", statement)
+                values = {}
+                for key, label, scale in (("revenue", r"Total net sales (?:[(]1[)] )?", 1_000_000),
+                                          ("netIncome", "Net income ", 1_000_000),
+                                          ("eps", "Diluted ", 1)):
+                    match = re.search(label + r"[$]? *([0-9,.]+)", statement)
+                    if match:
+                        values[key] = float(match[1].replace(",", "")) * scale
+                if period and len(values) == 3:
+                    end = datetime.strptime(period[1], "%B %d, %Y").date()
+                    if end <= today:
+                        rows.append(dict(period=end.isoformat(), url=url, **values))
+                        break
+            if len(rows) == 4:
+                return dict(symbol="AAPL", name="Apple Inc.", source=source,
+                            publisher="Apple公式Newsroom", quarters=rows)
+    return dict(symbol="AAPL", name="Apple Inc.", source=source,
+                publisher="Apple公式Newsroom", quarters=rows)
+
+
 def quarterly_facts(facts, unit, tags, today):
     periods = {}
     for tag in tags:
@@ -135,15 +181,17 @@ def company_fundamentals(fetch, today, previous):
             companies.append(dict(symbol=symbol, name=payload["entityName"], source=source, quarters=rows))
         except (requests.RequestException, ValueError, KeyError) as error:
             print(f"EDGAR {symbol}: {error}")
-            if symbol in ("HD", "WMT"):
+            providers = {"HD": home_depot_filings, "WMT": walmart_filings, "AAPL": apple_filings}
+            if symbol in providers:
                 try:
-                    provider = home_depot_filings if symbol == "HD" else walmart_filings
+                    provider = providers[symbol]
                     fallback = provider(fetch, today)
                     if fallback["quarters"]:
                         companies.append(fallback)
                         continue
-                except (requests.RequestException, ValueError, KeyError) as fallback_error:
+                except (requests.RequestException, ValueError, KeyError, PdfReadError) as fallback_error:
                     print(f"{symbol} IR filings: {fallback_error}")
             if symbol in cached:
                 companies.append(cached[symbol])
     return companies
+
