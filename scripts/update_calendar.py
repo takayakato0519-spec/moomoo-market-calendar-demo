@@ -188,6 +188,35 @@ def walmart_earnings(today, end):
     return items
 
 
+def nvidia_earnings(today, end):
+    root = "https://nvidianews.nvidia.com"
+    index = BeautifulSoup(fetch(root + "/news/latest").text, "html.parser")
+    links = dict.fromkeys(a["href"] for a in index.select('a[href^="/news/nvidia-sets-conference-call-for-"]'))
+    items = []
+    for path in links:
+        if "financial-results" not in path:
+            continue
+        url = root + path
+        article = BeautifulSoup(fetch(url).text, "html.parser")
+        published = article.select_one(".article-date")
+        announcement = re.search(
+            r"on [A-Za-z]+, ([A-Za-z]+ [0-9]{1,2}), at ([0-9]{1,2}(?::[0-9]{2})?) ([ap])[.]m[.]\s+PT",
+            article.get_text(" ", strip=True))
+        if published is None or announcement is None:
+            continue
+        published_date = datetime.strptime(published.get_text(strip=True), "%B %d, %Y").date()
+        local = datetime.strptime(f"{announcement[1]}, {published_date.year}", "%B %d, %Y").date()
+        if local < published_date:
+            local = local.replace(year=local.year + 1)
+        if today <= local <= end:
+            raw_time = announcement[2] if ":" in announcement[2] else announcement[2] + ":00"
+            call_time = datetime.strptime(raw_time + announcement[3].upper() + "M", "%I:%M%p")
+            items.append(dict(date=local.isoformat(), time=call_time.strftime("%H:%M") + " PT",
+                              title="NVDA 決算説明会", category="決算", region="米国",
+                              detail="NVIDIA公式発表 · 説明会の現地時刻", url=url))
+    return items
+
+
 def attach_fomc_results(events, news, start):
     for item in news:
         if not re.fullmatch(r"https://www\.federalreserve\.gov/newsevents/pressreleases/monetary\d{8}a\.htm", item["url"]):
@@ -607,7 +636,7 @@ def main():
     prior_month = (start - timedelta(days=1)).replace(day=1)
     events = economy(prior_month - timedelta(days=1), end) + holidays(start, end)
     issuer_status = {}
-    for symbol, source in {"HD": issuer_earnings, "WMT": walmart_earnings}.items():
+    for symbol, source in {"HD": issuer_earnings, "WMT": walmart_earnings, "NVDA": nvidia_earnings}.items():
         try:
             rows = source(now.astimezone(ZoneInfo("America/New_York")).date(), end)
             events.extend(rows)
