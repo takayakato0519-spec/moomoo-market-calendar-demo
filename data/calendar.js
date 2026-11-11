@@ -160,9 +160,28 @@ window.MARKET_CALENDAR = {
             "change": null,
             "firstObserved": "7.3%",
             "revisions": []
+          },
+          {
+            "label": "売上高",
+            "current": "1756.84億ドル",
+            "previous": null,
+            "change": null
+          },
+          {
+            "label": "純利益",
+            "current": "53.30億ドル",
+            "previous": null,
+            "change": null
+          },
+          {
+            "label": "希薄化後EPS",
+            "current": "0.67ドル",
+            "previous": null,
+            "change": null
           }
         ],
-        "consensusAvailable": false
+        "consensusAvailable": false,
+        "filingUrl": "https://stock.walmart.com/sec-filings/all-sec-filings/content/0000104169-26-000102/wmt-20260430.htm"
       }
     },
     {
@@ -330,9 +349,28 @@ window.MARKET_CALENDAR = {
             "change": "-1.4ポイント",
             "firstObserved": "5.9%",
             "revisions": []
+          },
+          {
+            "label": "売上高",
+            "current": "1861.00億ドル",
+            "previous": "1756.84億ドル",
+            "change": "+104.16億ドル"
+          },
+          {
+            "label": "純利益",
+            "current": "63.66億ドル",
+            "previous": "53.30億ドル",
+            "change": "+10.36億ドル"
+          },
+          {
+            "label": "希薄化後EPS",
+            "current": "0.80ドル",
+            "previous": "0.67ドル",
+            "change": "+0.13ドル"
           }
         ],
-        "consensusAvailable": false
+        "consensusAvailable": false,
+        "filingUrl": "https://stock.walmart.com/sec-filings/all-sec-filings/content/0000104169-26-000154/wmt-20260731.htm"
       }
     },
     {

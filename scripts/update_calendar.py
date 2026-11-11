@@ -598,6 +598,49 @@ def compare_gdp_estimates(events):
             metric["initialRelease"] = first[key]
 
 
+def filing_comparison(quarters, index):
+    quarter = quarters[index]
+    prior = quarters[index + 1] if index + 1 < len(quarters) else {}
+    if prior and not 75 <= (date.fromisoformat(quarter["period"]) - date.fromisoformat(prior["period"])).days <= 105:
+        prior = {}
+    metrics = []
+    for key, label, scale, suffix in (("revenue", "売上高", 1e8, "億ドル"),
+                                       ("netIncome", "純利益", 1e8, "億ドル"),
+                                       ("eps", "希薄化後EPS", 1, "ドル")):
+        current = quarter.get(key)
+        previous = prior.get(key)
+        if current is None:
+            continue
+        change = (current - previous) / scale if previous is not None else None
+        metrics.append(dict(label=label, current=f"{current / scale:.2f}{suffix}",
+                            previous=f"{previous / scale:.2f}{suffix}" if previous is not None else None,
+                            change=f"{change:+.2f}{suffix}" if change is not None else None))
+    return metrics
+
+
+def add_walmart_filing_metrics(events, companies):
+    quarters = next((company["quarters"] for company in companies if company["symbol"] == "WMT"), [])
+    for event in events:
+        result = event.get("result")
+        if event["title"] != "WMT 決算発表" or not result:
+            continue
+        release = re.search(r"/walmart-releases-q([1-4])-fy([0-9]{2})-earnings", result["url"])
+        if not release:
+            continue
+        fiscal_quarter, fiscal_year = map(int, release.groups())
+        period_month = (4, 7, 10, 1)[fiscal_quarter - 1]
+        period_year = 2000 + fiscal_year - (fiscal_quarter != 4)
+        for index, quarter in enumerate(quarters):
+            period = date.fromisoformat(quarter["period"])
+            if (period.year, period.month) != (period_year, period_month):
+                continue
+            metrics = filing_comparison(quarters, index)
+            labels = {metric["label"] for metric in metrics}
+            result["metrics"] = [metric for metric in result.get("metrics", []) if metric["label"] not in labels] + metrics
+            result["filingUrl"] = quarter["url"]
+            break
+
+
 def add_issuer_release_events(events, companies, today):
     cutoff = (today - timedelta(days=220)).isoformat()
     for company in companies:
@@ -609,21 +652,7 @@ def add_issuer_release_events(events, companies, today):
             title = f"{symbol} 決算発表"
             if any(row["date"] == day and row["title"] == title for row in events):
                 continue
-            prior = company["quarters"][index + 1] if index + 1 < len(company["quarters"]) else {}
-            if prior and not 75 <= (date.fromisoformat(quarter["period"]) - date.fromisoformat(prior["period"])).days <= 105:
-                prior = {}
-            metrics = []
-            for key, label, scale, suffix in (("revenue", "売上高", 1e8, "億ドル"),
-                                               ("netIncome", "純利益", 1e8, "億ドル"),
-                                               ("eps", "希薄化後EPS", 1, "ドル")):
-                current = quarter.get(key)
-                previous = prior.get(key)
-                if current is None:
-                    continue
-                change = (current - previous) / scale if previous is not None else None
-                metrics.append(dict(label=label, current=f"{current / scale:.2f}{suffix}",
-                                    previous=f"{previous / scale:.2f}{suffix}" if previous is not None else None,
-                                    change=f"{change:+.2f}{suffix}" if change is not None else None))
+            metrics = filing_comparison(company["quarters"], index)
             url = quarter["releaseUrl"]
             events.append(dict(date=day, time="", title=title, category="決算", region="米国",
                                detail="企業公式IR・現地日付", url=url,
@@ -666,6 +695,7 @@ def main():
         previous = {}
     fundamentals = company_fundamentals(fetch, now.date(), previous.get("fundamentals", []))
     add_issuer_release_events(events, fundamentals, now.date())
+    add_walmart_filing_metrics(events, fundamentals)
     issuer_news = []
     for event in events:
         result = event.get("result")
