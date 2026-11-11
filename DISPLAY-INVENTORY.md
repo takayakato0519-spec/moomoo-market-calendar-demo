@@ -37,5 +37,5 @@
 ## 追加公開した市場画面
 
 - [米国株セクターマップ](https://takayakato0519-spec.github.io/moomoo-market-calendar-demo/sectors.html)は、S&P 500構成銘柄の騰落をTradingViewの埋め込みで表示します。
-- [米国株価指数](https://takayakato0519-spec.github.io/moomoo-market-calendar-demo/indices.html)は、S&P 500、NASDAQ 100、ダウ平均のFRED原典へのリンクを掲載します。
-- [暗号資産市場](https://takayakato0519-spec.github.io/moomoo-market-calendar-demo/crypto.html)は、TradingViewの銘柄一覧とBasisのBTC/USDT無期限先物の板ヒートマップを表示します。価格帯別の数量表は未移植です。
+- [米国株価指数](https://takayakato0519-spec.github.io/moomoo-market-calendar-demo/indices.html)は、指数連動CFDの参考チャートと、S&P 500、NASDAQ 100、ダウ平均のFRED原典へのリンクを掲載します。
+- [暗号資産市場](https://takayakato0519-spec.github.io/moomoo-market-calendar-demo/crypto.html)は、TradingViewの銘柄一覧とBasisのBTC/USDT無期限先物の板ヒートマップを表示します。価格帯別の数量表は利用者のCSVをブラウザ内で読み込みます。
