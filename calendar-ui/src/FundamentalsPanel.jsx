@@ -25,11 +25,16 @@ function quarterChange(current, previous, key) {
   return signedPercent.format((current[key] - previous[key]) / previous[key]);
 }
 
+const forecastTickers = {
+  HD: "NYSE-HD", WMT: "NASDAQ-WMT", AAPL: "NASDAQ-AAPL", MSFT: "NASDAQ-MSFT", NVDA: "NASDAQ-NVDA",
+};
+
 export function FundamentalsPanel({ companies }) {
   const [symbol, setSymbol] = useState(companies[0]?.symbol);
   const company = companies.find(row => row.symbol === symbol);
   if (!company) return <p>四半期報告書のデータを取得できていません。</p>;
   const latest = company.quarters[0];
+  const forecastTicker = forecastTickers[company.symbol];
   const outlook = latest.nextRevenueOutlook;
   const prior = company.quarters[1];
   const priorOutlook = prior?.nextRevenueOutlook;
@@ -43,6 +48,13 @@ export function FundamentalsPanel({ companies }) {
         </select></label>
       </div>
       <p className="mb-2 text-sm text-slate-700">{company.name} · {company.publisher ?? "SEC EDGAR"}の決算資料</p>
+      {forecastTicker && (
+        <p className="mb-2 text-sm">
+          <a className="text-indigo-700 underline"
+             href={`https://www.tradingview.com/symbols/${forecastTicker}/forecast-price-target/`}
+             target="_blank" rel="noopener noreferrer">市場予想・目標株価をTradingViewで確認</a>
+        </p>
+      )}
       <div className="mb-3 grid gap-2 sm:grid-cols-3">
         <MetricCard label="売上高（億ドル）" value={billions(latest.revenue)} sub={latest.period} tone="teal" />
         <MetricCard label="純利益（億ドル）" value={billions(latest.netIncome)} sub={latest.period} tone="emerald" />
