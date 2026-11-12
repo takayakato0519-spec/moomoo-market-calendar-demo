@@ -1,5 +1,5 @@
 window.MARKET_CALENDAR = {
-  "updatedAt": "2026-11-11T18:35:51+09:00",
+  "updatedAt": "2026-11-12T18:57:16+09:00",
   "coverage": [
     "2026-11-01",
     "2026-12-31"
@@ -939,22 +939,94 @@ window.MARKET_CALENDAR = {
   "analystTrends": [],
   "news": [
     {
+      "title": "[東証]監理銘柄（確認中）の指定：（株）森組",
+      "url": "https://www.jpx.co.jp/news/1023/20261112-11.html",
+      "publisher": "JPX",
+      "date": "2026-11-12T18:10:00+09:00"
+    },
+    {
+      "title": "日本銀行が保有する国債の銘柄別残高",
+      "url": "https://www.boj.or.jp/statistics/boj/other/mei/release/2026/mei261110.xlsx",
+      "publisher": "日本銀行",
+      "date": "2026-11-12T17:00:00+09:00"
+    },
+    {
+      "title": "バーゼル銀行監督委員会による「統合されたガイドライン及びサウンド・プラクティス」の最終化及び市中協議文書「技術的改訂―統合されたガイドライン及びサウンド・プラクティス」の公表について",
+      "url": "https://www.boj.or.jp/finsys/intlact_fs/kisei/kis261112a.htm",
+      "publisher": "日本銀行",
+      "date": "2026-11-12T17:00:00+09:00"
+    },
+    {
+      "title": "フェイルの発生状況（10月）",
+      "url": "https://www.boj.or.jp/statistics/set/bffail/sjgb2610.pdf",
+      "publisher": "日本銀行",
+      "date": "2026-11-12T16:30:00+09:00"
+    },
+    {
+      "title": "[東証]新規上場の承認（グロース市場）：（株）FOLIOホールディングス",
+      "url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
+      "publisher": "JPX",
+      "date": "2026-11-12T16:00:00+09:00"
+    },
+    {
+      "title": "[東証]新規上場の承認（グロース市場）：スマートニュース（株）",
+      "url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
+      "publisher": "JPX",
+      "date": "2026-11-12T16:00:00+09:00"
+    },
+    {
+      "title": "[東証]グロース市場からスタンダード市場への変更：エコモット（株）",
+      "url": "https://www.jpx.co.jp/listing/stocks/transfers/index.html",
+      "publisher": "JPX",
+      "date": "2026-11-12T16:00:00+09:00"
+    },
+    {
+      "title": "[東証]制限値幅の拡大：2銘柄",
+      "url": "https://www.jpx.co.jp/news/1030/20261112-01.html",
+      "publisher": "JPX",
+      "date": "2026-11-12T15:45:00+09:00"
+    },
+    {
+      "title": "[TOCOM]令和8年度第3回東京都グリーン水素トライアル取引（京浜島グリーン水素）の結果について",
+      "url": "https://www.jpx.co.jp/news/2040/20261112-01.html",
+      "publisher": "JPX",
+      "date": "2026-11-12T14:00:00+09:00"
+    },
+    {
+      "title": "【挨拶】浅田審議委員「わが国の経済・物価情勢と金融政策」（長崎）",
+      "url": "https://www.boj.or.jp/about/press/koen_2026/ko261112a.htm",
+      "publisher": "日本銀行",
+      "date": "2026-11-12T10:30:00+09:00"
+    },
+    {
+      "title": "営業毎旬報告（11月10日現在）",
+      "url": "https://www.boj.or.jp/statistics/boj/other/acmai/release/2026/ac261110.htm",
+      "publisher": "日本銀行",
+      "date": "2026-11-12T10:00:00+09:00"
+    },
+    {
+      "title": "企業物価指数（10月）",
+      "url": "https://www.boj.or.jp/statistics/pi/cgpi_release/cgpi2610.pdf",
+      "publisher": "日本銀行",
+      "date": "2026-11-12T08:50:00+09:00"
+    },
+    {
+      "title": "「預金者別預金」（2026年9月）等の公表について",
+      "url": "https://www.boj.or.jp/statistics/outline/notice_2026/not261112a.htm",
+      "publisher": "日本銀行",
+      "date": "2026-11-12T08:50:00+09:00"
+    },
+    {
+      "title": "[東証]監理銘柄（確認中）の指定：アイビーシー（株）",
+      "url": "https://www.jpx.co.jp/news/1023/20261111-11.html",
+      "publisher": "JPX",
+      "date": "2026-11-11T20:10:00+09:00"
+    },
+    {
       "title": "[東証]新規上場の承認（ETF）：iシェアーズ　米国成長株式 キャピタル ＆ プレミアムインカム アクティブ ETF（ブラックロック･ジャパン）",
       "url": "https://www.jpx.co.jp/news/1070/20261111.html",
       "publisher": "JPX",
       "date": "2026-11-11T16:00:00+09:00"
-    },
-    {
-      "title": "[東証]制限値幅の拡大：1銘柄",
-      "url": "https://www.jpx.co.jp/news/1030/20261111-01.html",
-      "publisher": "JPX",
-      "date": "2026-11-11T15:45:00+09:00"
-    },
-    {
-      "title": "[東証]上場廃止等の決定：（株）動力",
-      "url": "https://www.jpx.co.jp/news/1021/20261111-18.html",
-      "publisher": "JPX",
-      "date": "2026-11-11T13:15:00+09:00"
     },
     {
       "title": "マネーストック（10月）",
@@ -981,82 +1053,10 @@ window.MARKET_CALENDAR = {
       "date": "2026-11-10T23:00:00+09:00"
     },
     {
-      "title": "[東証]新規上場の承認（グロース市場）：（株）Ｂｅｙｏｎｔ",
-      "url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
-      "publisher": "JPX",
-      "date": "2026-11-10T16:00:00+09:00"
-    },
-    {
-      "title": "[東証]監理銘柄（確認中）の指定：北陸電気工業（株）",
-      "url": "https://www.jpx.co.jp/news/1023/20261110-13.html",
-      "publisher": "JPX",
-      "date": "2026-11-10T15:40:00+09:00"
-    },
-    {
-      "title": "[東証]監理銘柄（確認中）の指定：（株）加地テック",
-      "url": "https://www.jpx.co.jp/news/1023/20261110-11.html",
-      "publisher": "JPX",
-      "date": "2026-11-10T14:40:00+09:00"
-    },
-    {
-      "title": "[東証]新規上場日の初値決定前の気配運用について：（株）アイグローブ",
-      "url": "https://www.jpx.co.jp/news/1031/20261110_01.html",
-      "publisher": "JPX",
-      "date": "2026-11-10T13:00:00+09:00"
-    },
-    {
-      "title": "貸出・預金動向（10月）",
-      "url": "https://www.boj.or.jp/statistics/dl/depo/kashi/kasi2610.pdf",
-      "publisher": "日本銀行",
-      "date": "2026-11-10T08:50:00+09:00"
-    },
-    {
-      "title": "金融政策決定会合における主な意見（10月29、30日開催分）",
-      "url": "https://www.boj.or.jp/mopo/mpmsche_minu/opinion_2026/opi261030.pdf",
-      "publisher": "日本銀行",
-      "date": "2026-11-10T08:50:00+09:00"
-    },
-    {
       "title": "Monthly Wholesale Trade: Sales and Inventories",
       "url": "https://www.census.gov/wholesale/index.html",
       "publisher": "U.S. Census Bureau",
       "date": "2026-11-10T00:00:00+09:00"
-    },
-    {
-      "title": "[OSE]制限値幅の拡大：日本たばこ産業株式会社　株式に係る有価証券オプション取引",
-      "url": "https://www.jpx.co.jp/news/2020/20261109-01.html",
-      "publisher": "JPX",
-      "date": "2026-11-09T18:00:00+09:00"
-    },
-    {
-      "title": "コール市場残高（10月）",
-      "url": "https://www.boj.or.jp/statistics/market/short/call/call.xlsx",
-      "publisher": "日本銀行",
-      "date": "2026-11-09T15:00:00+09:00"
-    },
-    {
-      "title": "消費活動指数",
-      "url": "https://www.boj.or.jp/research/research_data/cai/index.htm",
-      "publisher": "日本銀行",
-      "date": "2026-11-09T14:00:00+09:00"
-    },
-    {
-      "title": "マネタリーベースと日本銀行の取引（10月）",
-      "url": "https://www.boj.or.jp/statistics/boj/other/mbt/mbt2610.pdf",
-      "publisher": "日本銀行",
-      "date": "2026-11-09T08:50:00+09:00"
-    },
-    {
-      "title": "日本銀行の対政府取引（10月）",
-      "url": "https://www.boj.or.jp/statistics/boj/other/tseifu/release/2026/seifu2610.pdf",
-      "publisher": "日本銀行",
-      "date": "2026-11-09T08:50:00+09:00"
-    },
-    {
-      "title": "オペレーション（10月）",
-      "url": "https://www.boj.or.jp/statistics/boj/fm/ope/m_release/2026/ope2610.xlsx",
-      "publisher": "日本銀行",
-      "date": "2026-11-09T08:50:00+09:00"
     },
     {
       "title": "Christine Lagarde: Interview with Yomiuri Shimbun",
