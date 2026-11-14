@@ -1,5 +1,5 @@
 window.MARKET_CALENDAR = {
-  "updatedAt": "2026-11-13T18:43:22+09:00",
+  "updatedAt": "2026-11-14T18:05:56+09:00",
   "coverage": [
     "2026-11-01",
     "2026-12-31"
@@ -581,11 +581,16 @@ window.MARKET_CALENDAR = {
         "metrics": [
           {
             "label": "PPI 前月比",
-            "current": "+1.3%",
-            "previous": "+0.5%",
+            "current": "+1.4%",
+            "previous": "+0.4%",
             "firstObserved": "+1.3%",
-            "revisions": [],
-            "change": "+0.8ポイント"
+            "revisions": [
+              {
+                "at": "2026-11-14T18:05:56+09:00",
+                "value": "+1.4%"
+              }
+            ],
+            "change": "+1ポイント"
           }
         ]
       }
@@ -816,7 +821,20 @@ window.MARKET_CALENDAR = {
       "category": "経済指標",
       "region": "米国",
       "detail": "FRED公表カレンダー",
-      "url": "https://fred.stlouisfed.org/release?rid=46"
+      "url": "https://fred.stlouisfed.org/release?rid=46",
+      "result": {
+        "url": "https://www.bls.gov/news.release/archives/ppi_11132026.htm",
+        "publishedAt": "2026-11-13T22:30:00+09:00",
+        "summary": "2026年10月分 · 最終需要・季節調整済み前月比（BLS公表系列から計算、改定を含む）",
+        "metrics": [
+          {
+            "label": "PPI 前月比",
+            "current": "+0.3%",
+            "previous": "+1.4%",
+            "change": "-1.1ポイント"
+          }
+        ]
+      }
     },
     {
       "date": "2026-11-17",
@@ -939,6 +957,24 @@ window.MARKET_CALENDAR = {
   "analystTrends": [],
   "news": [
     {
+      "title": "SEC Proposes Executive and Director Compensation Disclosure Reforms",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-114-sec-proposes-executive-director-compensation-disclosure-reforms",
+      "publisher": "SEC",
+      "date": "2026-11-14T01:57:00+09:00"
+    },
+    {
+      "title": "Hydropower generation in the Southwest fell to record lows this summer",
+      "url": "https://www.eia.gov/todayinenergy/detail.php?id=68445",
+      "publisher": "EIA",
+      "date": "2026-11-13T23:00:00+09:00"
+    },
+    {
+      "title": "[東証]監理銘柄（確認中）の指定：ワタミ（株）",
+      "url": "https://www.jpx.co.jp/news/1023/20261113-11.html",
+      "publisher": "JPX",
+      "date": "2026-11-13T20:10:00+09:00"
+    },
+    {
       "title": "[東証]監理銘柄（確認中）の指定：（株）岐阜造園",
       "url": "https://www.jpx.co.jp/news/1023/20261113-12.html",
       "publisher": "JPX",
@@ -995,12 +1031,6 @@ window.MARKET_CALENDAR = {
     {
       "title": "[東証]新規上場の承認（ETF）：iFreeETF FANG+レバレッジ（OTCスワップ型）（大和アセットマネジメント）",
       "url": "https://www.jpx.co.jp/news/1070/20261113-02.html",
-      "publisher": "JPX",
-      "date": "2026-11-13T16:00:00+09:00"
-    },
-    {
-      "title": "[東証]新規上場の承認（ETF）：半導体ブル2倍ETF（OTCスワップ型）（シンプレクス・アセット・マネジメント）",
-      "url": "https://www.jpx.co.jp/news/1070/20261113-01.html",
       "publisher": "JPX",
       "date": "2026-11-13T16:00:00+09:00"
     },
@@ -1253,18 +1283,6 @@ window.MARKET_CALENDAR = {
       "url": "https://www.sec.gov/newsroom/press-releases/2026-107-sec-fsa-hold-autumn-financial-regulatory-dialogue",
       "publisher": "SEC",
       "date": "2026-10-20T21:51:00+09:00"
-    },
-    {
-      "title": "SEC Announces Roundtable on Machine-Understandable Data in the Age of Super Intelligence",
-      "url": "https://www.sec.gov/newsroom/press-releases/2026-106-sec-announces-roundtable-machine-understandable-data-age-super-intelligence",
-      "publisher": "SEC",
-      "date": "2026-10-20T02:19:43+09:00"
-    },
-    {
-      "title": "Hybrid sales rise while battery electric sales remain lower after tax credit expiration",
-      "url": "https://www.eia.gov/todayinenergy/detail.php?id=68325",
-      "publisher": "EIA",
-      "date": "2026-10-19T23:00:00+09:00"
     },
     {
       "title": "Minutes of the Board's discount rate meetings on August 17, September 9, and September 16, 2026",
@@ -2154,10 +2172,6 @@ window.MARKET_CALENDAR = {
       "unit": "%",
       "history": [
         {
-          "date": "2026-09-29",
-          "price": 5.26
-        },
-        {
           "date": "2026-09-30",
           "price": 5.29
         },
@@ -2272,6 +2286,10 @@ window.MARKET_CALENDAR = {
         {
           "date": "2026-11-10",
           "price": 4.98
+        },
+        {
+          "date": "2026-11-12",
+          "price": 5.1
         }
       ],
       "url": "https://fred.stlouisfed.org/series/DGS10"
