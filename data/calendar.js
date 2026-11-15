@@ -1,5 +1,5 @@
 window.MARKET_CALENDAR = {
-  "updatedAt": "2026-11-14T18:05:56+09:00",
+  "updatedAt": "2026-11-15T18:37:07+09:00",
   "coverage": [
     "2026-11-01",
     "2026-12-31"
@@ -831,6 +831,8 @@ window.MARKET_CALENDAR = {
             "label": "PPI 前月比",
             "current": "+0.3%",
             "previous": "+1.4%",
+            "firstObserved": "+0.3%",
+            "revisions": [],
             "change": "-1.1ポイント"
           }
         ]
