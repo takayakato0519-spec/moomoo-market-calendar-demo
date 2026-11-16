@@ -1,5 +1,5 @@
 window.MARKET_CALENDAR = {
-  "updatedAt": "2026-11-15T18:37:07+09:00",
+  "updatedAt": "2026-11-16T18:54:39+09:00",
   "coverage": [
     "2026-11-01",
     "2026-12-31"
@@ -848,15 +848,6 @@ window.MARKET_CALENDAR = {
       "url": "https://ir.homedepot.com/events-and-presentations"
     },
     {
-      "date": "2026-11-17",
-      "time": "14:00 PT",
-      "title": "NVDA 決算説明会",
-      "category": "決算",
-      "region": "米国",
-      "detail": "NVIDIA公式発表 · 説明会の現地時刻",
-      "url": "https://nvidianews.nvidia.com/news/nvidia-sets-conference-call-for-third-quarter-financial-results-6928873"
-    },
-    {
       "date": "2026-11-19",
       "time": "",
       "title": "WMT FY2027 Q3 Earnings Release",
@@ -959,6 +950,84 @@ window.MARKET_CALENDAR = {
   "analystTrends": [],
   "news": [
     {
+      "title": "Boris Vujčić: Risks and resilience in the euro area financial system",
+      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261116~db374b56ab.en.html",
+      "publisher": "ECB",
+      "date": "2026-11-16T17:30:00+09:00"
+    },
+    {
+      "title": "バーゼル銀行監督委員会による市中協議文書「銀行勘定の金利リスクに関する追加的な第2の柱ガイダンス」の公表について",
+      "url": "https://www.boj.or.jp/finsys/intlact_fs/kisei/kis261116a.htm",
+      "publisher": "日本銀行",
+      "date": "2026-11-16T17:00:00+09:00"
+    },
+    {
+      "title": "展望レポートのハイライト （2026年10月）",
+      "url": "https://www.boj.or.jp/mopo/outlook/highlight/ten202610.htm",
+      "publisher": "日本銀行",
+      "date": "2026-11-16T17:00:00+09:00"
+    },
+    {
+      "title": "業態別の日銀当座預金残高（10月）",
+      "url": "https://www.boj.or.jp/statistics/boj/other/cabs/cabs.xlsx",
+      "publisher": "日本銀行",
+      "date": "2026-11-16T17:00:00+09:00"
+    },
+    {
+      "title": "[東証]上場廃止の決定：（株）ヒューマンアジャスト",
+      "url": "https://www.jpx.co.jp/news/1021/20261116-19.html",
+      "publisher": "JPX",
+      "date": "2026-11-16T16:15:00+09:00"
+    },
+    {
+      "title": "[東証]新規上場の承認（グロース市場）：（株）コネクティ",
+      "url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
+      "publisher": "JPX",
+      "date": "2026-11-16T16:00:00+09:00"
+    },
+    {
+      "title": "[東証]新規上場の承認（スタンダード市場）：（株）ＩＧホールディングス",
+      "url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
+      "publisher": "JPX",
+      "date": "2026-11-16T16:00:00+09:00"
+    },
+    {
+      "title": "[東証]新規上場の承認（TOKYO PRO Market）：InfiniCloud（株）",
+      "url": "https://www.jpx.co.jp/equities/products/tpm/issues/index.html",
+      "publisher": "JPX",
+      "date": "2026-11-16T16:00:00+09:00"
+    },
+    {
+      "title": "[東証]新規上場の承認（ETF）：iシェアーズ　日本株 通信サービス トップ 10 ETF （MSCI）他9銘柄（ブラックロック･ジャパン）",
+      "url": "https://www.jpx.co.jp/news/1070/20261116-03.html",
+      "publisher": "JPX",
+      "date": "2026-11-16T16:00:00+09:00"
+    },
+    {
+      "title": "[東証]新規上場の承認（ETF）：iシェアーズ　日本株 半導体メーカー トップ 10 ETF （MSCI）他9銘柄（ブラックロック･ジャパン）",
+      "url": "https://www.jpx.co.jp/news/1070/20261116-02.html",
+      "publisher": "JPX",
+      "date": "2026-11-16T16:00:00+09:00"
+    },
+    {
+      "title": "[東証]新規上場の承認（ETF）：ＭＡＸＩＳ日本国債上場投信（三菱ＵＦＪアセットマネジメント）",
+      "url": "https://www.jpx.co.jp/news/1070/20261116-01.html",
+      "publisher": "JPX",
+      "date": "2026-11-16T16:00:00+09:00"
+    },
+    {
+      "title": "[東証]制限値幅の拡大：1銘柄",
+      "url": "https://www.jpx.co.jp/news/1030/20261116-01.html",
+      "publisher": "JPX",
+      "date": "2026-11-16T15:45:00+09:00"
+    },
+    {
+      "title": "【講演】高田審議委員「わが国の経済・物価情勢と金融政策：日本のマネー・資本市場転換、山は動くか」（徳島経済同友会）",
+      "url": "https://www.boj.or.jp/about/press/koen_2026/ko261116a.htm",
+      "publisher": "日本銀行",
+      "date": "2026-11-16T13:00:00+09:00"
+    },
+    {
       "title": "SEC Proposes Executive and Director Compensation Disclosure Reforms",
       "url": "https://www.sec.gov/newsroom/press-releases/2026-114-sec-proposes-executive-director-compensation-disclosure-reforms",
       "publisher": "SEC",
@@ -971,27 +1040,9 @@ window.MARKET_CALENDAR = {
       "date": "2026-11-13T23:00:00+09:00"
     },
     {
-      "title": "[東証]監理銘柄（確認中）の指定：ワタミ（株）",
-      "url": "https://www.jpx.co.jp/news/1023/20261113-11.html",
-      "publisher": "JPX",
-      "date": "2026-11-13T20:10:00+09:00"
-    },
-    {
-      "title": "[東証]監理銘柄（確認中）の指定：（株）岐阜造園",
-      "url": "https://www.jpx.co.jp/news/1023/20261113-12.html",
-      "publisher": "JPX",
-      "date": "2026-11-13T17:10:00+09:00"
-    },
-    {
       "title": "【記者会見】浅田審議委員（長崎、11月12日分）",
       "url": "https://www.boj.or.jp/about/press/kaiken_2026/kk261113a.pdf",
       "publisher": "日本銀行",
-      "date": "2026-11-13T16:30:00+09:00"
-    },
-    {
-      "title": "[OSE]有価証券オプションの取扱い（2026年11月27日調整分）",
-      "url": "https://www.jpx.co.jp/news/2020/20261113-02.html",
-      "publisher": "JPX",
       "date": "2026-11-13T16:30:00+09:00"
     },
     {
@@ -1004,36 +1055,6 @@ window.MARKET_CALENDAR = {
       "title": "被災地金融機関を支援するための資金供給オペレーションの実施結果",
       "url": "https://www.boj.or.jp/mopo/mpmdeci/mpr_2026/mpr261113a.pdf",
       "publisher": "日本銀行",
-      "date": "2026-11-13T16:00:00+09:00"
-    },
-    {
-      "title": "[東証]新規上場の承認（プライム市場）：（株）WHI Holdings",
-      "url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
-      "publisher": "JPX",
-      "date": "2026-11-13T16:00:00+09:00"
-    },
-    {
-      "title": "[東証]新規上場の承認（グロース市場）：（株）Ｂｅｒｒｙ",
-      "url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
-      "publisher": "JPX",
-      "date": "2026-11-13T16:00:00+09:00"
-    },
-    {
-      "title": "[東証]新規上場の承認（ETF）：Ｏｎｅ ＥＴＦ 円建て社債（アセットマネジメントOne）",
-      "url": "https://www.jpx.co.jp/news/1070/20261113-04.html",
-      "publisher": "JPX",
-      "date": "2026-11-13T16:00:00+09:00"
-    },
-    {
-      "title": "[東証]新規上場の承認（ETF）：ＳＭＴ　ＥＴＦ円金利フィクスト・グリッド（１０年固定金利払い／ＯＴＣスワップ型）（三井住友トラスト・アセットマネジメント）",
-      "url": "https://www.jpx.co.jp/news/1070/20261113-03.html",
-      "publisher": "JPX",
-      "date": "2026-11-13T16:00:00+09:00"
-    },
-    {
-      "title": "[東証]新規上場の承認（ETF）：iFreeETF FANG+レバレッジ（OTCスワップ型）（大和アセットマネジメント）",
-      "url": "https://www.jpx.co.jp/news/1070/20261113-02.html",
-      "publisher": "JPX",
       "date": "2026-11-13T16:00:00+09:00"
     },
     {
@@ -1064,30 +1085,6 @@ window.MARKET_CALENDAR = {
       "url": "https://www.boj.or.jp/finsys/intlact_fs/kisei/kis261112a.htm",
       "publisher": "日本銀行",
       "date": "2026-11-12T17:00:00+09:00"
-    },
-    {
-      "title": "フェイルの発生状況（10月）",
-      "url": "https://www.boj.or.jp/statistics/set/bffail/sjgb2610.pdf",
-      "publisher": "日本銀行",
-      "date": "2026-11-12T16:30:00+09:00"
-    },
-    {
-      "title": "【挨拶】浅田審議委員「わが国の経済・物価情勢と金融政策」（長崎）",
-      "url": "https://www.boj.or.jp/about/press/koen_2026/ko261112a.htm",
-      "publisher": "日本銀行",
-      "date": "2026-11-12T10:30:00+09:00"
-    },
-    {
-      "title": "営業毎旬報告（11月10日現在）",
-      "url": "https://www.boj.or.jp/statistics/boj/other/acmai/release/2026/ac261110.htm",
-      "publisher": "日本銀行",
-      "date": "2026-11-12T10:00:00+09:00"
-    },
-    {
-      "title": "企業物価指数（10月）",
-      "url": "https://www.boj.or.jp/statistics/pi/cgpi_release/cgpi2610.pdf",
-      "publisher": "日本銀行",
-      "date": "2026-11-12T08:50:00+09:00"
     },
     {
       "title": "Philip R. Lane: The science and practice of monetary policy communication: the ECB experience",
@@ -1166,12 +1163,6 @@ window.MARKET_CALENDAR = {
       "url": "https://www.census.gov/foreign-trade/index.html",
       "publisher": "U.S. Census Bureau",
       "date": "2026-11-04T22:30:00+09:00"
-    },
-    {
-      "title": "ECB wage tracker suggests slightly higher wage growth in first three quarters of 2027 compared with the full year of 2026",
-      "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261104~caf181d7ac.en.html",
-      "publisher": "ECB",
-      "date": "2026-11-04T09:00:00+09:00"
     },
     {
       "title": "Manufacturers' Shipments, Inventories, and Orders",
@@ -2429,6 +2420,6 @@ window.MARKET_CALENDAR = {
   "issuerStatus": {
     "HD": 1,
     "WMT": 1,
-    "NVDA": 1
+    "NVDA": 0
   }
 };
