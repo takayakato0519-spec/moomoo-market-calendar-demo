@@ -1,5 +1,5 @@
 window.MARKET_CALENDAR = {
-  "updatedAt": "2026-11-16T18:54:39+09:00",
+  "updatedAt": "2026-11-17T19:50:38+09:00",
   "coverage": [
     "2026-11-01",
     "2026-12-31"
@@ -950,6 +950,42 @@ window.MARKET_CALENDAR = {
   "analystTrends": [],
   "news": [
     {
+      "title": "金融安定理事会による「クロスボーダー送金の改善に向けたG20ロードマップ：2026年統合進捗報告書」の公表について",
+      "url": "https://www.boj.or.jp/intl_finance/meeting/group/gro261117a.htm",
+      "publisher": "日本銀行",
+      "date": "2026-11-17T17:00:00+09:00"
+    },
+    {
+      "title": "[東証]市場区分の変更日の決定（グロース市場からプライム市場）：（株）ノースサンド",
+      "url": "https://www.jpx.co.jp/listing/stocks/transfers/index.html",
+      "publisher": "JPX",
+      "date": "2026-11-17T17:00:00+09:00"
+    },
+    {
+      "title": "[東証]新規上場の承認（TOKYO PRO Market）：（株）Ｇｉｎｚａ",
+      "url": "https://www.jpx.co.jp/equities/products/tpm/issues/index.html",
+      "publisher": "JPX",
+      "date": "2026-11-17T16:00:00+09:00"
+    },
+    {
+      "title": "[東証]制限値幅の拡大：1銘柄",
+      "url": "https://www.jpx.co.jp/news/1030/20261117-01.html",
+      "publisher": "JPX",
+      "date": "2026-11-17T15:45:00+09:00"
+    },
+    {
+      "title": "「貸出先別貸出金」（2026年9月）等の公表について",
+      "url": "https://www.boj.or.jp/statistics/outline/notice_2026/not261117a.htm",
+      "publisher": "日本銀行",
+      "date": "2026-11-17T08:50:00+09:00"
+    },
+    {
+      "title": "Frank Elderson: Smart supervision for small banks",
+      "url": "https://www.ecb.europa.eu//press/inter/date/2026/html/ecb.in261116_1~11dd7f62af.en.html",
+      "publisher": "ECB",
+      "date": "2026-11-16T22:00:00+09:00"
+    },
+    {
       "title": "Boris Vujčić: Risks and resilience in the euro area financial system",
       "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261116~db374b56ab.en.html",
       "publisher": "ECB",
@@ -1002,24 +1038,6 @@ window.MARKET_CALENDAR = {
       "url": "https://www.jpx.co.jp/news/1070/20261116-03.html",
       "publisher": "JPX",
       "date": "2026-11-16T16:00:00+09:00"
-    },
-    {
-      "title": "[東証]新規上場の承認（ETF）：iシェアーズ　日本株 半導体メーカー トップ 10 ETF （MSCI）他9銘柄（ブラックロック･ジャパン）",
-      "url": "https://www.jpx.co.jp/news/1070/20261116-02.html",
-      "publisher": "JPX",
-      "date": "2026-11-16T16:00:00+09:00"
-    },
-    {
-      "title": "[東証]新規上場の承認（ETF）：ＭＡＸＩＳ日本国債上場投信（三菱ＵＦＪアセットマネジメント）",
-      "url": "https://www.jpx.co.jp/news/1070/20261116-01.html",
-      "publisher": "JPX",
-      "date": "2026-11-16T16:00:00+09:00"
-    },
-    {
-      "title": "[東証]制限値幅の拡大：1銘柄",
-      "url": "https://www.jpx.co.jp/news/1030/20261116-01.html",
-      "publisher": "JPX",
-      "date": "2026-11-16T15:45:00+09:00"
     },
     {
       "title": "【講演】高田審議委員「わが国の経済・物価情勢と金融政策：日本のマネー・資本市場転換、山は動くか」（徳島経済同友会）",
@@ -1075,18 +1093,6 @@ window.MARKET_CALENDAR = {
       "date": "2026-11-12T23:00:00+09:00"
     },
     {
-      "title": "日本銀行が保有する国債の銘柄別残高",
-      "url": "https://www.boj.or.jp/statistics/boj/other/mei/release/2026/mei261110.xlsx",
-      "publisher": "日本銀行",
-      "date": "2026-11-12T17:00:00+09:00"
-    },
-    {
-      "title": "バーゼル銀行監督委員会による「統合されたガイドライン及びサウンド・プラクティス」の最終化及び市中協議文書「技術的改訂―統合されたガイドライン及びサウンド・プラクティス」の公表について",
-      "url": "https://www.boj.or.jp/finsys/intlact_fs/kisei/kis261112a.htm",
-      "publisher": "日本銀行",
-      "date": "2026-11-12T17:00:00+09:00"
-    },
-    {
       "title": "Philip R. Lane: The science and practice of monetary policy communication: the ECB experience",
       "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261110_1~9725b7aa07.en.html",
       "publisher": "ECB",
@@ -1139,12 +1145,6 @@ window.MARKET_CALENDAR = {
       "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261105_1~5e97d9d5a0.en.html",
       "publisher": "ECB",
       "date": "2026-11-05T17:00:00+09:00"
-    },
-    {
-      "title": "Piero Cipollone: Shaping the future of money",
-      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261105~6495a0df6f.en.html",
-      "publisher": "ECB",
-      "date": "2026-11-05T16:30:00+09:00"
     },
     {
       "title": "SEC Adopts Amendments to Update Definitions of Small Entity for Investment Companies and Investment Advisers",
@@ -2037,22 +2037,6 @@ window.MARKET_CALENDAR = {
       "unit": "円／ドル",
       "history": [
         {
-          "date": "2026-09-25",
-          "price": 157.18
-        },
-        {
-          "date": "2026-09-28",
-          "price": 157.44
-        },
-        {
-          "date": "2026-09-29",
-          "price": 157.5
-        },
-        {
-          "date": "2026-09-30",
-          "price": 157.25
-        },
-        {
           "date": "2026-10-01",
           "price": 157.63
         },
@@ -2155,6 +2139,22 @@ window.MARKET_CALENDAR = {
         {
           "date": "2026-11-06",
           "price": 158.23
+        },
+        {
+          "date": "2026-11-09",
+          "price": 157.99
+        },
+        {
+          "date": "2026-11-10",
+          "price": 158.76
+        },
+        {
+          "date": "2026-11-12",
+          "price": 159.6
+        },
+        {
+          "date": "2026-11-13",
+          "price": 159.93
         }
       ],
       "url": "https://fred.stlouisfed.org/series/DEXJPUS"
@@ -2164,10 +2164,6 @@ window.MARKET_CALENDAR = {
       "name": "米国10年国債利回り",
       "unit": "%",
       "history": [
-        {
-          "date": "2026-09-30",
-          "price": 5.29
-        },
         {
           "date": "2026-10-01",
           "price": 5.24
@@ -2283,6 +2279,10 @@ window.MARKET_CALENDAR = {
         {
           "date": "2026-11-12",
           "price": 5.1
+        },
+        {
+          "date": "2026-11-13",
+          "price": 5.15
         }
       ],
       "url": "https://fred.stlouisfed.org/series/DGS10"
@@ -2292,22 +2292,6 @@ window.MARKET_CALENDAR = {
       "name": "FRB貿易加重ドル指数",
       "unit": "指数（2006年1月＝100）",
       "history": [
-        {
-          "date": "2026-09-25",
-          "price": 120.33
-        },
-        {
-          "date": "2026-09-28",
-          "price": 120.6958
-        },
-        {
-          "date": "2026-09-29",
-          "price": 121.0296
-        },
-        {
-          "date": "2026-09-30",
-          "price": 120.9693
-        },
         {
           "date": "2026-10-01",
           "price": 121.7882
@@ -2411,6 +2395,22 @@ window.MARKET_CALENDAR = {
         {
           "date": "2026-11-06",
           "price": 121.8803
+        },
+        {
+          "date": "2026-11-09",
+          "price": 121.6623
+        },
+        {
+          "date": "2026-11-10",
+          "price": 122.1143
+        },
+        {
+          "date": "2026-11-12",
+          "price": 122.5433
+        },
+        {
+          "date": "2026-11-13",
+          "price": 122.6503
         }
       ],
       "url": "https://fred.stlouisfed.org/series/DTWEXBGS"
