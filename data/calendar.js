@@ -1,5 +1,5 @@
 window.MARKET_CALENDAR = {
-  "updatedAt": "2026-11-17T19:50:38+09:00",
+  "updatedAt": "2026-11-18T19:20:59+09:00",
   "coverage": [
     "2026-11-01",
     "2026-12-31"
@@ -840,12 +840,66 @@ window.MARKET_CALENDAR = {
     },
     {
       "date": "2026-11-17",
-      "time": "09:00 ET",
+      "time": "",
       "title": "HD 決算発表",
       "category": "決算",
       "region": "米国",
-      "detail": "Home Depot公式IR · 取引所の現地日付",
-      "url": "https://ir.homedepot.com/events-and-presentations"
+      "detail": "企業公式IR",
+      "url": "https://ir.homedepot.com/news-releases/2026/11-17-2026-110221331",
+      "result": {
+        "url": "https://ir.homedepot.com/news-releases/2026/11-17-2026-110221331",
+        "publishedAt": "2026-11-17",
+        "summary": "売上高 434億ドル・希薄化後EPS 3.72ドル",
+        "metrics": [
+          {
+            "label": "売上高",
+            "current": "434億ドル",
+            "previous": "479億ドル",
+            "change": "-45億ドル"
+          },
+          {
+            "label": "希薄化後EPS",
+            "current": "3.72ドル",
+            "previous": "4.79ドル",
+            "change": "-1.07ドル"
+          }
+        ],
+        "consensusAvailable": false
+      }
+    },
+    {
+      "date": "2026-11-17",
+      "time": "",
+      "title": "NVDA 決算発表",
+      "category": "決算",
+      "region": "米国",
+      "detail": "企業公式IR・現地日付",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2027",
+      "result": {
+        "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2027",
+        "publishedAt": "2026-11-17",
+        "summary": "2026-10-25終了四半期",
+        "metrics": [
+          {
+            "label": "売上高",
+            "current": "1.16億ドル",
+            "previous": "962.21億ドル",
+            "change": "-961.05億ドル"
+          },
+          {
+            "label": "純利益",
+            "current": "0.65億ドル",
+            "previous": "596.88億ドル",
+            "change": "-596.23億ドル"
+          },
+          {
+            "label": "希薄化後EPS",
+            "current": "2.70ドル",
+            "previous": "2.46ドル",
+            "change": "+0.24ドル"
+          }
+        ]
+      }
     },
     {
       "date": "2026-11-19",
@@ -950,6 +1004,78 @@ window.MARKET_CALENDAR = {
   "analystTrends": [],
   "news": [
     {
+      "title": "Boris Vujčić: Financial Stability Review - November 2026",
+      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261118~86f1e8147e.en.pdf",
+      "publisher": "ECB",
+      "date": "2026-11-18T18:00:00+09:00"
+    },
+    {
+      "title": "Risks from AI valuations, fiscal imbalances and geoeconomic tensions weigh on financial stability outlook",
+      "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261118~83c5c60158.en.html",
+      "publisher": "ECB",
+      "date": "2026-11-18T18:00:00+09:00"
+    },
+    {
+      "title": "金融安定理事会による本会合議事要旨の公表について",
+      "url": "https://www.boj.or.jp/intl_finance/meeting/group/gro261118a.htm",
+      "publisher": "日本銀行",
+      "date": "2026-11-18T17:00:00+09:00"
+    },
+    {
+      "title": "[OSE]有価証券オプションの調整後の権利行使価格：2026年11月19日調整分",
+      "url": "https://www.jpx.co.jp/news/2020/20261118-01.html",
+      "publisher": "JPX",
+      "date": "2026-11-18T16:45:00+09:00"
+    },
+    {
+      "title": "[東証]新規上場の承認（グロース市場）：（株）GROWTH VERSE",
+      "url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
+      "publisher": "JPX",
+      "date": "2026-11-18T16:00:00+09:00"
+    },
+    {
+      "title": "[東証]新規上場の承認（スタンダード市場）：ユニテックフーズ（株）",
+      "url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
+      "publisher": "JPX",
+      "date": "2026-11-18T16:00:00+09:00"
+    },
+    {
+      "title": "[東証]新規上場の承認（TOKYO PRO-BOND Market）：独立行政法人　国際協力機構　総額100億円の債券",
+      "url": "https://www.jpx.co.jp/news/1070/20261118-51.html",
+      "publisher": "JPX",
+      "date": "2026-11-18T16:00:00+09:00"
+    },
+    {
+      "title": "市場レベルBCP・3市場合同訓練を実施",
+      "url": "https://www.boj.or.jp/about/bcp/fin_bcp/fbcp261118a.htm",
+      "publisher": "日本銀行",
+      "date": "2026-11-18T10:00:00+09:00"
+    },
+    {
+      "title": "Philip R. Lane: The practice and science of monetary policy communication: the ECB experience",
+      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261117~7f5d3b1a0e.en.pdf",
+      "publisher": "ECB",
+      "date": "2026-11-18T03:30:00+09:00"
+    },
+    {
+      "title": "Manufacturing and Trade Inventories and Sales",
+      "url": "https://www.census.gov/mtis/index.html",
+      "publisher": "U.S. Census Bureau",
+      "date": "2026-11-18T00:00:00+09:00"
+    },
+    {
+      "title": "How does EIA account for small differences between energy supply and demand data?",
+      "url": "https://www.eia.gov/todayinenergy/detail.php?id=68464",
+      "publisher": "EIA",
+      "date": "2026-11-17T23:00:00+09:00"
+    },
+    {
+      "title": "Advance Monthly Sales for Retail and Food Services",
+      "url": "https://www.census.gov/retail/index.html",
+      "publisher": "U.S. Census Bureau",
+      "date": "2026-11-17T22:30:00+09:00"
+    },
+    {
       "title": "金融安定理事会による「クロスボーダー送金の改善に向けたG20ロードマップ：2026年統合進捗報告書」の公表について",
       "url": "https://www.boj.or.jp/intl_finance/meeting/group/gro261117a.htm",
       "publisher": "日本銀行",
@@ -978,6 +1104,18 @@ window.MARKET_CALENDAR = {
       "url": "https://www.boj.or.jp/statistics/outline/notice_2026/not261117a.htm",
       "publisher": "日本銀行",
       "date": "2026-11-17T08:50:00+09:00"
+    },
+    {
+      "title": "HD 決算発表 · 売上高 434億ドル・希薄化後EPS 3.72ドル",
+      "url": "https://ir.homedepot.com/news-releases/2026/11-17-2026-110221331",
+      "date": "2026-11-17",
+      "publisher": "Home Depot公式IR"
+    },
+    {
+      "title": "NVDA 決算発表 · 2026-10-25終了四半期",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2027",
+      "date": "2026-11-17",
+      "publisher": "NVIDIA公式Newsroom"
     },
     {
       "title": "Frank Elderson: Smart supervision for small banks",
@@ -1016,30 +1154,6 @@ window.MARKET_CALENDAR = {
       "date": "2026-11-16T16:15:00+09:00"
     },
     {
-      "title": "[東証]新規上場の承認（グロース市場）：（株）コネクティ",
-      "url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
-      "publisher": "JPX",
-      "date": "2026-11-16T16:00:00+09:00"
-    },
-    {
-      "title": "[東証]新規上場の承認（スタンダード市場）：（株）ＩＧホールディングス",
-      "url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
-      "publisher": "JPX",
-      "date": "2026-11-16T16:00:00+09:00"
-    },
-    {
-      "title": "[東証]新規上場の承認（TOKYO PRO Market）：InfiniCloud（株）",
-      "url": "https://www.jpx.co.jp/equities/products/tpm/issues/index.html",
-      "publisher": "JPX",
-      "date": "2026-11-16T16:00:00+09:00"
-    },
-    {
-      "title": "[東証]新規上場の承認（ETF）：iシェアーズ　日本株 通信サービス トップ 10 ETF （MSCI）他9銘柄（ブラックロック･ジャパン）",
-      "url": "https://www.jpx.co.jp/news/1070/20261116-03.html",
-      "publisher": "JPX",
-      "date": "2026-11-16T16:00:00+09:00"
-    },
-    {
       "title": "【講演】高田審議委員「わが国の経済・物価情勢と金融政策：日本のマネー・資本市場転換、山は動くか」（徳島経済同友会）",
       "url": "https://www.boj.or.jp/about/press/koen_2026/ko261116a.htm",
       "publisher": "日本銀行",
@@ -1058,22 +1172,10 @@ window.MARKET_CALENDAR = {
       "date": "2026-11-13T23:00:00+09:00"
     },
     {
-      "title": "【記者会見】浅田審議委員（長崎、11月12日分）",
-      "url": "https://www.boj.or.jp/about/press/kaiken_2026/kk261113a.pdf",
-      "publisher": "日本銀行",
-      "date": "2026-11-13T16:30:00+09:00"
-    },
-    {
       "title": "Isabel Schnabel: Made in Europe",
       "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261113~3883f1f187.en.html",
       "publisher": "ECB",
       "date": "2026-11-13T16:20:00+09:00"
-    },
-    {
-      "title": "被災地金融機関を支援するための資金供給オペレーションの実施結果",
-      "url": "https://www.boj.or.jp/mopo/mpmdeci/mpr_2026/mpr261113a.pdf",
-      "publisher": "日本銀行",
-      "date": "2026-11-13T16:00:00+09:00"
     },
     {
       "title": "Federal Reserve announces revised tentative schedule of Federal Open Market Committee meetings in 2027",
@@ -1117,34 +1219,16 @@ window.MARKET_CALENDAR = {
       "date": "2026-11-10T00:00:00+09:00"
     },
     {
-      "title": "Christine Lagarde: Interview with Yomiuri Shimbun",
-      "url": "https://www.ecb.europa.eu//press/inter/date/2026/html/ecb.in261107~e7b86fc4ce.en.html",
-      "publisher": "ECB",
-      "date": "2026-11-07T23:00:00+09:00"
-    },
-    {
       "title": "U.S. crude oil imports from Venezuela in July were highest since 2017",
       "url": "https://www.eia.gov/todayinenergy/detail.php?id=68425",
       "publisher": "EIA",
       "date": "2026-11-06T23:00:00+09:00"
     },
     {
-      "title": "ECB publishes consolidated banking data for end-June 2026",
-      "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261106~356f2fc73a.en.html",
-      "publisher": "ECB",
-      "date": "2026-11-06T18:00:00+09:00"
-    },
-    {
       "title": "Refineries have shifted production away from gasoline to middle distillates",
       "url": "https://www.eia.gov/todayinenergy/detail.php?id=68424",
       "publisher": "EIA",
       "date": "2026-11-05T23:00:00+09:00"
-    },
-    {
-      "title": "Isabel Schnabel: Navigating stormy waters: reflections on monetary policy",
-      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261105_1~5e97d9d5a0.en.html",
-      "publisher": "ECB",
-      "date": "2026-11-05T17:00:00+09:00"
     },
     {
       "title": "SEC Adopts Amendments to Update Definitions of Small Entity for Investment Companies and Investment Advisers",
@@ -1236,18 +1320,6 @@ window.MARKET_CALENDAR = {
       "date": "2026-10-28T23:00:00+09:00"
     },
     {
-      "title": "Rental Vacancy Rate",
-      "url": "https://www.census.gov/housing/hvs/",
-      "publisher": "U.S. Census Bureau",
-      "date": "2026-10-28T23:00:00+09:00"
-    },
-    {
-      "title": "Advance U.S. International Trade in Goods",
-      "url": "https://www.census.gov/econ/indicators/index.html",
-      "publisher": "U.S. Census Bureau",
-      "date": "2026-10-28T21:30:00+09:00"
-    },
-    {
       "title": "MSFT 決算発表 · 2026-09-30終了四半期",
       "url": "https://www.microsoft.com/en-us/investor/earnings/fy-2027-q1/press-release-webcast",
       "date": "2026-10-28",
@@ -1258,12 +1330,6 @@ window.MARKET_CALENDAR = {
       "url": "https://www.sec.gov/newsroom/press-releases/2026-109-sec-announces-fiscal-year-2027-examination-priorities",
       "publisher": "SEC",
       "date": "2026-10-23T23:10:00+09:00"
-    },
-    {
-      "title": "U.S. refineries have been running at very high rates in 2026",
-      "url": "https://www.eia.gov/todayinenergy/detail.php?id=68344",
-      "publisher": "EIA",
-      "date": "2026-10-22T23:00:00+09:00"
     },
     {
       "title": "SEC and AMF Announce Supervisory MOU To Enhance Cooperation for Investment Advisers and Investment Service Providers",
@@ -1590,6 +1656,19 @@ window.MARKET_CALENDAR = {
       "publisher": "NVIDIA公式Newsroom",
       "quarters": [
         {
+          "period": "2026-10-25",
+          "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2027",
+          "releaseUrl": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2027",
+          "releaseDate": "2026-11-17",
+          "revenue": 115800000.0,
+          "netIncome": 65300000.0,
+          "eps": 2.7,
+          "nextRevenueOutlook": {
+            "midpoint": 130000000000.0,
+            "tolerance": 0.03
+          }
+        },
+        {
           "period": "2026-07-26",
           "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
           "releaseUrl": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
@@ -1625,19 +1704,6 @@ window.MARKET_CALENDAR = {
           "eps": 1.76,
           "nextRevenueOutlook": {
             "midpoint": 78000000000.0,
-            "tolerance": 0.02
-          }
-        },
-        {
-          "period": "2025-10-26",
-          "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2026",
-          "releaseUrl": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2026",
-          "releaseDate": "2025-11-19",
-          "revenue": 57006000000.0,
-          "netIncome": 31910000000.0,
-          "eps": 1.3,
-          "nextRevenueOutlook": {
-            "midpoint": 65000000000.0,
             "tolerance": 0.02
           }
         }
@@ -2165,10 +2231,6 @@ window.MARKET_CALENDAR = {
       "unit": "%",
       "history": [
         {
-          "date": "2026-10-01",
-          "price": 5.24
-        },
-        {
           "date": "2026-10-02",
           "price": 5.28
         },
@@ -2283,6 +2345,10 @@ window.MARKET_CALENDAR = {
         {
           "date": "2026-11-13",
           "price": 5.15
+        },
+        {
+          "date": "2026-11-16",
+          "price": 5.12
         }
       ],
       "url": "https://fred.stlouisfed.org/series/DGS10"
@@ -2418,7 +2484,7 @@ window.MARKET_CALENDAR = {
   ],
   "licensedData": false,
   "issuerStatus": {
-    "HD": 1,
+    "HD": 0,
     "WMT": 1,
     "NVDA": 0
   }
