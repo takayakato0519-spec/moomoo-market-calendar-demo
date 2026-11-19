@@ -1,5 +1,5 @@
 window.MARKET_CALENDAR = {
-  "updatedAt": "2026-11-18T19:20:59+09:00",
+  "updatedAt": "2026-11-19T19:29:36+09:00",
   "coverage": [
     "2026-11-01",
     "2026-12-31"
@@ -855,13 +855,17 @@ window.MARKET_CALENDAR = {
             "label": "売上高",
             "current": "434億ドル",
             "previous": "479億ドル",
-            "change": "-45億ドル"
+            "change": "-45億ドル",
+            "firstObserved": "434億ドル",
+            "revisions": []
           },
           {
             "label": "希薄化後EPS",
             "current": "3.72ドル",
             "previous": "4.79ドル",
-            "change": "-1.07ドル"
+            "change": "-1.07ドル",
+            "firstObserved": "3.72ドル",
+            "revisions": []
           }
         ],
         "consensusAvailable": false
@@ -1004,6 +1008,59 @@ window.MARKET_CALENDAR = {
   "analystTrends": [],
   "news": [
     {
+      "title": "[東証]上場廃止等の決定：（株）プロジェクトホールディングス",
+      "url": "https://www.jpx.co.jp/news/1023/20261119-11.html",
+      "publisher": "JPX",
+      "date": "2026-11-19T16:10:00+09:00"
+    },
+    {
+      "title": "実質輸出入の動向",
+      "url": "https://www.boj.or.jp/research/research_data/reri/index.htm",
+      "publisher": "日本銀行",
+      "date": "2026-11-19T16:00:00+09:00"
+    },
+    {
+      "title": "[東証]制限値幅の拡大：1銘柄",
+      "url": "https://www.jpx.co.jp/news/1030/20261119-01.html",
+      "publisher": "JPX",
+      "date": "2026-11-19T15:45:00+09:00"
+    },
+    {
+      "title": "[東証]新規上場日の初値決定前の気配運用について：HiJoJo Partners（株）",
+      "url": "https://www.jpx.co.jp/news/1031/20261119_01.html",
+      "publisher": "JPX",
+      "date": "2026-11-19T13:00:00+09:00"
+    },
+    {
+      "title": "【概要説明】植田総裁「通貨及び金融の調節に関する報告書」（参議院財政金融委員会）",
+      "url": "https://www.boj.or.jp/mopo/diet/d_state/dst261119a.htm",
+      "publisher": "日本銀行",
+      "date": "2026-11-19T10:13:00+09:00"
+    },
+    {
+      "title": "Minutes of the Federal Open Market Committee, October 27-28, 2026",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261118a.htm",
+      "date": "2026-11-19T04:00:00+09:00"
+    },
+    {
+      "title": "Outdoor Recreation Economic Statistics, U.S. and States, 2025",
+      "url": "https://www.bea.gov/news/2026/outdoor-recreation-economic-statistics-us-and-states-2025",
+      "date": "2026-11-19T00:00:00+09:00",
+      "publisher": "BEA"
+    },
+    {
+      "title": "U.S. natural gas inventories end injection season above normal levels",
+      "url": "https://www.eia.gov/todayinenergy/detail.php?id=68484",
+      "publisher": "EIA",
+      "date": "2026-11-18T23:00:00+09:00"
+    },
+    {
+      "title": "New Residential Construction",
+      "url": "https://www.census.gov/construction/nrc/index.html",
+      "publisher": "U.S. Census Bureau",
+      "date": "2026-11-18T22:30:00+09:00"
+    },
+    {
       "title": "Boris Vujčić: Financial Stability Review - November 2026",
       "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261118~86f1e8147e.en.pdf",
       "publisher": "ECB",
@@ -1088,18 +1145,6 @@ window.MARKET_CALENDAR = {
       "date": "2026-11-17T17:00:00+09:00"
     },
     {
-      "title": "[東証]新規上場の承認（TOKYO PRO Market）：（株）Ｇｉｎｚａ",
-      "url": "https://www.jpx.co.jp/equities/products/tpm/issues/index.html",
-      "publisher": "JPX",
-      "date": "2026-11-17T16:00:00+09:00"
-    },
-    {
-      "title": "[東証]制限値幅の拡大：1銘柄",
-      "url": "https://www.jpx.co.jp/news/1030/20261117-01.html",
-      "publisher": "JPX",
-      "date": "2026-11-17T15:45:00+09:00"
-    },
-    {
       "title": "「貸出先別貸出金」（2026年9月）等の公表について",
       "url": "https://www.boj.or.jp/statistics/outline/notice_2026/not261117a.htm",
       "publisher": "日本銀行",
@@ -1140,24 +1185,6 @@ window.MARKET_CALENDAR = {
       "url": "https://www.boj.or.jp/mopo/outlook/highlight/ten202610.htm",
       "publisher": "日本銀行",
       "date": "2026-11-16T17:00:00+09:00"
-    },
-    {
-      "title": "業態別の日銀当座預金残高（10月）",
-      "url": "https://www.boj.or.jp/statistics/boj/other/cabs/cabs.xlsx",
-      "publisher": "日本銀行",
-      "date": "2026-11-16T17:00:00+09:00"
-    },
-    {
-      "title": "[東証]上場廃止の決定：（株）ヒューマンアジャスト",
-      "url": "https://www.jpx.co.jp/news/1021/20261116-19.html",
-      "publisher": "JPX",
-      "date": "2026-11-16T16:15:00+09:00"
-    },
-    {
-      "title": "【講演】高田審議委員「わが国の経済・物価情勢と金融政策：日本のマネー・資本市場転換、山は動くか」（徳島経済同友会）",
-      "url": "https://www.boj.or.jp/about/press/koen_2026/ko261116a.htm",
-      "publisher": "日本銀行",
-      "date": "2026-11-16T13:00:00+09:00"
     },
     {
       "title": "SEC Proposes Executive and Director Compensation Disclosure Reforms",
@@ -1291,12 +1318,6 @@ window.MARKET_CALENDAR = {
       "date": "2026-10-30T01:42:37+09:00"
     },
     {
-      "title": "LNG imports make up increasing share of Colombia's natural gas supply",
-      "url": "https://www.eia.gov/todayinenergy/detail.php?id=68364",
-      "publisher": "EIA",
-      "date": "2026-10-29T23:00:00+09:00"
-    },
-    {
       "title": "GDP (Advance Estimate), 3rd Quarter 2026",
       "url": "https://www.bea.gov/news/2026/gdp-advance-estimate-3rd-quarter-2026",
       "date": "2026-10-29T21:30:00+09:00",
@@ -1312,12 +1333,6 @@ window.MARKET_CALENDAR = {
       "title": "Federal Reserve issues FOMC statement",
       "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
       "date": "2026-10-29T03:00:00+09:00"
-    },
-    {
-      "title": "Housing Vacancies and Homeownership",
-      "url": "https://www.census.gov/housing/hvs/",
-      "publisher": "U.S. Census Bureau",
-      "date": "2026-10-28T23:00:00+09:00"
     },
     {
       "title": "MSFT 決算発表 · 2026-09-30終了四半期",
@@ -1379,11 +1394,6 @@ window.MARKET_CALENDAR = {
       "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
       "date": "2026-08-26",
       "publisher": "NVIDIA公式Newsroom"
-    },
-    {
-      "title": "Minutes of the Federal Open Market Committee, July 28–29, 2026",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260819a.htm",
-      "date": "2026-08-20T03:00:00+09:00"
     },
     {
       "title": "WMT 決算発表 · 総収益 前年同期比 +5.9％",
@@ -1479,12 +1489,6 @@ window.MARKET_CALENDAR = {
       "title": "Personal Income and Outlays, January 2026",
       "url": "https://www.bea.gov/news/2026/personal-income-and-outlays-january-2026",
       "date": "2026-03-13T21:31:00+09:00",
-      "publisher": "BEA"
-    },
-    {
-      "title": "Outdoor Recreation Economic Statistics, U.S. and States, 2024",
-      "url": "https://www.bea.gov/news/2026/outdoor-recreation-economic-statistics-us-and-states-2024",
-      "date": "2026-03-06T00:00:00+09:00",
       "publisher": "BEA"
     }
   ],
@@ -1717,22 +1721,6 @@ window.MARKET_CALENDAR = {
       "unit": "ドル／バレル",
       "history": [
         {
-          "date": "2026-10-01",
-          "price": 99.77
-        },
-        {
-          "date": "2026-10-02",
-          "price": 97.89
-        },
-        {
-          "date": "2026-10-05",
-          "price": 96.13
-        },
-        {
-          "date": "2026-10-06",
-          "price": 96.24
-        },
-        {
           "date": "2026-10-07",
           "price": 95.02
         },
@@ -1835,6 +1823,22 @@ window.MARKET_CALENDAR = {
         {
           "date": "2026-11-11",
           "price": 89.62
+        },
+        {
+          "date": "2026-11-12",
+          "price": 92.3
+        },
+        {
+          "date": "2026-11-13",
+          "price": 91.96
+        },
+        {
+          "date": "2026-11-16",
+          "price": 89.24
+        },
+        {
+          "date": "2026-11-17",
+          "price": 89.53
         }
       ],
       "url": "https://fred.stlouisfed.org/series/DCOILWTICO"
@@ -1844,22 +1848,6 @@ window.MARKET_CALENDAR = {
       "name": "ブレント原油",
       "unit": "ドル／バレル",
       "history": [
-        {
-          "date": "2026-10-01",
-          "price": 114.82
-        },
-        {
-          "date": "2026-10-02",
-          "price": 135.51
-        },
-        {
-          "date": "2026-10-05",
-          "price": 125.51
-        },
-        {
-          "date": "2026-10-06",
-          "price": 125.44
-        },
         {
           "date": "2026-10-07",
           "price": 126.0
@@ -1963,6 +1951,22 @@ window.MARKET_CALENDAR = {
         {
           "date": "2026-11-11",
           "price": 92.14
+        },
+        {
+          "date": "2026-11-12",
+          "price": 95.42
+        },
+        {
+          "date": "2026-11-13",
+          "price": 95.17
+        },
+        {
+          "date": "2026-11-16",
+          "price": 92.9
+        },
+        {
+          "date": "2026-11-17",
+          "price": 92.94
         }
       ],
       "url": "https://fred.stlouisfed.org/series/DCOILBRENTEU"
@@ -1972,22 +1976,6 @@ window.MARKET_CALENDAR = {
       "name": "ヘンリーハブ天然ガス",
       "unit": "ドル／MMBtu",
       "history": [
-        {
-          "date": "2026-10-01",
-          "price": 3.0
-        },
-        {
-          "date": "2026-10-02",
-          "price": 2.9
-        },
-        {
-          "date": "2026-10-05",
-          "price": 2.96
-        },
-        {
-          "date": "2026-10-06",
-          "price": 3.03
-        },
         {
           "date": "2026-10-07",
           "price": 3.16
@@ -2091,6 +2079,22 @@ window.MARKET_CALENDAR = {
         {
           "date": "2026-11-11",
           "price": 3.0
+        },
+        {
+          "date": "2026-11-12",
+          "price": 3.0
+        },
+        {
+          "date": "2026-11-13",
+          "price": 3.26
+        },
+        {
+          "date": "2026-11-16",
+          "price": 3.2
+        },
+        {
+          "date": "2026-11-17",
+          "price": 3.1
         }
       ],
       "url": "https://fred.stlouisfed.org/series/DHHNGSP"
@@ -2231,10 +2235,6 @@ window.MARKET_CALENDAR = {
       "unit": "%",
       "history": [
         {
-          "date": "2026-10-02",
-          "price": 5.28
-        },
-        {
           "date": "2026-10-05",
           "price": 5.31
         },
@@ -2349,6 +2349,10 @@ window.MARKET_CALENDAR = {
         {
           "date": "2026-11-16",
           "price": 5.12
+        },
+        {
+          "date": "2026-11-17",
+          "price": 5.1
         }
       ],
       "url": "https://fred.stlouisfed.org/series/DGS10"
