@@ -1,5 +1,5 @@
 window.MARKET_CALENDAR = {
-  "updatedAt": "2026-11-19T19:29:36+09:00",
+  "updatedAt": "2026-11-20T19:10:38+09:00",
   "coverage": [
     "2026-11-01",
     "2026-12-31"
@@ -908,11 +908,25 @@ window.MARKET_CALENDAR = {
     {
       "date": "2026-11-19",
       "time": "",
-      "title": "WMT FY2027 Q3 Earnings Release",
+      "title": "WMT 決算発表",
       "category": "決算",
       "region": "米国",
-      "detail": "Walmart公式IR · 7:00 a.m. CT（公式イベント時刻）",
-      "url": "https://corporate.walmart.com/news/events/fy2027-q3-earnings-release"
+      "detail": "企業公式IR",
+      "url": "https://corporate.walmart.com/news/2026/11/walmart-releases-q3-fy27-earnings",
+      "result": {
+        "url": "https://corporate.walmart.com/news/2026/11/walmart-releases-q3-fy27-earnings",
+        "publishedAt": "2026-11-19",
+        "summary": "総収益 前年同期比 +5.2％",
+        "metrics": [
+          {
+            "label": "総収益 前年同期比",
+            "current": "5.2%",
+            "previous": "5.9%",
+            "change": "-0.7ポイント"
+          }
+        ],
+        "consensusAvailable": false
+      }
     },
     {
       "date": "2026-11-25",
@@ -1008,28 +1022,112 @@ window.MARKET_CALENDAR = {
   "analystTrends": [],
   "news": [
     {
-      "title": "[東証]上場廃止等の決定：（株）プロジェクトホールディングス",
-      "url": "https://www.jpx.co.jp/news/1023/20261119-11.html",
+      "title": "[東証]監理銘柄（確認中）の指定：（株）Ｉ－ｎｅ",
+      "url": "https://www.jpx.co.jp/news/1023/20261120-12.html",
       "publisher": "JPX",
-      "date": "2026-11-19T16:10:00+09:00"
+      "date": "2026-11-20T17:55:00+09:00"
+    },
+    {
+      "title": "Christine Lagarde: Acting in time",
+      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261120~e52bcc4db2.en.html",
+      "publisher": "ECB",
+      "date": "2026-11-20T17:30:00+09:00"
+    },
+    {
+      "title": "[OSE,TOCOM]デリバティブの祝日取引の非実施について（2026年11月23日）",
+      "url": "https://www.jpx.co.jp/news/2040/20261120-01.html",
+      "publisher": "JPX",
+      "date": "2026-11-20T17:01:00+09:00"
+    },
+    {
+      "title": "[JPX総研]東証REIT高利回り30指数の構成銘柄の定期入替について",
+      "url": "https://www.jpx.co.jp/news/6030/20261120-01.html",
+      "publisher": "JPX",
+      "date": "2026-11-20T16:30:00+09:00"
+    },
+    {
+      "title": "[東証]上場廃止等の決定：（株）デジタルハーツホールディングス",
+      "url": "https://www.jpx.co.jp/news/1023/20261120-11.html",
+      "publisher": "JPX",
+      "date": "2026-11-20T16:10:00+09:00"
+    },
+    {
+      "title": "（論文）家計のインフレ予想の形成メカニズム：インフレ実感とインフレ経験の役割",
+      "url": "https://www.boj.or.jp/research/wps_rev/wps_2026/wp26j12.htm",
+      "publisher": "日本銀行",
+      "date": "2026-11-20T16:00:00+09:00"
+    },
+    {
+      "title": "[東証]TOKYO PRO Marketへの上場申請：（株）ＭＡＣオフィス",
+      "url": "https://www.jpx.co.jp/equities/products/tpm/issues/index.html",
+      "publisher": "JPX",
+      "date": "2026-11-20T16:00:00+09:00"
+    },
+    {
+      "title": "[東証]プライム市場からスタンダード市場への変更：（株）日本エム・ディ・エム",
+      "url": "https://www.jpx.co.jp/listing/stocks/transfers/index.html",
+      "publisher": "JPX",
+      "date": "2026-11-20T16:00:00+09:00"
+    },
+    {
+      "title": "[東証]新規上場日の呼値の単位：ＮＥＸＴ ＦＵＮＤＳ ＣＳＯＰ 中国ＡＩ関連株（香港上場）指数連動型上場投信（コード671A）",
+      "url": "https://www.jpx.co.jp/news/1030/20261120-01.html",
+      "publisher": "JPX",
+      "date": "2026-11-20T16:00:00+09:00"
+    },
+    {
+      "title": "[OSE]指数オプション取引に係る呼値の制限値幅（2026年12月1日（取引日ベース）から適用）",
+      "url": "https://www.jpx.co.jp/markets/derivatives/price-limits/",
+      "publisher": "JPX",
+      "date": "2026-11-20T15:30:00+09:00"
+    },
+    {
+      "title": "情報セキュリティ・セミナー「モノをどう見分け、どう認証するか」開催のお知らせ",
+      "url": "https://www.boj.or.jp/about/release_2026/rel261120a.htm",
+      "publisher": "日本銀行",
+      "date": "2026-11-20T13:00:00+09:00"
+    },
+    {
+      "title": "金融研究所 英文機関誌 Monetary and Economic Studies（第44巻）",
+      "url": "https://www.boj.or.jp/research/imes/mes/mes_261120.htm",
+      "publisher": "日本銀行",
+      "date": "2026-11-20T11:00:00+09:00"
+    },
+    {
+      "title": "報告省令レート（12月分）",
+      "url": "https://www.boj.or.jp/about/services/tame/tame_rate/syorei/hou2612.htm",
+      "publisher": "日本銀行",
+      "date": "2026-11-20T09:00:00+09:00"
+    },
+    {
+      "title": "基準外国為替相場及び裁定外国為替相場（12月分）",
+      "url": "https://www.boj.or.jp/about/services/tame/tame_rate/kijun/kiju2612.htm",
+      "publisher": "日本銀行",
+      "date": "2026-11-20T09:00:00+09:00"
+    },
+    {
+      "title": "Quarterly Services Survey",
+      "url": "https://www.census.gov/services/index.html",
+      "publisher": "U.S. Census Bureau",
+      "date": "2026-11-20T00:00:00+09:00"
+    },
+    {
+      "title": "SEC: Eight Entities Used Fake Crypto Asset Trading Platforms to Steal More Than $37 Million From U.S. Investors",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-115-sec-eight-entities-used-fake-crypto-asset-trading-platforms-steal-more-37-million-us-investors",
+      "publisher": "SEC",
+      "date": "2026-11-19T23:39:02+09:00"
+    },
+    {
+      "title": "Oil flows through Middle East chokepoints increased in the third quarter",
+      "url": "https://www.eia.gov/todayinenergy/detail.php?id=",
+      "publisher": "EIA",
+      "date": "2026-11-19T23:00:00+09:00"
     },
     {
       "title": "実質輸出入の動向",
       "url": "https://www.boj.or.jp/research/research_data/reri/index.htm",
       "publisher": "日本銀行",
       "date": "2026-11-19T16:00:00+09:00"
-    },
-    {
-      "title": "[東証]制限値幅の拡大：1銘柄",
-      "url": "https://www.jpx.co.jp/news/1030/20261119-01.html",
-      "publisher": "JPX",
-      "date": "2026-11-19T15:45:00+09:00"
-    },
-    {
-      "title": "[東証]新規上場日の初値決定前の気配運用について：HiJoJo Partners（株）",
-      "url": "https://www.jpx.co.jp/news/1031/20261119_01.html",
-      "publisher": "JPX",
-      "date": "2026-11-19T13:00:00+09:00"
     },
     {
       "title": "【概要説明】植田総裁「通貨及び金融の調節に関する報告書」（参議院財政金融委員会）",
@@ -1047,6 +1145,12 @@ window.MARKET_CALENDAR = {
       "url": "https://www.bea.gov/news/2026/outdoor-recreation-economic-statistics-us-and-states-2025",
       "date": "2026-11-19T00:00:00+09:00",
       "publisher": "BEA"
+    },
+    {
+      "title": "WMT 決算発表 · 総収益 前年同期比 +5.2％",
+      "url": "https://corporate.walmart.com/news/2026/11/walmart-releases-q3-fy27-earnings",
+      "date": "2026-11-19",
+      "publisher": "Walmart公式IR"
     },
     {
       "title": "U.S. natural gas inventories end injection season above normal levels",
@@ -1079,36 +1183,6 @@ window.MARKET_CALENDAR = {
       "date": "2026-11-18T17:00:00+09:00"
     },
     {
-      "title": "[OSE]有価証券オプションの調整後の権利行使価格：2026年11月19日調整分",
-      "url": "https://www.jpx.co.jp/news/2020/20261118-01.html",
-      "publisher": "JPX",
-      "date": "2026-11-18T16:45:00+09:00"
-    },
-    {
-      "title": "[東証]新規上場の承認（グロース市場）：（株）GROWTH VERSE",
-      "url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
-      "publisher": "JPX",
-      "date": "2026-11-18T16:00:00+09:00"
-    },
-    {
-      "title": "[東証]新規上場の承認（スタンダード市場）：ユニテックフーズ（株）",
-      "url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
-      "publisher": "JPX",
-      "date": "2026-11-18T16:00:00+09:00"
-    },
-    {
-      "title": "[東証]新規上場の承認（TOKYO PRO-BOND Market）：独立行政法人　国際協力機構　総額100億円の債券",
-      "url": "https://www.jpx.co.jp/news/1070/20261118-51.html",
-      "publisher": "JPX",
-      "date": "2026-11-18T16:00:00+09:00"
-    },
-    {
-      "title": "市場レベルBCP・3市場合同訓練を実施",
-      "url": "https://www.boj.or.jp/about/bcp/fin_bcp/fbcp261118a.htm",
-      "publisher": "日本銀行",
-      "date": "2026-11-18T10:00:00+09:00"
-    },
-    {
       "title": "Philip R. Lane: The practice and science of monetary policy communication: the ECB experience",
       "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261117~7f5d3b1a0e.en.pdf",
       "publisher": "ECB",
@@ -1133,24 +1207,6 @@ window.MARKET_CALENDAR = {
       "date": "2026-11-17T22:30:00+09:00"
     },
     {
-      "title": "金融安定理事会による「クロスボーダー送金の改善に向けたG20ロードマップ：2026年統合進捗報告書」の公表について",
-      "url": "https://www.boj.or.jp/intl_finance/meeting/group/gro261117a.htm",
-      "publisher": "日本銀行",
-      "date": "2026-11-17T17:00:00+09:00"
-    },
-    {
-      "title": "[東証]市場区分の変更日の決定（グロース市場からプライム市場）：（株）ノースサンド",
-      "url": "https://www.jpx.co.jp/listing/stocks/transfers/index.html",
-      "publisher": "JPX",
-      "date": "2026-11-17T17:00:00+09:00"
-    },
-    {
-      "title": "「貸出先別貸出金」（2026年9月）等の公表について",
-      "url": "https://www.boj.or.jp/statistics/outline/notice_2026/not261117a.htm",
-      "publisher": "日本銀行",
-      "date": "2026-11-17T08:50:00+09:00"
-    },
-    {
       "title": "HD 決算発表 · 売上高 434億ドル・希薄化後EPS 3.72ドル",
       "url": "https://ir.homedepot.com/news-releases/2026/11-17-2026-110221331",
       "date": "2026-11-17",
@@ -1173,18 +1229,6 @@ window.MARKET_CALENDAR = {
       "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261116~db374b56ab.en.html",
       "publisher": "ECB",
       "date": "2026-11-16T17:30:00+09:00"
-    },
-    {
-      "title": "バーゼル銀行監督委員会による市中協議文書「銀行勘定の金利リスクに関する追加的な第2の柱ガイダンス」の公表について",
-      "url": "https://www.boj.or.jp/finsys/intlact_fs/kisei/kis261116a.htm",
-      "publisher": "日本銀行",
-      "date": "2026-11-16T17:00:00+09:00"
-    },
-    {
-      "title": "展望レポートのハイライト （2026年10月）",
-      "url": "https://www.boj.or.jp/mopo/outlook/highlight/ten202610.htm",
-      "publisher": "日本銀行",
-      "date": "2026-11-16T17:00:00+09:00"
     },
     {
       "title": "SEC Proposes Executive and Director Compensation Disclosure Reforms",
@@ -1232,12 +1276,6 @@ window.MARKET_CALENDAR = {
       "url": "https://www.sec.gov/newsroom/press-releases/2026-113-sec-announces-enforcement-annual-results-fiscal-year-2026",
       "publisher": "SEC",
       "date": "2026-11-11T01:15:35+09:00"
-    },
-    {
-      "title": "Piero Cipollone: Cash and the digital euro: two sides of the same coin",
-      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261110~9422461bad.en.html",
-      "publisher": "ECB",
-      "date": "2026-11-10T23:00:00+09:00"
     },
     {
       "title": "Monthly Wholesale Trade: Sales and Inventories",
@@ -1288,12 +1326,6 @@ window.MARKET_CALENDAR = {
       "date": "2026-11-03T23:00:00+09:00"
     },
     {
-      "title": "Construction Spending",
-      "url": "https://www.census.gov/construction/c30/c30index.html",
-      "publisher": "U.S. Census Bureau",
-      "date": "2026-11-03T00:00:00+09:00"
-    },
-    {
       "title": "AAPL 決算発表 · 2026-09-26終了四半期",
       "url": "https://www.apple.com/newsroom/2026/11/apple-reports-fourth-quarter-results/",
       "date": "2026-11-02",
@@ -1304,12 +1336,6 @@ window.MARKET_CALENDAR = {
       "url": "https://www.sec.gov/newsroom/press-releases/2026-111-sec-issues-exemptive-relief-treasury-clearing-requirements-certain-inter-affiliate-non-us-repo",
       "publisher": "SEC",
       "date": "2026-10-31T04:30:00+09:00"
-    },
-    {
-      "title": "The share of solar generation with co-located battery storage is increasing",
-      "url": "https://www.eia.gov/todayinenergy/detail.php?id=68384",
-      "publisher": "EIA",
-      "date": "2026-10-30T23:00:00+09:00"
     },
     {
       "title": "Two Entities Charged in $130 Million Fraud Scheme That Used False SEC Filings to Boost Investor Confidence",
@@ -1351,12 +1377,6 @@ window.MARKET_CALENDAR = {
       "url": "https://www.sec.gov/newsroom/press-releases/2026-108-sec-amf-announce-supervisory-mou-enhance-cooperation-investment-advisers-investment-service",
       "publisher": "SEC",
       "date": "2026-10-20T22:25:16+09:00"
-    },
-    {
-      "title": "SEC, FSA Hold Autumn Financial Regulatory Dialogue",
-      "url": "https://www.sec.gov/newsroom/press-releases/2026-107-sec-fsa-hold-autumn-financial-regulatory-dialogue",
-      "publisher": "SEC",
-      "date": "2026-10-20T21:51:00+09:00"
     },
     {
       "title": "Minutes of the Board's discount rate meetings on August 17, September 9, and September 16, 2026",
@@ -2235,10 +2255,6 @@ window.MARKET_CALENDAR = {
       "unit": "%",
       "history": [
         {
-          "date": "2026-10-05",
-          "price": 5.31
-        },
-        {
           "date": "2026-10-06",
           "price": 5.27
         },
@@ -2353,6 +2369,10 @@ window.MARKET_CALENDAR = {
         {
           "date": "2026-11-17",
           "price": 5.1
+        },
+        {
+          "date": "2026-11-18",
+          "price": 5.07
         }
       ],
       "url": "https://fred.stlouisfed.org/series/DGS10"
@@ -2489,7 +2509,7 @@ window.MARKET_CALENDAR = {
   "licensedData": false,
   "issuerStatus": {
     "HD": 0,
-    "WMT": 1,
+    "WMT": 0,
     "NVDA": 0
   }
 };
