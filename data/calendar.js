@@ -1,5 +1,5 @@
 window.MARKET_CALENDAR = {
-  "updatedAt": "2026-11-20T19:10:38+09:00",
+  "updatedAt": "2026-11-21T18:57:35+09:00",
   "coverage": [
     "2026-11-01",
     "2026-12-31"
@@ -922,7 +922,9 @@ window.MARKET_CALENDAR = {
             "label": "総収益 前年同期比",
             "current": "5.2%",
             "previous": "5.9%",
-            "change": "-0.7ポイント"
+            "change": "-0.7ポイント",
+            "firstObserved": "5.2%",
+            "revisions": []
           }
         ],
         "consensusAvailable": false
@@ -1022,6 +1024,30 @@ window.MARKET_CALENDAR = {
   "analystTrends": [],
   "news": [
     {
+      "title": "SEC Issues Proposal to Restructure the Consolidated Audit Trail",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-117-sec-issues-proposal-restructure-consolidated-audit-trail",
+      "publisher": "SEC",
+      "date": "2026-11-21T03:03:24+09:00"
+    },
+    {
+      "title": "SEC Charges Indianapolis-Based Backward Hat Capital and Its Co-Founders With $560 Million Dollar Offering Fraud and Obtains Emergency Relief",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-116-sec-charges-indianapolis-based-backward-hat-capital-its-co-founders-560-million-dollar-offering",
+      "publisher": "SEC",
+      "date": "2026-11-20T23:28:28+09:00"
+    },
+    {
+      "title": "Activities of U.S. Multinational Enterprises, 2024",
+      "url": "https://www.bea.gov/news/2026/activities-us-multinational-enterprises-2024",
+      "date": "2026-11-20T22:30:00+09:00",
+      "publisher": "BEA"
+    },
+    {
+      "title": "[東証]監理銘柄（確認中）の指定：（株）ワコム",
+      "url": "https://www.jpx.co.jp/news/1023/20261120-13.html",
+      "publisher": "JPX",
+      "date": "2026-11-20T19:50:00+09:00"
+    },
+    {
       "title": "[東証]監理銘柄（確認中）の指定：（株）Ｉ－ｎｅ",
       "url": "https://www.jpx.co.jp/news/1023/20261120-12.html",
       "publisher": "JPX",
@@ -1074,12 +1100,6 @@ window.MARKET_CALENDAR = {
       "url": "https://www.jpx.co.jp/news/1030/20261120-01.html",
       "publisher": "JPX",
       "date": "2026-11-20T16:00:00+09:00"
-    },
-    {
-      "title": "[OSE]指数オプション取引に係る呼値の制限値幅（2026年12月1日（取引日ベース）から適用）",
-      "url": "https://www.jpx.co.jp/markets/derivatives/price-limits/",
-      "publisher": "JPX",
-      "date": "2026-11-20T15:30:00+09:00"
     },
     {
       "title": "情報セキュリティ・セミナー「モノをどう見分け、どう認証するか」開催のお知らせ",
@@ -1367,18 +1387,6 @@ window.MARKET_CALENDAR = {
       "publisher": "Microsoft公式IR"
     },
     {
-      "title": "SEC Announces Fiscal Year 2027 Examination Priorities",
-      "url": "https://www.sec.gov/newsroom/press-releases/2026-109-sec-announces-fiscal-year-2027-examination-priorities",
-      "publisher": "SEC",
-      "date": "2026-10-23T23:10:00+09:00"
-    },
-    {
-      "title": "SEC and AMF Announce Supervisory MOU To Enhance Cooperation for Investment Advisers and Investment Service Providers",
-      "url": "https://www.sec.gov/newsroom/press-releases/2026-108-sec-amf-announce-supervisory-mou-enhance-cooperation-investment-advisers-investment-service",
-      "publisher": "SEC",
-      "date": "2026-10-20T22:25:16+09:00"
-    },
-    {
       "title": "Minutes of the Board's discount rate meetings on August 17, September 9, and September 16, 2026",
       "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261013a.htm",
       "date": "2026-10-14T03:00:00+09:00"
@@ -1504,12 +1512,6 @@ window.MARKET_CALENDAR = {
       "url": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q3/press-release-webcast",
       "date": "2026-04-29",
       "publisher": "Microsoft公式IR"
-    },
-    {
-      "title": "Personal Income and Outlays, January 2026",
-      "url": "https://www.bea.gov/news/2026/personal-income-and-outlays-january-2026",
-      "date": "2026-03-13T21:31:00+09:00",
-      "publisher": "BEA"
     }
   ],
   "fundamentals": [
@@ -2255,10 +2257,6 @@ window.MARKET_CALENDAR = {
       "unit": "%",
       "history": [
         {
-          "date": "2026-10-06",
-          "price": 5.27
-        },
-        {
           "date": "2026-10-07",
           "price": 5.28
         },
@@ -2373,6 +2371,10 @@ window.MARKET_CALENDAR = {
         {
           "date": "2026-11-18",
           "price": 5.07
+        },
+        {
+          "date": "2026-11-19",
+          "price": 5.04
         }
       ],
       "url": "https://fred.stlouisfed.org/series/DGS10"
