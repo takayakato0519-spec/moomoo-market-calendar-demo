@@ -1,5 +1,5 @@
 window.MARKET_CALENDAR = {
-  "updatedAt": "2026-11-22T18:55:35+09:00",
+  "updatedAt": "2026-11-23T19:54:53+09:00",
   "coverage": [
     "2026-11-01",
     "2026-12-31"
@@ -1024,6 +1024,12 @@ window.MARKET_CALENDAR = {
   "analystTrends": [],
   "news": [
     {
+      "title": "ECB expands acceptance of DLT-based assets as eligible Eurosystem collateral",
+      "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261123~76b6f57b74.en.html",
+      "publisher": "ECB",
+      "date": "2026-11-23T19:00:00+09:00"
+    },
+    {
       "title": "SEC Issues Proposal to Restructure the Consolidated Audit Trail",
       "url": "https://www.sec.gov/newsroom/press-releases/2026-117-sec-issues-proposal-restructure-consolidated-audit-trail",
       "publisher": "SEC",
@@ -1284,12 +1290,6 @@ window.MARKET_CALENDAR = {
       "url": "https://www.eia.gov/todayinenergy/detail.php?id=68444",
       "publisher": "EIA",
       "date": "2026-11-12T23:00:00+09:00"
-    },
-    {
-      "title": "Philip R. Lane: The science and practice of monetary policy communication: the ECB experience",
-      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261110_1~9725b7aa07.en.html",
-      "publisher": "ECB",
-      "date": "2026-11-11T01:45:00+09:00"
     },
     {
       "title": "SEC Announces Enforcement Annual Results for Fiscal Year 2026",
