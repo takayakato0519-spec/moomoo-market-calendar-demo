@@ -1,5 +1,5 @@
 window.MARKET_CALENDAR = {
-  "updatedAt": "2026-11-23T19:54:53+09:00",
+  "updatedAt": "2026-11-24T21:38:40+09:00",
   "coverage": [
     "2026-11-01",
     "2026-12-31"
@@ -853,22 +853,25 @@ window.MARKET_CALENDAR = {
         "metrics": [
           {
             "label": "売上高",
-            "current": "434億ドル",
-            "previous": "479億ドル",
-            "change": "-45億ドル",
-            "firstObserved": "434億ドル",
-            "revisions": []
+            "current": "433.98億ドル",
+            "previous": "478.61億ドル",
+            "change": "-44.63億ドル"
+          },
+          {
+            "label": "純利益",
+            "current": "37.13億ドル",
+            "previous": "47.66億ドル",
+            "change": "-10.53億ドル"
           },
           {
             "label": "希薄化後EPS",
             "current": "3.72ドル",
             "previous": "4.79ドル",
-            "change": "-1.07ドル",
-            "firstObserved": "3.72ドル",
-            "revisions": []
+            "change": "-1.07ドル"
           }
         ],
-        "consensusAvailable": false
+        "consensusAvailable": false,
+        "filingUrl": "https://ir.homedepot.com/~/media/Files/H/HomeDepot-IR/reports-and-presentations/quarterly-earnings/2026/hd-q3-2026-10q.pdf"
       }
     },
     {
@@ -1024,6 +1027,66 @@ window.MARKET_CALENDAR = {
   "analystTrends": [],
   "news": [
     {
+      "title": "Boris Vujčić: Resilience in an age of shocks: lessons from central and eastern Europe",
+      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261124~17928e5456.en.html",
+      "publisher": "ECB",
+      "date": "2026-11-24T20:00:00+09:00"
+    },
+    {
+      "title": "バーゼル銀行監督委員会による議事要旨の公表について",
+      "url": "https://www.boj.or.jp/finsys/intlact_fs/kisei/kis261124a.htm",
+      "publisher": "日本銀行",
+      "date": "2026-11-24T17:00:00+09:00"
+    },
+    {
+      "title": "日本銀行政策委員会月報（令和8年10月号）",
+      "url": "https://www.boj.or.jp/about/organization/policyboard/pb_geppo/pbgp2610.htm",
+      "publisher": "日本銀行",
+      "date": "2026-11-24T16:30:00+09:00"
+    },
+    {
+      "title": "[東証]スタンダード市場からプライム市場への変更：（株）ベルテクスコーポレーション",
+      "url": "https://www.jpx.co.jp/listing/stocks/transfers/index.html",
+      "publisher": "JPX",
+      "date": "2026-11-24T16:00:00+09:00"
+    },
+    {
+      "title": "[東証]新規上場の承認（ETF）：ニッセイＥＴＦ　日経高配当株３０（ニッセイアセットマネジメント）",
+      "url": "https://www.jpx.co.jp/news/1070/20261124.html",
+      "publisher": "JPX",
+      "date": "2026-11-24T16:00:00+09:00"
+    },
+    {
+      "title": "[東証]改善報告書の公衆の縦覧：（株）ＢｌｕｅＭｅｍｅ",
+      "url": "https://www.jpx.co.jp/news/1023/20261124-11.html",
+      "publisher": "JPX",
+      "date": "2026-11-24T15:30:00+09:00"
+    },
+    {
+      "title": "令和8年11月20日からの大雪に係る災害等に対する金融上の措置について（福島県）",
+      "url": "https://www.boj.or.jp/about/bcp/fso/fso261124a.pdf",
+      "publisher": "日本銀行",
+      "date": "2026-11-24T13:30:00+09:00"
+    },
+    {
+      "title": "[東証]新規上場日の初値決定前の気配運用について：（株）TOKIUM",
+      "url": "https://www.jpx.co.jp/news/1031/20261124_01.html",
+      "publisher": "JPX",
+      "date": "2026-11-24T13:00:00+09:00"
+    },
+    {
+      "title": "FSBレポ統計の日本分集計結果",
+      "url": "https://www.boj.or.jp/statistics/bis/repo/index.htm",
+      "publisher": "日本銀行",
+      "date": "2026-11-24T08:50:00+09:00"
+    },
+    {
+      "title": "Philip R. Lane: Climate change and monetary policy",
+      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261123~b5816801a0.en.pdf",
+      "publisher": "ECB",
+      "date": "2026-11-23T23:30:00+09:00"
+    },
+    {
       "title": "ECB expands acceptance of DLT-based assets as eligible Eurosystem collateral",
       "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261123~76b6f57b74.en.html",
       "publisher": "ECB",
@@ -1078,36 +1141,6 @@ window.MARKET_CALENDAR = {
       "date": "2026-11-20T16:30:00+09:00"
     },
     {
-      "title": "[東証]上場廃止等の決定：（株）デジタルハーツホールディングス",
-      "url": "https://www.jpx.co.jp/news/1023/20261120-11.html",
-      "publisher": "JPX",
-      "date": "2026-11-20T16:10:00+09:00"
-    },
-    {
-      "title": "（論文）家計のインフレ予想の形成メカニズム：インフレ実感とインフレ経験の役割",
-      "url": "https://www.boj.or.jp/research/wps_rev/wps_2026/wp26j12.htm",
-      "publisher": "日本銀行",
-      "date": "2026-11-20T16:00:00+09:00"
-    },
-    {
-      "title": "[東証]TOKYO PRO Marketへの上場申請：（株）ＭＡＣオフィス",
-      "url": "https://www.jpx.co.jp/equities/products/tpm/issues/index.html",
-      "publisher": "JPX",
-      "date": "2026-11-20T16:00:00+09:00"
-    },
-    {
-      "title": "[東証]プライム市場からスタンダード市場への変更：（株）日本エム・ディ・エム",
-      "url": "https://www.jpx.co.jp/listing/stocks/transfers/index.html",
-      "publisher": "JPX",
-      "date": "2026-11-20T16:00:00+09:00"
-    },
-    {
-      "title": "[東証]新規上場日の呼値の単位：ＮＥＸＴ ＦＵＮＤＳ ＣＳＯＰ 中国ＡＩ関連株（香港上場）指数連動型上場投信（コード671A）",
-      "url": "https://www.jpx.co.jp/news/1030/20261120-01.html",
-      "publisher": "JPX",
-      "date": "2026-11-20T16:00:00+09:00"
-    },
-    {
       "title": "情報セキュリティ・セミナー「モノをどう見分け、どう認証するか」開催のお知らせ",
       "url": "https://www.boj.or.jp/about/release_2026/rel261120a.htm",
       "publisher": "日本銀行",
@@ -1150,18 +1183,6 @@ window.MARKET_CALENDAR = {
       "date": "2026-11-19T23:00:00+09:00"
     },
     {
-      "title": "実質輸出入の動向",
-      "url": "https://www.boj.or.jp/research/research_data/reri/index.htm",
-      "publisher": "日本銀行",
-      "date": "2026-11-19T16:00:00+09:00"
-    },
-    {
-      "title": "【概要説明】植田総裁「通貨及び金融の調節に関する報告書」（参議院財政金融委員会）",
-      "url": "https://www.boj.or.jp/mopo/diet/d_state/dst261119a.htm",
-      "publisher": "日本銀行",
-      "date": "2026-11-19T10:13:00+09:00"
-    },
-    {
       "title": "Minutes of the Federal Open Market Committee, October 27-28, 2026",
       "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261118a.htm",
       "date": "2026-11-19T04:00:00+09:00"
@@ -1201,12 +1222,6 @@ window.MARKET_CALENDAR = {
       "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261118~83c5c60158.en.html",
       "publisher": "ECB",
       "date": "2026-11-18T18:00:00+09:00"
-    },
-    {
-      "title": "金融安定理事会による本会合議事要旨の公表について",
-      "url": "https://www.boj.or.jp/intl_finance/meeting/group/gro261118a.htm",
-      "publisher": "日本銀行",
-      "date": "2026-11-18T17:00:00+09:00"
     },
     {
       "title": "Philip R. Lane: The practice and science of monetary policy communication: the ECB experience",
@@ -1251,12 +1266,6 @@ window.MARKET_CALENDAR = {
       "date": "2026-11-16T22:00:00+09:00"
     },
     {
-      "title": "Boris Vujčić: Risks and resilience in the euro area financial system",
-      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261116~db374b56ab.en.html",
-      "publisher": "ECB",
-      "date": "2026-11-16T17:30:00+09:00"
-    },
-    {
       "title": "SEC Proposes Executive and Director Compensation Disclosure Reforms",
       "url": "https://www.sec.gov/newsroom/press-releases/2026-114-sec-proposes-executive-director-compensation-disclosure-reforms",
       "publisher": "SEC",
@@ -1267,12 +1276,6 @@ window.MARKET_CALENDAR = {
       "url": "https://www.eia.gov/todayinenergy/detail.php?id=68445",
       "publisher": "EIA",
       "date": "2026-11-13T23:00:00+09:00"
-    },
-    {
-      "title": "Isabel Schnabel: Made in Europe",
-      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261113~3883f1f187.en.html",
-      "publisher": "ECB",
-      "date": "2026-11-13T16:20:00+09:00"
     },
     {
       "title": "Federal Reserve announces revised tentative schedule of Federal Open Market Committee meetings in 2027",
@@ -1522,6 +1525,13 @@ window.MARKET_CALENDAR = {
       "publisher": "Home Depot公式IR",
       "quarters": [
         {
+          "period": "2026-11-01",
+          "url": "https://ir.homedepot.com/~/media/Files/H/HomeDepot-IR/reports-and-presentations/quarterly-earnings/2026/hd-q3-2026-10q.pdf",
+          "revenue": 43398000000.0,
+          "netIncome": 3713000000.0,
+          "eps": 3.72
+        },
+        {
           "period": "2026-08-02",
           "url": "https://ir.homedepot.com/~/media/Files/H/HomeDepot-IR/reports-and-presentations/quarterly-earnings/2026/hd-q2-2026-10q.pdf",
           "revenue": 47861000000.0,
@@ -1541,13 +1551,6 @@ window.MARKET_CALENDAR = {
           "revenue": 41352000000.0,
           "netIncome": 3601000000.0,
           "eps": 3.62
-        },
-        {
-          "period": "2025-08-03",
-          "url": "https://ir.homedepot.com/~/media/Files/H/HomeDepot-IR/reports-and-presentations/quarterly-earnings/2025/hd-q2-2025-10q.pdf",
-          "revenue": 45277000000.0,
-          "netIncome": 4551000000.0,
-          "eps": 4.58
         }
       ]
     },
@@ -2129,26 +2132,6 @@ window.MARKET_CALENDAR = {
       "unit": "円／ドル",
       "history": [
         {
-          "date": "2026-10-01",
-          "price": 157.63
-        },
-        {
-          "date": "2026-10-02",
-          "price": 157.81
-        },
-        {
-          "date": "2026-10-05",
-          "price": 157.97
-        },
-        {
-          "date": "2026-10-06",
-          "price": 158.12
-        },
-        {
-          "date": "2026-10-07",
-          "price": 158.11
-        },
-        {
           "date": "2026-10-08",
           "price": 158.33
         },
@@ -2247,6 +2230,26 @@ window.MARKET_CALENDAR = {
         {
           "date": "2026-11-13",
           "price": 159.93
+        },
+        {
+          "date": "2026-11-16",
+          "price": 159.65
+        },
+        {
+          "date": "2026-11-17",
+          "price": 159.27
+        },
+        {
+          "date": "2026-11-18",
+          "price": 159.25
+        },
+        {
+          "date": "2026-11-19",
+          "price": 159.76
+        },
+        {
+          "date": "2026-11-20",
+          "price": 158.76
         }
       ],
       "url": "https://fred.stlouisfed.org/series/DEXJPUS"
@@ -2256,10 +2259,6 @@ window.MARKET_CALENDAR = {
       "name": "米国10年国債利回り",
       "unit": "%",
       "history": [
-        {
-          "date": "2026-10-07",
-          "price": 5.28
-        },
         {
           "date": "2026-10-08",
           "price": 5.22
@@ -2375,6 +2374,10 @@ window.MARKET_CALENDAR = {
         {
           "date": "2026-11-19",
           "price": 5.04
+        },
+        {
+          "date": "2026-11-20",
+          "price": 4.92
         }
       ],
       "url": "https://fred.stlouisfed.org/series/DGS10"
@@ -2384,26 +2387,6 @@ window.MARKET_CALENDAR = {
       "name": "FRB貿易加重ドル指数",
       "unit": "指数（2006年1月＝100）",
       "history": [
-        {
-          "date": "2026-10-01",
-          "price": 121.7882
-        },
-        {
-          "date": "2026-10-02",
-          "price": 121.3848
-        },
-        {
-          "date": "2026-10-05",
-          "price": 121.2708
-        },
-        {
-          "date": "2026-10-06",
-          "price": 120.8976
-        },
-        {
-          "date": "2026-10-07",
-          "price": 121.2558
-        },
         {
           "date": "2026-10-08",
           "price": 121.4469
@@ -2503,6 +2486,26 @@ window.MARKET_CALENDAR = {
         {
           "date": "2026-11-13",
           "price": 122.6503
+        },
+        {
+          "date": "2026-11-16",
+          "price": 122.8617
+        },
+        {
+          "date": "2026-11-17",
+          "price": 122.6097
+        },
+        {
+          "date": "2026-11-18",
+          "price": 123.1376
+        },
+        {
+          "date": "2026-11-19",
+          "price": 123.5253
+        },
+        {
+          "date": "2026-11-20",
+          "price": 123.5978
         }
       ],
       "url": "https://fred.stlouisfed.org/series/DTWEXBGS"
