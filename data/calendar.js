@@ -1,5 +1,5 @@
 window.MARKET_CALENDAR = {
-  "updatedAt": "2026-11-24T21:38:40+09:00",
+  "updatedAt": "2026-11-25T20:28:40+09:00",
   "coverage": [
     "2026-11-01",
     "2026-12-31"
@@ -1027,22 +1027,63 @@ window.MARKET_CALENDAR = {
   "analystTrends": [],
   "news": [
     {
+      "title": "Card payments edge past cash in shops; euro area consumers want both",
+      "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261125~26d1ade228.en.html",
+      "publisher": "ECB",
+      "date": "2026-11-25T19:00:00+09:00"
+    },
+    {
+      "title": "[東証]新規上場日の呼値の単位：半導体ブル2倍ETF（OTCスワップ型）（コード682A）",
+      "url": "https://www.jpx.co.jp/news/1030/20261125-02.html",
+      "publisher": "JPX",
+      "date": "2026-11-25T16:00:00+09:00"
+    },
+    {
+      "title": "[東証]新規上場日の呼値の単位：ＳＭＴ　ＥＴＦ円金利フィクスト・グリッド（１０年固定金利払い／ＯＴＣスワップ型）（コード684A）",
+      "url": "https://www.jpx.co.jp/news/1030/20261125-04.html",
+      "publisher": "JPX",
+      "date": "2026-11-25T16:00:00+09:00"
+    },
+    {
+      "title": "[東証]新規上場日の呼値の単位：iFreeETF FANG+レバレッジ（OTCスワップ型）（コード683A）",
+      "url": "https://www.jpx.co.jp/news/1030/20261125-03.html",
+      "publisher": "JPX",
+      "date": "2026-11-25T16:00:00+09:00"
+    },
+    {
+      "title": "[東証]新規上場日の呼値の単位：iシェアーズ　米国成長株式 キャピタル ＆ プレミアムインカム アクティブ ETF （コード675A）",
+      "url": "https://www.jpx.co.jp/news/1030/20261125-01.html",
+      "publisher": "JPX",
+      "date": "2026-11-25T16:00:00+09:00"
+    },
+    {
+      "title": "[東証]新規上場の承認（ETF）：ＳＭＴ　ＥＴＦ日本株式モメンタムファンド（三井住友トラスト・アセットマネジメント）",
+      "url": "https://www.jpx.co.jp/news/1070/20261125.html",
+      "publisher": "JPX",
+      "date": "2026-11-25T16:00:00+09:00"
+    },
+    {
+      "title": "[東証]制限値幅の拡大：1銘柄",
+      "url": "https://www.jpx.co.jp/news/1030/20261125-05.html",
+      "publisher": "JPX",
+      "date": "2026-11-25T15:45:00+09:00"
+    },
+    {
+      "title": "Minutes of the Board's discount rate meetings on October 19 and October 28, 2026",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261124a.htm",
+      "date": "2026-11-25T04:00:00+09:00"
+    },
+    {
+      "title": "How does EIA compare different types of energy?",
+      "url": "https://www.eia.gov/todayinenergy/detail.php?id=68504",
+      "publisher": "EIA",
+      "date": "2026-11-24T23:00:00+09:00"
+    },
+    {
       "title": "Boris Vujčić: Resilience in an age of shocks: lessons from central and eastern Europe",
       "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261124~17928e5456.en.html",
       "publisher": "ECB",
       "date": "2026-11-24T20:00:00+09:00"
-    },
-    {
-      "title": "バーゼル銀行監督委員会による議事要旨の公表について",
-      "url": "https://www.boj.or.jp/finsys/intlact_fs/kisei/kis261124a.htm",
-      "publisher": "日本銀行",
-      "date": "2026-11-24T17:00:00+09:00"
-    },
-    {
-      "title": "日本銀行政策委員会月報（令和8年10月号）",
-      "url": "https://www.boj.or.jp/about/organization/policyboard/pb_geppo/pbgp2610.htm",
-      "publisher": "日本銀行",
-      "date": "2026-11-24T16:30:00+09:00"
     },
     {
       "title": "[東証]スタンダード市場からプライム市場への変更：（株）ベルテクスコーポレーション",
@@ -1055,30 +1096,6 @@ window.MARKET_CALENDAR = {
       "url": "https://www.jpx.co.jp/news/1070/20261124.html",
       "publisher": "JPX",
       "date": "2026-11-24T16:00:00+09:00"
-    },
-    {
-      "title": "[東証]改善報告書の公衆の縦覧：（株）ＢｌｕｅＭｅｍｅ",
-      "url": "https://www.jpx.co.jp/news/1023/20261124-11.html",
-      "publisher": "JPX",
-      "date": "2026-11-24T15:30:00+09:00"
-    },
-    {
-      "title": "令和8年11月20日からの大雪に係る災害等に対する金融上の措置について（福島県）",
-      "url": "https://www.boj.or.jp/about/bcp/fso/fso261124a.pdf",
-      "publisher": "日本銀行",
-      "date": "2026-11-24T13:30:00+09:00"
-    },
-    {
-      "title": "[東証]新規上場日の初値決定前の気配運用について：（株）TOKIUM",
-      "url": "https://www.jpx.co.jp/news/1031/20261124_01.html",
-      "publisher": "JPX",
-      "date": "2026-11-24T13:00:00+09:00"
-    },
-    {
-      "title": "FSBレポ統計の日本分集計結果",
-      "url": "https://www.boj.or.jp/statistics/bis/repo/index.htm",
-      "publisher": "日本銀行",
-      "date": "2026-11-24T08:50:00+09:00"
     },
     {
       "title": "Philip R. Lane: Climate change and monetary policy",
@@ -1111,58 +1128,10 @@ window.MARKET_CALENDAR = {
       "publisher": "BEA"
     },
     {
-      "title": "[東証]監理銘柄（確認中）の指定：（株）ワコム",
-      "url": "https://www.jpx.co.jp/news/1023/20261120-13.html",
-      "publisher": "JPX",
-      "date": "2026-11-20T19:50:00+09:00"
-    },
-    {
-      "title": "[東証]監理銘柄（確認中）の指定：（株）Ｉ－ｎｅ",
-      "url": "https://www.jpx.co.jp/news/1023/20261120-12.html",
-      "publisher": "JPX",
-      "date": "2026-11-20T17:55:00+09:00"
-    },
-    {
       "title": "Christine Lagarde: Acting in time",
       "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261120~e52bcc4db2.en.html",
       "publisher": "ECB",
       "date": "2026-11-20T17:30:00+09:00"
-    },
-    {
-      "title": "[OSE,TOCOM]デリバティブの祝日取引の非実施について（2026年11月23日）",
-      "url": "https://www.jpx.co.jp/news/2040/20261120-01.html",
-      "publisher": "JPX",
-      "date": "2026-11-20T17:01:00+09:00"
-    },
-    {
-      "title": "[JPX総研]東証REIT高利回り30指数の構成銘柄の定期入替について",
-      "url": "https://www.jpx.co.jp/news/6030/20261120-01.html",
-      "publisher": "JPX",
-      "date": "2026-11-20T16:30:00+09:00"
-    },
-    {
-      "title": "情報セキュリティ・セミナー「モノをどう見分け、どう認証するか」開催のお知らせ",
-      "url": "https://www.boj.or.jp/about/release_2026/rel261120a.htm",
-      "publisher": "日本銀行",
-      "date": "2026-11-20T13:00:00+09:00"
-    },
-    {
-      "title": "金融研究所 英文機関誌 Monetary and Economic Studies（第44巻）",
-      "url": "https://www.boj.or.jp/research/imes/mes/mes_261120.htm",
-      "publisher": "日本銀行",
-      "date": "2026-11-20T11:00:00+09:00"
-    },
-    {
-      "title": "報告省令レート（12月分）",
-      "url": "https://www.boj.or.jp/about/services/tame/tame_rate/syorei/hou2612.htm",
-      "publisher": "日本銀行",
-      "date": "2026-11-20T09:00:00+09:00"
-    },
-    {
-      "title": "基準外国為替相場及び裁定外国為替相場（12月分）",
-      "url": "https://www.boj.or.jp/about/services/tame/tame_rate/kijun/kiju2612.htm",
-      "publisher": "日本銀行",
-      "date": "2026-11-20T09:00:00+09:00"
     },
     {
       "title": "Quarterly Services Survey",
@@ -1260,12 +1229,6 @@ window.MARKET_CALENDAR = {
       "publisher": "NVIDIA公式Newsroom"
     },
     {
-      "title": "Frank Elderson: Smart supervision for small banks",
-      "url": "https://www.ecb.europa.eu//press/inter/date/2026/html/ecb.in261116_1~11dd7f62af.en.html",
-      "publisher": "ECB",
-      "date": "2026-11-16T22:00:00+09:00"
-    },
-    {
       "title": "SEC Proposes Executive and Director Compensation Disclosure Reforms",
       "url": "https://www.sec.gov/newsroom/press-releases/2026-114-sec-proposes-executive-director-compensation-disclosure-reforms",
       "publisher": "SEC",
@@ -1343,12 +1306,6 @@ window.MARKET_CALENDAR = {
       "date": "2026-11-04T00:00:00+09:00"
     },
     {
-      "title": "Global refinery inputs fell sharply in the second quarter of 2026 before modest recovery",
-      "url": "https://www.eia.gov/todayinenergy/detail.php?id=68404",
-      "publisher": "EIA",
-      "date": "2026-11-03T23:00:00+09:00"
-    },
-    {
       "title": "AAPL 決算発表 · 2026-09-26終了四半期",
       "url": "https://www.apple.com/newsroom/2026/11/apple-reports-fourth-quarter-results/",
       "date": "2026-11-02",
@@ -1414,11 +1371,6 @@ window.MARKET_CALENDAR = {
       "url": "https://www.bea.gov/news/2026/personal-income-and-outlays-july-2026",
       "date": "2026-08-26T21:30:00+09:00",
       "publisher": "BEA"
-    },
-    {
-      "title": "Minutes of the Board's discount rate meetings on July 20 and July 29, 2026",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260825a.htm",
-      "date": "2026-08-26T03:00:00+09:00"
     },
     {
       "title": "NVDA 決算発表 · 2026-07-26終了四半期",
@@ -2260,10 +2212,6 @@ window.MARKET_CALENDAR = {
       "unit": "%",
       "history": [
         {
-          "date": "2026-10-08",
-          "price": 5.22
-        },
-        {
           "date": "2026-10-09",
           "price": 5.24
         },
@@ -2377,6 +2325,10 @@ window.MARKET_CALENDAR = {
         },
         {
           "date": "2026-11-20",
+          "price": 4.92
+        },
+        {
+          "date": "2026-11-23",
           "price": 4.92
         }
       ],
