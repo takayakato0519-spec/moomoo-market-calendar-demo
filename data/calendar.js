@@ -1,5 +1,5 @@
 window.MARKET_CALENDAR = {
-  "updatedAt": "2026-11-25T20:28:40+09:00",
+  "updatedAt": "2026-11-26T20:05:24+09:00",
   "coverage": [
     "2026-11-01",
     "2026-12-31"
@@ -940,7 +940,26 @@ window.MARKET_CALENDAR = {
       "category": "経済指標",
       "region": "米国",
       "detail": "FRED公表カレンダー",
-      "url": "https://fred.stlouisfed.org/release?rid=54"
+      "url": "https://fred.stlouisfed.org/release?rid=54",
+      "result": {
+        "url": "https://www.bea.gov/news/2026/personal-income-and-outlays-october-2026",
+        "publishedAt": "2026-11-25T22:30:00+09:00",
+        "summary": "Personal Income and Outlays, October 2026",
+        "metrics": [
+          {
+            "label": "PCE価格指数 前月比",
+            "current": "0.3%",
+            "previous": "0.5%",
+            "change": "-0.2ポイント"
+          },
+          {
+            "label": "コアPCE価格指数 前月比",
+            "current": "0.3%",
+            "previous": "0.3%",
+            "change": "0ポイント"
+          }
+        ]
+      }
     },
     {
       "date": "2026-11-25",
@@ -949,7 +968,21 @@ window.MARKET_CALENDAR = {
       "category": "経済指標",
       "region": "米国",
       "detail": "FRED公表カレンダー",
-      "url": "https://fred.stlouisfed.org/release?rid=53"
+      "url": "https://fred.stlouisfed.org/release?rid=53",
+      "result": {
+        "url": "https://www.bea.gov/news/2026/gdp-second-estimate-and-corporate-profits-3rd-quarter-2026",
+        "publishedAt": "2026-11-25T22:30:00+09:00",
+        "summary": "GDP, (Second Estimate) and Corporate Profits, 3rd Quarter 2026",
+        "metrics": [
+          {
+            "label": "実質GDP 前期比年率",
+            "current": "4.3%",
+            "previous": "2.2%",
+            "initialRelease": "3.4%",
+            "change": "+2.1ポイント"
+          }
+        ]
+      }
     },
     {
       "date": "2026-11-26",
@@ -1027,10 +1060,106 @@ window.MARKET_CALENDAR = {
   "analystTrends": [],
   "news": [
     {
+      "title": "金融安定理事会による「グローバルなシステム上重要な銀行（G-SIB）の2026年リスト」の公表について",
+      "url": "https://www.boj.or.jp/finsys/intlact_fs/kisei/kis261126a.htm",
+      "publisher": "日本銀行",
+      "date": "2026-11-26T17:00:00+09:00"
+    },
+    {
+      "title": "[OSE]有価証券オプションの調整後の権利行使価格：2026年11月27日調整分",
+      "url": "https://www.jpx.co.jp/news/2020/20261126-01.html",
+      "publisher": "JPX",
+      "date": "2026-11-26T16:45:00+09:00"
+    },
+    {
+      "title": "令和8年度上半期末の日本銀行保有外貨資産の残高",
+      "url": "https://www.boj.or.jp/statistics/boj/other/other_gai/gai2609.pdf",
+      "publisher": "日本銀行",
+      "date": "2026-11-26T16:10:00+09:00"
+    },
+    {
+      "title": "地域金融強化のための特別当座預金制度に基づく特別付利の実施について",
+      "url": "https://www.boj.or.jp/finsys/rfs/rfs261126.pdf",
+      "publisher": "日本銀行",
+      "date": "2026-11-26T16:00:00+09:00"
+    },
+    {
+      "title": "[東証]監理銘柄（確認中）の指定解除：（株）トップカルチャー",
+      "url": "https://www.jpx.co.jp/news/1021/20261126-23.html",
+      "publisher": "JPX",
+      "date": "2026-11-26T16:00:00+09:00"
+    },
+    {
+      "title": "[東証]新規上場日の呼値の単位：ＭＡＸＩＳ日本国債上場投信（コード689A）",
+      "url": "https://www.jpx.co.jp/news/1030/20261126-01.html",
+      "publisher": "JPX",
+      "date": "2026-11-26T16:00:00+09:00"
+    },
+    {
+      "title": "[東証]上場廃止等の決定：（株）ソフト９９コーポレーション",
+      "url": "https://www.jpx.co.jp/news/1023/20261126-11.html",
+      "publisher": "JPX",
+      "date": "2026-11-26T15:40:00+09:00"
+    },
+    {
+      "title": "【挨拶】田村審議委員「わが国の経済・物価情勢と金融政策」（山梨）",
+      "url": "https://www.boj.or.jp/about/press/koen_2026/ko261126a.htm",
+      "publisher": "日本銀行",
+      "date": "2026-11-26T10:00:00+09:00"
+    },
+    {
+      "title": "ECB and Sveriges Riksbank conclude agreement for Sweden to join T2",
+      "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261125_1~6333a90f3a.en.html",
+      "publisher": "ECB",
+      "date": "2026-11-26T02:30:00+09:00"
+    },
+    {
+      "title": "New Home Sales",
+      "url": "https://www.census.gov/construction/nrs/",
+      "publisher": "U.S. Census Bureau",
+      "date": "2026-11-26T00:00:00+09:00"
+    },
+    {
+      "title": "SEC Investor Advisory Committee to Host Dec. 3 Virtual Meeting",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-118-sec-investor-advisory-committee-host-dec-3-virtual-meeting",
+      "publisher": "SEC",
+      "date": "2026-11-25T23:10:24+09:00"
+    },
+    {
+      "title": "Almost 60% of primary energy used for electricity is lost to conversion and transmission",
+      "url": "https://www.eia.gov/todayinenergy/detail.php?id=68504",
+      "publisher": "EIA",
+      "date": "2026-11-25T23:00:00+09:00"
+    },
+    {
+      "title": "GDP, (Second Estimate) and Corporate Profits, 3rd Quarter 2026",
+      "url": "https://www.bea.gov/news/2026/gdp-second-estimate-and-corporate-profits-3rd-quarter-2026",
+      "date": "2026-11-25T22:30:00+09:00",
+      "publisher": "BEA"
+    },
+    {
+      "title": "Personal Income and Outlays, October 2026",
+      "url": "https://www.bea.gov/news/2026/personal-income-and-outlays-october-2026",
+      "date": "2026-11-25T22:30:00+09:00",
+      "publisher": "BEA"
+    },
+    {
+      "title": "Advance Monthly Manufacturers' Shipments, Inventories, and Orders",
+      "url": "https://www.census.gov/manufacturing/m3/",
+      "publisher": "U.S. Census Bureau",
+      "date": "2026-11-25T22:30:00+09:00"
+    },
+    {
       "title": "Card payments edge past cash in shops; euro area consumers want both",
       "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261125~26d1ade228.en.html",
       "publisher": "ECB",
       "date": "2026-11-25T19:00:00+09:00"
+    },
+    {
+      "title": "日本銀行が保有する国債の銘柄別残高",
+      "url": "https://www.boj.or.jp/statistics/boj/other/mei/release/2026/mei261120.xlsx",
+      "publisher": "日本銀行",
+      "date": "2026-11-25T17:00:00+09:00"
     },
     {
       "title": "[東証]新規上場日の呼値の単位：半導体ブル2倍ETF（OTCスワップ型）（コード682A）",
@@ -1057,16 +1186,22 @@ window.MARKET_CALENDAR = {
       "date": "2026-11-25T16:00:00+09:00"
     },
     {
-      "title": "[東証]新規上場の承認（ETF）：ＳＭＴ　ＥＴＦ日本株式モメンタムファンド（三井住友トラスト・アセットマネジメント）",
-      "url": "https://www.jpx.co.jp/news/1070/20261125.html",
-      "publisher": "JPX",
-      "date": "2026-11-25T16:00:00+09:00"
+      "title": "消費者物価のコア指標",
+      "url": "https://www.boj.or.jp/research/research_data/cpi/index.htm",
+      "publisher": "日本銀行",
+      "date": "2026-11-25T14:00:00+09:00"
     },
     {
-      "title": "[東証]制限値幅の拡大：1銘柄",
-      "url": "https://www.jpx.co.jp/news/1030/20261125-05.html",
-      "publisher": "JPX",
-      "date": "2026-11-25T15:45:00+09:00"
+      "title": "営業毎旬報告（11月20日現在）",
+      "url": "https://www.boj.or.jp/statistics/boj/other/acmai/release/2026/ac261120.htm",
+      "publisher": "日本銀行",
+      "date": "2026-11-25T10:00:00+09:00"
+    },
+    {
+      "title": "貸出約定平均金利（9月）",
+      "url": "https://www.boj.or.jp/statistics/dl/loan/yaku/yaku2609.pdf",
+      "publisher": "日本銀行",
+      "date": "2026-11-25T08:50:00+09:00"
     },
     {
       "title": "Minutes of the Board's discount rate meetings on October 19 and October 28, 2026",
@@ -1084,18 +1219,6 @@ window.MARKET_CALENDAR = {
       "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261124~17928e5456.en.html",
       "publisher": "ECB",
       "date": "2026-11-24T20:00:00+09:00"
-    },
-    {
-      "title": "[東証]スタンダード市場からプライム市場への変更：（株）ベルテクスコーポレーション",
-      "url": "https://www.jpx.co.jp/listing/stocks/transfers/index.html",
-      "publisher": "JPX",
-      "date": "2026-11-24T16:00:00+09:00"
-    },
-    {
-      "title": "[東証]新規上場の承認（ETF）：ニッセイＥＴＦ　日経高配当株３０（ニッセイアセットマネジメント）",
-      "url": "https://www.jpx.co.jp/news/1070/20261124.html",
-      "publisher": "JPX",
-      "date": "2026-11-24T16:00:00+09:00"
     },
     {
       "title": "Philip R. Lane: Climate change and monetary policy",
@@ -1193,12 +1316,6 @@ window.MARKET_CALENDAR = {
       "date": "2026-11-18T18:00:00+09:00"
     },
     {
-      "title": "Philip R. Lane: The practice and science of monetary policy communication: the ECB experience",
-      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261117~7f5d3b1a0e.en.pdf",
-      "publisher": "ECB",
-      "date": "2026-11-18T03:30:00+09:00"
-    },
-    {
       "title": "Manufacturing and Trade Inventories and Sales",
       "url": "https://www.census.gov/mtis/index.html",
       "publisher": "U.S. Census Bureau",
@@ -1276,12 +1393,6 @@ window.MARKET_CALENDAR = {
       "date": "2026-11-06T23:00:00+09:00"
     },
     {
-      "title": "Refineries have shifted production away from gasoline to middle distillates",
-      "url": "https://www.eia.gov/todayinenergy/detail.php?id=68424",
-      "publisher": "EIA",
-      "date": "2026-11-05T23:00:00+09:00"
-    },
-    {
       "title": "SEC Adopts Amendments to Update Definitions of Small Entity for Investment Companies and Investment Advisers",
       "url": "https://www.sec.gov/newsroom/press-releases/2026-112-sec-adopts-amendments-update-definitions-small-entity-investment-companies-investment-advisers",
       "publisher": "SEC",
@@ -1294,18 +1405,6 @@ window.MARKET_CALENDAR = {
       "publisher": "BEA"
     },
     {
-      "title": "U.S. International Trade in Goods and Services",
-      "url": "https://www.census.gov/foreign-trade/index.html",
-      "publisher": "U.S. Census Bureau",
-      "date": "2026-11-04T22:30:00+09:00"
-    },
-    {
-      "title": "Manufacturers' Shipments, Inventories, and Orders",
-      "url": "https://www.census.gov/manufacturing/m3/",
-      "publisher": "U.S. Census Bureau",
-      "date": "2026-11-04T00:00:00+09:00"
-    },
-    {
       "title": "AAPL 決算発表 · 2026-09-26終了四半期",
       "url": "https://www.apple.com/newsroom/2026/11/apple-reports-fourth-quarter-results/",
       "date": "2026-11-02",
@@ -1316,18 +1415,6 @@ window.MARKET_CALENDAR = {
       "url": "https://www.sec.gov/newsroom/press-releases/2026-111-sec-issues-exemptive-relief-treasury-clearing-requirements-certain-inter-affiliate-non-us-repo",
       "publisher": "SEC",
       "date": "2026-10-31T04:30:00+09:00"
-    },
-    {
-      "title": "Two Entities Charged in $130 Million Fraud Scheme That Used False SEC Filings to Boost Investor Confidence",
-      "url": "https://www.sec.gov/newsroom/press-releases/2026-110-two-entities-charged-130-million-fraud-scheme-used-false-sec-filings-boost-investor-confidence",
-      "publisher": "SEC",
-      "date": "2026-10-30T01:42:37+09:00"
-    },
-    {
-      "title": "GDP (Advance Estimate), 3rd Quarter 2026",
-      "url": "https://www.bea.gov/news/2026/gdp-advance-estimate-3rd-quarter-2026",
-      "date": "2026-10-29T21:30:00+09:00",
-      "publisher": "BEA"
     },
     {
       "title": "Personal Income and Outlays, September 2026",
@@ -1430,12 +1517,6 @@ window.MARKET_CALENDAR = {
       "title": "New Foreign Direct Investment in the United States, 2025",
       "url": "https://www.bea.gov/news/2026/new-foreign-direct-investment-united-states-2025",
       "date": "2026-06-10T21:30:00+09:00",
-      "publisher": "BEA"
-    },
-    {
-      "title": "Personal Income and Outlays, April 2026",
-      "url": "https://www.bea.gov/news/2026/personal-income-and-outlays-april-2026",
-      "date": "2026-05-28T21:30:00+09:00",
       "publisher": "BEA"
     },
     {
@@ -1698,26 +1779,6 @@ window.MARKET_CALENDAR = {
       "unit": "ドル／バレル",
       "history": [
         {
-          "date": "2026-10-07",
-          "price": 95.02
-        },
-        {
-          "date": "2026-10-08",
-          "price": 98.26
-        },
-        {
-          "date": "2026-10-09",
-          "price": 98.73
-        },
-        {
-          "date": "2026-10-12",
-          "price": 94.99
-        },
-        {
-          "date": "2026-10-13",
-          "price": 95.39
-        },
-        {
           "date": "2026-10-14",
           "price": 96.34
         },
@@ -1816,6 +1877,26 @@ window.MARKET_CALENDAR = {
         {
           "date": "2026-11-17",
           "price": 89.53
+        },
+        {
+          "date": "2026-11-18",
+          "price": 86.81
+        },
+        {
+          "date": "2026-11-19",
+          "price": 86.78
+        },
+        {
+          "date": "2026-11-20",
+          "price": 87.59
+        },
+        {
+          "date": "2026-11-23",
+          "price": 81.42
+        },
+        {
+          "date": "2026-11-24",
+          "price": 82.24
         }
       ],
       "url": "https://fred.stlouisfed.org/series/DCOILWTICO"
@@ -1825,26 +1906,6 @@ window.MARKET_CALENDAR = {
       "name": "ブレント原油",
       "unit": "ドル／バレル",
       "history": [
-        {
-          "date": "2026-10-07",
-          "price": 126.0
-        },
-        {
-          "date": "2026-10-08",
-          "price": 130.18
-        },
-        {
-          "date": "2026-10-09",
-          "price": 130.03
-        },
-        {
-          "date": "2026-10-12",
-          "price": 129.95
-        },
-        {
-          "date": "2026-10-13",
-          "price": 125.78
-        },
         {
           "date": "2026-10-14",
           "price": 126.55
@@ -1944,6 +2005,26 @@ window.MARKET_CALENDAR = {
         {
           "date": "2026-11-17",
           "price": 92.94
+        },
+        {
+          "date": "2026-11-18",
+          "price": 92.88
+        },
+        {
+          "date": "2026-11-19",
+          "price": 95.17
+        },
+        {
+          "date": "2026-11-20",
+          "price": 92.76
+        },
+        {
+          "date": "2026-11-23",
+          "price": 91.2
+        },
+        {
+          "date": "2026-11-24",
+          "price": 91.8
         }
       ],
       "url": "https://fred.stlouisfed.org/series/DCOILBRENTEU"
@@ -1953,26 +2034,6 @@ window.MARKET_CALENDAR = {
       "name": "ヘンリーハブ天然ガス",
       "unit": "ドル／MMBtu",
       "history": [
-        {
-          "date": "2026-10-07",
-          "price": 3.16
-        },
-        {
-          "date": "2026-10-08",
-          "price": 3.24
-        },
-        {
-          "date": "2026-10-09",
-          "price": 3.1
-        },
-        {
-          "date": "2026-10-12",
-          "price": 3.1
-        },
-        {
-          "date": "2026-10-13",
-          "price": 3.14
-        },
         {
           "date": "2026-10-14",
           "price": 3.22
@@ -2072,6 +2133,26 @@ window.MARKET_CALENDAR = {
         {
           "date": "2026-11-17",
           "price": 3.1
+        },
+        {
+          "date": "2026-11-18",
+          "price": 3.24
+        },
+        {
+          "date": "2026-11-19",
+          "price": 3.31
+        },
+        {
+          "date": "2026-11-20",
+          "price": 3.29
+        },
+        {
+          "date": "2026-11-23",
+          "price": 3.28
+        },
+        {
+          "date": "2026-11-24",
+          "price": 3.3
         }
       ],
       "url": "https://fred.stlouisfed.org/series/DHHNGSP"
@@ -2212,10 +2293,6 @@ window.MARKET_CALENDAR = {
       "unit": "%",
       "history": [
         {
-          "date": "2026-10-09",
-          "price": 5.24
-        },
-        {
           "date": "2026-10-13",
           "price": 5.21
         },
@@ -2330,6 +2407,10 @@ window.MARKET_CALENDAR = {
         {
           "date": "2026-11-23",
           "price": 4.92
+        },
+        {
+          "date": "2026-11-24",
+          "price": 4.91
         }
       ],
       "url": "https://fred.stlouisfed.org/series/DGS10"
