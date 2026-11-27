@@ -1,5 +1,5 @@
 window.MARKET_CALENDAR = {
-  "updatedAt": "2026-11-26T20:05:24+09:00",
+  "updatedAt": "2026-11-27T19:59:54+09:00",
   "coverage": [
     "2026-11-01",
     "2026-12-31"
@@ -950,12 +950,16 @@ window.MARKET_CALENDAR = {
             "label": "PCE価格指数 前月比",
             "current": "0.3%",
             "previous": "0.5%",
+            "firstObserved": "0.3%",
+            "revisions": [],
             "change": "-0.2ポイント"
           },
           {
             "label": "コアPCE価格指数 前月比",
             "current": "0.3%",
             "previous": "0.3%",
+            "firstObserved": "0.3%",
+            "revisions": [],
             "change": "0ポイント"
           }
         ]
@@ -979,6 +983,8 @@ window.MARKET_CALENDAR = {
             "current": "4.3%",
             "previous": "2.2%",
             "initialRelease": "3.4%",
+            "firstObserved": "4.3%",
+            "revisions": [],
             "change": "+2.1ポイント"
           }
         ]
@@ -1060,16 +1066,82 @@ window.MARKET_CALENDAR = {
   "analystTrends": [],
   "news": [
     {
+      "title": "ECB Consumer Expectations Survey results – October 2026",
+      "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261127~2e53af695e.en.html",
+      "publisher": "ECB",
+      "date": "2026-11-27T18:00:00+09:00"
+    },
+    {
+      "title": "[東証]新規上場日の基準値段等：ＮＥＸＴ ＦＵＮＤＳ ＣＳＯＰ 中国ＡＩ関連株（香港上場）指数連動型上場投信（コード671A）",
+      "url": "https://www.jpx.co.jp/news/1030/20261127-02.html",
+      "publisher": "JPX",
+      "date": "2026-11-27T18:00:00+09:00"
+    },
+    {
+      "title": "[東証]上場廃止等の決定：（株）ＪＰＭＣ",
+      "url": "https://www.jpx.co.jp/news/1023/20261127-11.html",
+      "publisher": "JPX",
+      "date": "2026-11-27T16:10:00+09:00"
+    },
+    {
+      "title": "【記者会見】田村審議委員（山梨、11月26日分）",
+      "url": "https://www.boj.or.jp/about/press/kaiken_2026/kk261127a.pdf",
+      "publisher": "日本銀行",
+      "date": "2026-11-27T16:00:00+09:00"
+    },
+    {
+      "title": "[東証]TOKYO PRO Marketへの上場申請：（株）ランドピア",
+      "url": "https://www.jpx.co.jp/equities/products/tpm/issues/index.html",
+      "publisher": "JPX",
+      "date": "2026-11-27T16:00:00+09:00"
+    },
+    {
+      "title": "[東証]上場廃止理由及び上場廃止日の変更：（株）さいか屋",
+      "url": "https://www.jpx.co.jp/news/1021/20261127-21.html",
+      "publisher": "JPX",
+      "date": "2026-11-27T16:00:00+09:00"
+    },
+    {
+      "title": "[東証]上場廃止に係る猶予期間からの解除：サンケイリアルエステート投資法人",
+      "url": "https://www.jpx.co.jp/news/1021/20261127-18.html",
+      "publisher": "JPX",
+      "date": "2026-11-27T16:00:00+09:00"
+    },
+    {
+      "title": "[東証]新規上場日の呼値の単位：Ｏｎｅ ＥＴＦ 円建て社債（コード685A）",
+      "url": "https://www.jpx.co.jp/news/1030/20261127-01.html",
+      "publisher": "JPX",
+      "date": "2026-11-27T16:00:00+09:00"
+    },
+    {
+      "title": "[東証]新規上場日の初値決定前の気配運用について：ジャパンホームシールド（株）",
+      "url": "https://www.jpx.co.jp/news/1031/20261127_01.html",
+      "publisher": "JPX",
+      "date": "2026-11-27T13:00:00+09:00"
+    },
+    {
+      "title": "[東証]新規上場日の初値決定前の気配運用について：InfiniCloud（株）",
+      "url": "https://www.jpx.co.jp/news/1031/20261127_02.html",
+      "publisher": "JPX",
+      "date": "2026-11-27T13:00:00+09:00"
+    },
+    {
+      "title": "【講演】神山理事「デジタルマネーと決済：新たなパラダイムへの移行」（IMF MCM-OAP Seminar in Tokyo）",
+      "url": "https://www.boj.or.jp/about/press/koen_2026/ko261127a.htm",
+      "publisher": "日本銀行",
+      "date": "2026-11-27T10:15:00+09:00"
+    },
+    {
+      "title": "Meeting of 28-29 October 2026",
+      "url": "https://www.ecb.europa.eu//press/accounts/2026/html/ecb.mg261126~ccf28c8071.en.html",
+      "publisher": "ECB",
+      "date": "2026-11-26T21:30:00+09:00"
+    },
+    {
       "title": "金融安定理事会による「グローバルなシステム上重要な銀行（G-SIB）の2026年リスト」の公表について",
       "url": "https://www.boj.or.jp/finsys/intlact_fs/kisei/kis261126a.htm",
       "publisher": "日本銀行",
       "date": "2026-11-26T17:00:00+09:00"
-    },
-    {
-      "title": "[OSE]有価証券オプションの調整後の権利行使価格：2026年11月27日調整分",
-      "url": "https://www.jpx.co.jp/news/2020/20261126-01.html",
-      "publisher": "JPX",
-      "date": "2026-11-26T16:45:00+09:00"
     },
     {
       "title": "令和8年度上半期末の日本銀行保有外貨資産の残高",
@@ -1082,24 +1154,6 @@ window.MARKET_CALENDAR = {
       "url": "https://www.boj.or.jp/finsys/rfs/rfs261126.pdf",
       "publisher": "日本銀行",
       "date": "2026-11-26T16:00:00+09:00"
-    },
-    {
-      "title": "[東証]監理銘柄（確認中）の指定解除：（株）トップカルチャー",
-      "url": "https://www.jpx.co.jp/news/1021/20261126-23.html",
-      "publisher": "JPX",
-      "date": "2026-11-26T16:00:00+09:00"
-    },
-    {
-      "title": "[東証]新規上場日の呼値の単位：ＭＡＸＩＳ日本国債上場投信（コード689A）",
-      "url": "https://www.jpx.co.jp/news/1030/20261126-01.html",
-      "publisher": "JPX",
-      "date": "2026-11-26T16:00:00+09:00"
-    },
-    {
-      "title": "[東証]上場廃止等の決定：（株）ソフト９９コーポレーション",
-      "url": "https://www.jpx.co.jp/news/1023/20261126-11.html",
-      "publisher": "JPX",
-      "date": "2026-11-26T15:40:00+09:00"
     },
     {
       "title": "【挨拶】田村審議委員「わが国の経済・物価情勢と金融政策」（山梨）",
@@ -1162,46 +1216,10 @@ window.MARKET_CALENDAR = {
       "date": "2026-11-25T17:00:00+09:00"
     },
     {
-      "title": "[東証]新規上場日の呼値の単位：半導体ブル2倍ETF（OTCスワップ型）（コード682A）",
-      "url": "https://www.jpx.co.jp/news/1030/20261125-02.html",
-      "publisher": "JPX",
-      "date": "2026-11-25T16:00:00+09:00"
-    },
-    {
-      "title": "[東証]新規上場日の呼値の単位：ＳＭＴ　ＥＴＦ円金利フィクスト・グリッド（１０年固定金利払い／ＯＴＣスワップ型）（コード684A）",
-      "url": "https://www.jpx.co.jp/news/1030/20261125-04.html",
-      "publisher": "JPX",
-      "date": "2026-11-25T16:00:00+09:00"
-    },
-    {
-      "title": "[東証]新規上場日の呼値の単位：iFreeETF FANG+レバレッジ（OTCスワップ型）（コード683A）",
-      "url": "https://www.jpx.co.jp/news/1030/20261125-03.html",
-      "publisher": "JPX",
-      "date": "2026-11-25T16:00:00+09:00"
-    },
-    {
-      "title": "[東証]新規上場日の呼値の単位：iシェアーズ　米国成長株式 キャピタル ＆ プレミアムインカム アクティブ ETF （コード675A）",
-      "url": "https://www.jpx.co.jp/news/1030/20261125-01.html",
-      "publisher": "JPX",
-      "date": "2026-11-25T16:00:00+09:00"
-    },
-    {
       "title": "消費者物価のコア指標",
       "url": "https://www.boj.or.jp/research/research_data/cpi/index.htm",
       "publisher": "日本銀行",
       "date": "2026-11-25T14:00:00+09:00"
-    },
-    {
-      "title": "営業毎旬報告（11月20日現在）",
-      "url": "https://www.boj.or.jp/statistics/boj/other/acmai/release/2026/ac261120.htm",
-      "publisher": "日本銀行",
-      "date": "2026-11-25T10:00:00+09:00"
-    },
-    {
-      "title": "貸出約定平均金利（9月）",
-      "url": "https://www.boj.or.jp/statistics/dl/loan/yaku/yaku2609.pdf",
-      "publisher": "日本銀行",
-      "date": "2026-11-25T08:50:00+09:00"
     },
     {
       "title": "Minutes of the Board's discount rate meetings on October 19 and October 28, 2026",
@@ -1302,18 +1320,6 @@ window.MARKET_CALENDAR = {
       "url": "https://www.census.gov/construction/nrc/index.html",
       "publisher": "U.S. Census Bureau",
       "date": "2026-11-18T22:30:00+09:00"
-    },
-    {
-      "title": "Boris Vujčić: Financial Stability Review - November 2026",
-      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261118~86f1e8147e.en.pdf",
-      "publisher": "ECB",
-      "date": "2026-11-18T18:00:00+09:00"
-    },
-    {
-      "title": "Risks from AI valuations, fiscal imbalances and geoeconomic tensions weigh on financial stability outlook",
-      "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261118~83c5c60158.en.html",
-      "publisher": "ECB",
-      "date": "2026-11-18T18:00:00+09:00"
     },
     {
       "title": "Manufacturing and Trade Inventories and Sales",
