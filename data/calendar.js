@@ -1,5 +1,5 @@
 window.MARKET_CALENDAR = {
-  "updatedAt": "2026-11-27T19:59:54+09:00",
+  "updatedAt": "2026-11-28T19:37:50+09:00",
   "coverage": [
     "2026-11-01",
     "2026-12-31"
@@ -1066,6 +1066,42 @@ window.MARKET_CALENDAR = {
   "analystTrends": [],
   "news": [
     {
+      "title": "Boris Vujčić: Interview with Kurier",
+      "url": "https://www.ecb.europa.eu//press/inter/date/2026/html/ecb.in261128~10e11f78f1.en.html",
+      "publisher": "ECB",
+      "date": "2026-11-28T17:00:00+09:00"
+    },
+    {
+      "title": "Decisions taken by the Governing Council of the ECB (in addition to decisions setting interest rates)",
+      "url": "https://www.ecb.europa.eu//press/govcdec/otherdec/2026/html/ecb.gc261127~13ecadc0f2.en.html",
+      "publisher": "ECB",
+      "date": "2026-11-27T23:00:00+09:00"
+    },
+    {
+      "title": "Global electricity generation more than doubled from 2000 to 2025",
+      "url": "https://www.eia.gov/todayinenergy/detail.php?id=68525",
+      "publisher": "EIA",
+      "date": "2026-11-27T23:00:00+09:00"
+    },
+    {
+      "title": "Advance Retail Inventories",
+      "url": "https://www.census.gov/econ/indicators/index.html",
+      "publisher": "U.S. Census Bureau",
+      "date": "2026-11-27T22:30:00+09:00"
+    },
+    {
+      "title": "Advance U.S. International Trade in Goods",
+      "url": "https://www.census.gov/econ/indicators/index.html",
+      "publisher": "U.S. Census Bureau",
+      "date": "2026-11-27T22:30:00+09:00"
+    },
+    {
+      "title": "Advance Wholesale Inventories",
+      "url": "https://www.census.gov/econ/indicators/index.html",
+      "publisher": "U.S. Census Bureau",
+      "date": "2026-11-27T22:30:00+09:00"
+    },
+    {
       "title": "ECB Consumer Expectations Survey results – October 2026",
       "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261127~2e53af695e.en.html",
       "publisher": "ECB",
@@ -1245,12 +1281,6 @@ window.MARKET_CALENDAR = {
       "date": "2026-11-23T23:30:00+09:00"
     },
     {
-      "title": "ECB expands acceptance of DLT-based assets as eligible Eurosystem collateral",
-      "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261123~76b6f57b74.en.html",
-      "publisher": "ECB",
-      "date": "2026-11-23T19:00:00+09:00"
-    },
-    {
       "title": "SEC Issues Proposal to Restructure the Consolidated Audit Trail",
       "url": "https://www.sec.gov/newsroom/press-releases/2026-117-sec-issues-proposal-restructure-consolidated-audit-trail",
       "publisher": "SEC",
@@ -1267,12 +1297,6 @@ window.MARKET_CALENDAR = {
       "url": "https://www.bea.gov/news/2026/activities-us-multinational-enterprises-2024",
       "date": "2026-11-20T22:30:00+09:00",
       "publisher": "BEA"
-    },
-    {
-      "title": "Christine Lagarde: Acting in time",
-      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261120~e52bcc4db2.en.html",
-      "publisher": "ECB",
-      "date": "2026-11-20T17:30:00+09:00"
     },
     {
       "title": "Quarterly Services Survey",
@@ -1334,12 +1358,6 @@ window.MARKET_CALENDAR = {
       "date": "2026-11-17T23:00:00+09:00"
     },
     {
-      "title": "Advance Monthly Sales for Retail and Food Services",
-      "url": "https://www.census.gov/retail/index.html",
-      "publisher": "U.S. Census Bureau",
-      "date": "2026-11-17T22:30:00+09:00"
-    },
-    {
       "title": "HD 決算発表 · 売上高 434億ドル・希薄化後EPS 3.72ドル",
       "url": "https://ir.homedepot.com/news-releases/2026/11-17-2026-110221331",
       "date": "2026-11-17",
@@ -1369,12 +1387,6 @@ window.MARKET_CALENDAR = {
       "date": "2026-11-13T02:45:00+09:00"
     },
     {
-      "title": "Business Formation Statistics",
-      "url": "https://www.census.gov/econ/bfs/",
-      "publisher": "U.S. Census Bureau",
-      "date": "2026-11-13T00:00:00+09:00"
-    },
-    {
       "title": "EIA forecasts Alaskan crude oil production to grow 13% in 2027",
       "url": "https://www.eia.gov/todayinenergy/detail.php?id=68444",
       "publisher": "EIA",
@@ -1385,18 +1397,6 @@ window.MARKET_CALENDAR = {
       "url": "https://www.sec.gov/newsroom/press-releases/2026-113-sec-announces-enforcement-annual-results-fiscal-year-2026",
       "publisher": "SEC",
       "date": "2026-11-11T01:15:35+09:00"
-    },
-    {
-      "title": "Monthly Wholesale Trade: Sales and Inventories",
-      "url": "https://www.census.gov/wholesale/index.html",
-      "publisher": "U.S. Census Bureau",
-      "date": "2026-11-10T00:00:00+09:00"
-    },
-    {
-      "title": "U.S. crude oil imports from Venezuela in July were highest since 2017",
-      "url": "https://www.eia.gov/todayinenergy/detail.php?id=68425",
-      "publisher": "EIA",
-      "date": "2026-11-06T23:00:00+09:00"
     },
     {
       "title": "SEC Adopts Amendments to Update Definitions of Small Entity for Investment Companies and Investment Advisers",
@@ -2299,10 +2299,6 @@ window.MARKET_CALENDAR = {
       "unit": "%",
       "history": [
         {
-          "date": "2026-10-13",
-          "price": 5.21
-        },
-        {
           "date": "2026-10-14",
           "price": 5.19
         },
@@ -2417,6 +2413,10 @@ window.MARKET_CALENDAR = {
         {
           "date": "2026-11-24",
           "price": 4.91
+        },
+        {
+          "date": "2026-11-25",
+          "price": 4.85
         }
       ],
       "url": "https://fred.stlouisfed.org/series/DGS10"
